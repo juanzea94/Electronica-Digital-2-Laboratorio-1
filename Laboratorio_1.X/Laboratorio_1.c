@@ -34,9 +34,477 @@
 int Boton = 0;
 void funcion ();
 void reset ();
+int B1 = 0;
+int B2 = 0;
+int m=0;
+int n=0;
+int p=0;
+int q=0;
+int r=0;
 
+void reset (){
+    if (PORTEbits.RE3 == 1 && PORTDbits.RD7 == 1){
+    Boton=0;
+    r=1;
+}
+}
 
-
-void main(void) {
-    return;
+void main(void)
+{
+    OSCCON = 0b110;
+    
+    TRISA = 0b00000000;
+    TRISB = 0b00000000;
+    TRISC = 0b00000000;
+    TRISD = 0b00000000;
+    TRISE = 1;
+    
+    ANSEL = 0b00000000;
+    ANSELH = 0;
+    PORTA = 0;
+    PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
+    PORTE = 0;
+while (1){
+  if (PORTEbits.RE3 == 1){
+        Boton = 1;
+    }
+  if (PORTEbits.RE3 == 1 && Boton == 1){
+      Boton = 0;
+      PORTDbits.RD4 = 1;
+      PORTCbits.RC3 = 1;
+      PORTCbits.RC2 = 1;
+      PORTCbits.RC6 = 1;
+      PORTCbits.RC0 = 1;
+      PORTCbits.RC1 = 1;
+      __delay_ms(5);
+      PORTDbits.RD4 = 0;
+      PORTCbits.RC3 = 0;
+      PORTCbits.RC2 = 0;
+      PORTCbits.RC6 = 0;
+      PORTCbits.RC0 = 0;
+      PORTCbits.RC1 = 0;
+      __delay_ms(5);
+      PORTDbits.RD3 = 1;
+      PORTCbits.RC3 = 1;
+      PORTCbits.RC4 = 1;
+      PORTCbits.RC6 = 1;
+      PORTCbits.RC0 = 1;
+      PORTCbits.RC1 = 1;
+      __delay_ms(5);
+      PORTDbits.RD3 = 0;
+      PORTCbits.RC3 = 0;
+      PORTCbits.RC4 = 0;
+      PORTCbits.RC6 = 0;
+      PORTCbits.RC0 = 0;
+      PORTCbits.RC1 = 0;
+      __delay_ms(5);
+      PORTDbits.RD2 = 1;
+      PORTCbits.RC2 = 1;
+      PORTCbits.RC1 = 1;
+      __delay_ms(5);
+      PORTDbits.RD2 = 1;
+      PORTDbits.RD3 = 1;
+      PORTDbits.RD4 = 1;
+      PORTCbits.RC2 = 1;
+      PORTCbits.RC1 = 1;
+      PORTCbits.RC3 = 1;
+      PORTCbits.RC4 = 1;
+      PORTCbits.RC5 = 1;
+      PORTCbits.RC0 = 1;
+      funcion();
+  }  
+}
+}
+void funcion (){
+while (1){
+      
+    if (PORTBbits.RB7 == 1 && m==0 && PORTAbits.RA0 == 0){
+        m=1;
+        PORTDbits.RD3 = 0;
+        PORTDbits.RD4 = 0;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC5 = 0;
+        PORTCbits.RC0 = 1;
+        PORTCbits.RC6 = 1;
+        PORTDbits.RD2 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 1;
+        PORTAbits.RA6 = 0;
+        PORTAbits.RA7 = 0;
+        PORTAbits.RA5 = 0;
+        PORTAbits.RA4 = 0;
+        PORTAbits.RA3 = 0;
+        PORTAbits.RA2 = 0;
+        PORTAbits.RA1 = 0;
+        PORTAbits.RA0 = 0;
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD7 = 1;
+        __delay_ms (1);
+        PORTDbits.RD7 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC1 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC6 = 0;
+        PORTCbits.RC0 = 0;
+        __delay_ms (1);
+        PORTDbits.RD7 = 1;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC1 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC6 = 1;
+        PORTCbits.RC0 = 1;
+        __delay_ms (1);
+        PORTDbits.RD7 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC1 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC6 = 0;
+        PORTCbits.RC0 = 0;
+        __delay_ms (1);
+        PORTDbits.RD7 = 1;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC1 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC6 = 1;
+        PORTCbits.RC0 = 1;
+        __delay_ms (1);
+        PORTDbits.RD7 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC1 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC6 = 0;
+        PORTCbits.RC0 = 0;
+        __delay_ms (1);
+        PORTDbits.RD7 = 1;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC1 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC6 = 1;
+        PORTCbits.RC0 = 1;
+        __delay_ms (1);
+        PORTDbits.RD7 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC1 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC6 = 0;
+        PORTCbits.RC0 = 0;
+        __delay_ms (1);
+        PORTDbits.RD7 = 1;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC1 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC6 = 1;
+        PORTCbits.RC0 = 1;
+        __delay_ms (1);
+        PORTDbits.RD7 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC1 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC6 = 0;
+        PORTCbits.RC0 = 0;
+        __delay_ms (1);
+        PORTDbits.RD7 = 1;
+        PORTCbits.RC3 = 1;
+        PORTCbits.RC1 = 1;
+        PORTCbits.RC4 = 1;
+        PORTCbits.RC6 = 1;
+        PORTCbits.RC0 = 1;
+    }
+        if (PORTEbits.RE3== 1 && PORTDbits.RD7 == 1){
+            PORTA = 0;
+            PORTB = 0;
+            PORTC = 0;
+            PORTD = 0;
+            PORTE = 0;
+            Boton = 0;
+            m = 0;
+            n = 0;
+            q = 0;
+            p = 0;
+            B1 = 0;
+            B2 = 0;
+            return;
+        }
+    
+        if (PORTEbits.RE2 == 0){
+            p=1;
+        }
+      if (PORTEbits.RE2 == 1&& PORTDbits.RD2 == 1 && p==1){
+            B2=B2+1;
+            __delay_ms(1);
+            
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB0 == 0 && B2==1){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 0;
+          PORTBbits.RB2 = 0;
+          PORTBbits.RB3 = 0;
+          PORTBbits.RB4 = 0;
+          PORTBbits.RB5 = 0;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB0 == 1 && B2 == 2){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 0;
+          PORTBbits.RB3 = 0;
+          PORTBbits.RB4 = 0;
+          PORTBbits.RB5 = 0;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB1 == 1 && B2 == 3){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 0;
+          PORTBbits.RB4 = 0;
+          PORTBbits.RB5 = 0;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB2 == 1 && B2 == 4){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 1;
+          PORTBbits.RB4 = 0;
+          PORTBbits.RB5 = 0;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB3 == 1 && B2 == 5){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 1;
+          PORTBbits.RB4 = 1;
+          PORTBbits.RB5 = 0;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB4 == 1 && B2 == 6){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 1;
+          PORTBbits.RB4 = 1;
+          PORTBbits.RB5 = 1;
+          PORTBbits.RB6 = 0;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB5 == 1 && B2 == 7){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 1;
+          PORTBbits.RB4 = 1;
+          PORTBbits.RB5 = 1;
+          PORTBbits.RB6 = 1;
+          PORTBbits.RB7 = 0;
+          p=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTBbits.RB7 == 0 && PORTBbits.RB1 == 1 && B2 == 8){
+          PORTBbits.RB0 = 1;
+          PORTBbits.RB1 = 1;
+          PORTBbits.RB2 = 1;
+          PORTBbits.RB3 = 1;
+          PORTBbits.RB4 = 1;
+          PORTBbits.RB5 = 1;
+          PORTBbits.RB6 = 1;
+          PORTBbits.RB7 = 1;
+          PORTDbits.RD7 = 1;
+          p=0;
+          
+      }
+    }
+    
+    if (PORTAbits.RA0 == 1 && n==0 && PORTBbits.RB7 == 0){
+        n=1;
+        PORTDbits.RD3 = 0;
+        PORTDbits.RD4 = 0;
+        PORTCbits.RC3 = 0;
+        PORTCbits.RC4 = 0;
+        PORTCbits.RC5 = 0;
+        PORTCbits.RC0 = 0;
+        PORTCbits.RC6 = 0;
+        PORTDbits.RD2 = 0;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+        PORTBbits.RB6 = 0;
+        PORTBbits.RB7 = 0;
+        PORTBbits.RB5 = 0;
+        PORTBbits.RB4 = 0;
+        PORTBbits.RB3 = 0;
+        PORTBbits.RB2 = 0;
+        PORTBbits.RB1 = 0;
+        PORTBbits.RB0 = 0;
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD0 = 1;
+        __delay_ms (1);
+        PORTDbits.RD0 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 0;
+        __delay_ms (1);
+        PORTDbits.RD0 = 1;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+        __delay_ms (1);
+        PORTDbits.RD0 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 0;
+        __delay_ms (1);
+        PORTDbits.RD0 = 1;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+        __delay_ms (1);
+        PORTDbits.RD0 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 0;
+        __delay_ms (1);
+        PORTDbits.RD0 = 1;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+        __delay_ms (1);
+        PORTDbits.RD0 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 0;
+        __delay_ms (1);
+        PORTDbits.RD0 = 1;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+        __delay_ms (1);
+        PORTDbits.RD0 = 0;
+        PORTCbits.RC2 = 0;
+        PORTCbits.RC1 = 0;
+        __delay_ms (1);
+        PORTDbits.RD0 = 1;
+        PORTCbits.RC2 = 1;
+        PORTCbits.RC1 = 1;
+    }
+        if (PORTEbits.RE3== 1 && PORTDbits.RD0 == 1){
+            PORTA = 0;
+            PORTB = 0;
+            PORTC = 0;
+            PORTD = 0;
+            PORTE = 0;
+            Boton = 0;
+            m = 0;
+            n = 0;
+            q = 0;
+            p = 0;
+            B1 = 0;
+            B2 = 0;
+            return;
+        }
+    
+        if (PORTEbits.RE1 == 0){
+            q=1;
+    }
+        if (PORTEbits.RE1 == 1&& PORTDbits.RD2 == 1 && q==1){
+            B1=B1+1;
+            __delay_ms(1);
+            
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA6 == 0 && B1==1){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 0;
+          PORTAbits.RA5 = 0;
+          PORTAbits.RA4 = 0;
+          PORTAbits.RA3 = 0;
+          PORTAbits.RA2 = 0;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA6 == 1 && B1 == 2){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 0;
+          PORTAbits.RA4 = 0;
+          PORTAbits.RA3 = 0;
+          PORTAbits.RA2 = 0;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA7 == 1 && B1 == 3){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 0;
+          PORTAbits.RA3 = 0;
+          PORTAbits.RA2 = 0;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA5 == 1 && B1 ==4){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 1;
+          PORTAbits.RA3 = 0;
+          PORTAbits.RA2 = 0;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA4 == 1 && B1 == 5){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 1;
+          PORTAbits.RA3 = 1;
+          PORTAbits.RA2 = 0;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA3 == 1 && B1 == 6){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 1;
+          PORTAbits.RA3 = 1;
+          PORTAbits.RA2 = 1;
+          PORTAbits.RA1 = 0;
+          PORTAbits.RA0 = 0;
+          q=0;
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA2 == 1 && B1 == 7){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 1;
+          PORTAbits.RA3 = 1;
+          PORTAbits.RA2 = 1;
+          PORTAbits.RA1 = 1;
+          PORTAbits.RA0 = 0;
+          q=0;
+          reset();
+      }
+      if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA1 == 1 && B1 == 8){
+          PORTAbits.RA6 = 1;
+          PORTAbits.RA7 = 1;
+          PORTAbits.RA5 = 1;
+          PORTAbits.RA4 = 1;
+          PORTAbits.RA3 = 1;
+          PORTAbits.RA2 = 1;
+          PORTAbits.RA1 = 1;
+          PORTAbits.RA0 = 1;
+          PORTDbits.RD0 = 1;
+          q=0;
+      }
+        }
+  }
+return;
 }
