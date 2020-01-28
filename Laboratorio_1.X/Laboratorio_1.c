@@ -407,14 +407,15 @@ while (1){
             B2 = 0;
             return;
         }
-        //Inicia
+        //Inicia los verificadores y contadores del primer jugador que realizan el encendido de cada led 8 bits
         if (PORTEbits.RE1 == 0){
             q=1;
     }
+        //Inicia contador y utiliza el if anterior como antirebote para operar la secuencia de los LEDS del primer jugador
         if (PORTEbits.RE1 == 1&& PORTDbits.RD2 == 1 && q==1){
             B1=B1+1;
             __delay_ms(1);
-            
+      //Inicia la secuencia de 8 bits del primer jugador.      
       if (PORTDbits.RD2 == 1 && PORTAbits.RA0 == 0 && PORTAbits.RA6 == 0 && B1==1){
           PORTAbits.RA6 = 1;
           PORTAbits.RA7 = 0;
