@@ -25,23 +25,41 @@
 #include <xc.h>
 #include <math.h>
 #include <stdint.h>
+#include <pic16f887.h>
 #define _XTAL_FREQ 4000000
 
+void pot ();
 uint16_t contador =0;
 int antirebote =0;
 uint16_t variable = 0;
 uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 
 void main(void) {
-    OSCCON = 0b110;
+    OSCCONbits.IRCF =0b110;
+ //   OSCCON = 0b110;
     TRISA = 0b00000000;
-    TRISB = 0b00000001;
+ //   TRISB = 0b00000001;
     ANSEL = 0b00000000;
-    ANSELH = 0b00000000;
+    ANSELH = 0b00100000;
+ //   ANSELH = 0b00000000;
     PORTA = 0b00000000;
-    PORTB =0b00000000;
- 
-    while (1){
+ //   PORTB =0b00000000;
+    PORTB = 0b00100011;
+    TRISB = 0b00100011;
+    ADCON0bits.ADCS0 =1;
+    ADCON0bits.ADCS1 =0;
+    ADCON0bits.CHS0 =1;
+    ADCON0bits.CHS1 =0;
+    ADCON0bits.CHS2 =1;
+    ADCON0bits.CHS3 =1;
+    ADCON1bits.ADFM =0;
+    ADCON1bits.VCFG0 =0;
+    ADCON1bits.VCFG1 =0;
+    pot();
+    return;
+
+
+   while (1){
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             __delay_ms (1);
@@ -64,5 +82,17 @@ void main(void) {
             variable = array[contador];
             PORTA = variable;   
         }
+    }
+}
+
+void pot(void){
+    while(0.05){
+        __delay_ms(1);
+        ADCON0bits.ADON =1;
+        if (ADCON0bits.GO_DONE ==0){
+            ADCON0bits.GO_DONE = 1;
+        }
+        PORTA = ADRESH;
+ //       return;
     }
 }
