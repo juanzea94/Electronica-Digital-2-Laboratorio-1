@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V2.10 build 88905656 
-                                                                                               Sat Feb 01 02:12:04 2020
+                                                                                               Sat Feb 01 10:54:44 2020
 
 Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1 
      1                           	processor	16F887
@@ -375,7 +375,7 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    361                           
    362                           ;psect for function _main
    363  07BE                     _main:	
-   364  07BE                     l658:	
+   364  07BE                     l656:	
    365                           ;incstack = 0
    366                           ; Regs used in _main: [wreg+status,2+status,0+pclath+cstack]
    367                           
@@ -387,80 +387,80 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    373  07C1  398F               	andlw	-113
    374  07C2  3860               	iorlw	96
    375  07C3  008F               	movwf	15	;volatile
-   376  07C4                     l660:	
+   376  07C4                     l658:	
    377                           
    378                           ;Laboratorio_2.c: 40:     TRISA = 0b00000000;
    379  07C4  0185               	clrf	5	;volatile
-   380  07C5                     l662:	
+   380  07C5                     l660:	
    381                           
    382                           ;Laboratorio_2.c: 42:     ANSEL = 0b00000000;
    383  07C5  1683               	bsf	3,5	;RP0=1, select bank3
    384  07C6  1703               	bsf	3,6	;RP1=1, select bank3
    385  07C7  0188               	clrf	8	;volatile
-   386  07C8                     l664:	
+   386  07C8                     l662:	
    387                           
    388                           ;Laboratorio_2.c: 43:     ANSELH = 0b00100000;
    389  07C8  3020               	movlw	32
    390  07C9  0089               	movwf	9	;volatile
-   391  07CA                     l666:	
+   391  07CA                     l664:	
    392                           
    393                           ;Laboratorio_2.c: 45:     PORTA = 0b00000000;
    394  07CA  1283               	bcf	3,5	;RP0=0, select bank0
    395  07CB  1303               	bcf	3,6	;RP1=0, select bank0
    396  07CC  0185               	clrf	5	;volatile
-   397  07CD                     l668:	
+   397  07CD                     l666:	
    398                           
    399                           ;Laboratorio_2.c: 47:     PORTB = 0b00100011;
    400  07CD  3023               	movlw	35
    401  07CE  0086               	movwf	6	;volatile
-   402  07CF                     l670:	
+   402  07CF                     l668:	
    403                           
    404                           ;Laboratorio_2.c: 48:     TRISB = 0b00100011;
    405  07CF  3023               	movlw	35
    406  07D0  1683               	bsf	3,5	;RP0=1, select bank1
    407  07D1  1303               	bcf	3,6	;RP1=0, select bank1
    408  07D2  0086               	movwf	6	;volatile
-   409  07D3                     l672:	
+   409  07D3                     l670:	
    410                           
    411                           ;Laboratorio_2.c: 49:     ADCON0bits.ADCS0 =1;
    412  07D3  1283               	bcf	3,5	;RP0=0, select bank0
    413  07D4  1303               	bcf	3,6	;RP1=0, select bank0
    414  07D5  171F               	bsf	31,6	;volatile
-   415  07D6                     l674:	
+   415  07D6                     l672:	
    416                           
    417                           ;Laboratorio_2.c: 50:     ADCON0bits.ADCS1 =0;
    418  07D6  139F               	bcf	31,7	;volatile
-   419  07D7                     l676:	
+   419  07D7                     l674:	
    420                           
    421                           ;Laboratorio_2.c: 51:     ADCON0bits.CHS0 =1;
    422  07D7  151F               	bsf	31,2	;volatile
-   423  07D8                     l678:	
+   423  07D8                     l676:	
    424                           
    425                           ;Laboratorio_2.c: 52:     ADCON0bits.CHS1 =0;
    426  07D8  119F               	bcf	31,3	;volatile
-   427  07D9                     l680:	
+   427  07D9                     l678:	
    428                           
    429                           ;Laboratorio_2.c: 53:     ADCON0bits.CHS2 =1;
    430  07D9  161F               	bsf	31,4	;volatile
-   431  07DA                     l682:	
+   431  07DA                     l680:	
    432                           
    433                           ;Laboratorio_2.c: 54:     ADCON0bits.CHS3 =1;
    434  07DA  169F               	bsf	31,5	;volatile
-   435  07DB                     l684:	
+   435  07DB                     l682:	
    436                           
    437                           ;Laboratorio_2.c: 55:     ADCON1bits.ADFM =0;
    438  07DB  1683               	bsf	3,5	;RP0=1, select bank1
    439  07DC  1303               	bcf	3,6	;RP1=0, select bank1
    440  07DD  139F               	bcf	31,7	;volatile
-   441  07DE                     l686:	
+   441  07DE                     l684:	
    442                           
    443                           ;Laboratorio_2.c: 56:     ADCON1bits.VCFG0 =0;
    444  07DE  121F               	bcf	31,4	;volatile
-   445  07DF                     l688:	
+   445  07DF                     l686:	
    446                           
    447                           ;Laboratorio_2.c: 57:     ADCON1bits.VCFG1 =0;
    448  07DF  129F               	bcf	31,5	;volatile
-   449  07E0                     l690:	
+   449  07E0                     l688:	
    450                           
    451                           ;Laboratorio_2.c: 58:     pot();
    452  07E0  120A  118A  2798  120A  118A  	fcall	_pot
@@ -502,52 +502,51 @@ Microchip MPLAB XC8 C Compiler v2.10 (Free license) build 20190730164152 Og1
    488                           
    489                           ;psect for function _pot
    490  0798                     _pot:	
-   491  0798                     l646:	
+   491  0798                     l50:	
    492                           ;incstack = 0
    493                           ; Regs used in _pot: [wreg]
-   494                           
-   495  0798                     l648:	
-   496                           ;Laboratorio_2.c: 89:     while(0.05){
+   494                           ;Laboratorio_2.c: 89:     while(1){
+   495                           
+   496  0798                     l646:	
    497                           
-   498                           
-   499                           ;Laboratorio_2.c: 90:         _delay((unsigned long)((1)*(4000000/4000.0)));
-   500  0798  30C7               	movlw	199
-   501  0799  00F6               	movwf	??_pot
-   502  079A                     u27:	
-   503  079A  2F9B               	nop2
-   504  079B  0BF6               	decfsz	??_pot,f
-   505  079C  2F9A               	goto	u27
-   506  079D  2F9E               	nop2
-   507  079E  2F9F               	nop2
-   508  079F                     l650:	
-   509                           
-   510                           ;Laboratorio_2.c: 91:         ADCON0bits.ADON =1;
-   511  079F  1283               	bcf	3,5	;RP0=0, select bank0
-   512  07A0  1303               	bcf	3,6	;RP1=0, select bank0
-   513  07A1  141F               	bsf	31,0	;volatile
-   514  07A2                     l652:	
-   515                           
-   516                           ;Laboratorio_2.c: 92:         if (ADCON0bits.GO_DONE ==0){
-   517  07A2  189F               	btfsc	31,1	;volatile
-   518  07A3  2FA5               	goto	u11
-   519  07A4  2FA6               	goto	u10
-   520  07A5                     u11:	
-   521  07A5  2FA7               	goto	l656
-   522  07A6                     u10:	
-   523  07A6                     l654:	
-   524                           
-   525                           ;Laboratorio_2.c: 93:             ADCON0bits.GO_DONE = 1;
-   526  07A6  149F               	bsf	31,1	;volatile
-   527  07A7                     l656:	
-   528                           
-   529                           ;Laboratorio_2.c: 95:         PORTA = ADRESH;
-   530  07A7  081E               	movf	30,w	;volatile
-   531  07A8  0085               	movwf	5	;volatile
-   532  07A9  2F98               	goto	l648
-   533  07AA  0008               	return
-   534  07AB                     __end_of_pot:	
-   535  007E                     btemp	set	126	;btemp
-   536  007E                     wtemp0	set	126
+   498                           ;Laboratorio_2.c: 90:         _delay((unsigned long)((1)*(4000000/4000.0)));
+   499  0798  30C7               	movlw	199
+   500  0799  00F6               	movwf	??_pot
+   501  079A                     u27:	
+   502  079A  2F9B               	nop2
+   503  079B  0BF6               	decfsz	??_pot,f
+   504  079C  2F9A               	goto	u27
+   505  079D  2F9E               	nop2
+   506  079E  2F9F               	nop2
+   507  079F                     l648:	
+   508                           
+   509                           ;Laboratorio_2.c: 91:         ADCON0bits.ADON =1;
+   510  079F  1283               	bcf	3,5	;RP0=0, select bank0
+   511  07A0  1303               	bcf	3,6	;RP1=0, select bank0
+   512  07A1  141F               	bsf	31,0	;volatile
+   513  07A2                     l650:	
+   514                           
+   515                           ;Laboratorio_2.c: 92:         if (ADCON0bits.GO_DONE ==0){
+   516  07A2  189F               	btfsc	31,1	;volatile
+   517  07A3  2FA5               	goto	u11
+   518  07A4  2FA6               	goto	u10
+   519  07A5                     u11:	
+   520  07A5  2FA7               	goto	l654
+   521  07A6                     u10:	
+   522  07A6                     l652:	
+   523                           
+   524                           ;Laboratorio_2.c: 93:             ADCON0bits.GO_DONE = 1;
+   525  07A6  149F               	bsf	31,1	;volatile
+   526  07A7                     l654:	
+   527                           
+   528                           ;Laboratorio_2.c: 95:         PORTA = ADRESH;
+   529  07A7  081E               	movf	30,w	;volatile
+   530  07A8  0085               	movwf	5	;volatile
+   531  07A9  2F98               	goto	l50
+   532  07AA  0008               	return
+   533  07AB                     __end_of_pot:	
+   534  007E                     btemp	set	126	;btemp
+   535  007E                     wtemp0	set	126
 
 
 Data Sizes:
@@ -638,18 +637,18 @@ EEDATA             100      0       0       0        0.0%
 
 
 Microchip Technology PIC Macro Assembler V2.10 build 88905656 
-Symbol Table                                                                                   Sat Feb 01 02:12:04 2020
+Symbol Table                                                                                   Sat Feb 01 10:54:44 2020
 
-                       pc 0002               __CFG_CP$OFF 0000                        l39 07E5  
-                      u10 07A6                        u11 07A5                        u27 079A  
-                      fsr 0004                       l650 079F                       l652 07A2  
-                     l660 07C4                       l654 07A6                       l646 0798  
-                     l670 07CF                       l662 07C5                       l656 07A7  
-                     l648 0798                       l680 07D9                       l672 07D3  
-                     l664 07C8                       l690 07E0                       l682 07DA  
-                     l674 07D6                       l666 07CA                       l658 07BE  
-                     l684 07DB                       l676 07D7                       l668 07CD  
-                     l686 07DE                       l678 07D8                       l688 07DF  
+                       pc 0002               __CFG_CP$OFF 0000                        l50 0798  
+                      l39 07E5                        u10 07A6                        u11 07A5  
+                      u27 079A                        fsr 0004                       l650 07A2  
+                     l652 07A6                       l660 07C5                       l654 07A7  
+                     l646 0798                       l670 07D3                       l662 07C8  
+                     l648 079F                       l680 07DA                       l672 07D6  
+                     l664 07CA                       l656 07BE                       l682 07DB  
+                     l674 07D7                       l666 07CD                       l658 07C4  
+                     l684 07DE                       l676 07D8                       l668 07CF  
+                     l686 07DF                       l678 07D9                       l688 07E0  
             __CFG_CPD$OFF 0000                       _pot 0798                       indf 0000  
             __CFG_LVP$OFF 0000                      ?_pot 0076              __CFG_WRT$OFF 0000  
                     _main 07BE                      btemp 007E                      start 0000  

@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\juanz\AppData\Local\Temp\sjps.o
+$C:\Users\juanz\AppData\Local\Temp\sdug.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Laboratorio_2.X.production.o
@@ -69,27 +69,27 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_2.X.production.o
-7E8 cinit CODE >491:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7E8 cinit CODE >494:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7E8 cinit CODE >547:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7E9 cinit CODE >548:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7EA cinit CODE >549:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7EB cinit CODE >550:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7EC cinit CODE >551:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7ED cinit CODE >552:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7EE cinit CODE >553:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7EF cinit CODE >554:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F0 cinit CODE >555:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F1 cinit CODE >556:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F6 cinit CODE >560:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F7 cinit CODE >561:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F8 cinit CODE >562:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7F9 cinit CODE >563:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7FA cinit CODE >564:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7FB cinit CODE >565:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7FC cinit CODE >571:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7FC cinit CODE >573:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7FD cinit CODE >574:C:\Users\juanz\AppData\Local\Temp\sjps.s
+7E8 cinit CODE >491:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7E8 cinit CODE >494:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7E8 cinit CODE >547:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7E9 cinit CODE >548:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7EA cinit CODE >549:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7EB cinit CODE >550:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7EC cinit CODE >551:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7ED cinit CODE >552:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7EE cinit CODE >553:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7EF cinit CODE >554:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F0 cinit CODE >555:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F1 cinit CODE >556:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F6 cinit CODE >560:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F7 cinit CODE >561:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F8 cinit CODE >562:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7F9 cinit CODE >563:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7FA cinit CODE >564:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7FB cinit CODE >565:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7FC cinit CODE >571:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7FC cinit CODE >573:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7FD cinit CODE >574:C:\Users\juanz\AppData\Local\Temp\sdug.s
 798 text1 CODE >88:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
 798 text1 CODE >89:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
 798 text1 CODE >90:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
@@ -116,23 +116,23 @@ $dist/default/production\Laboratorio_2.X.production.o
 7DF maintext CODE >57:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
 7E0 maintext CODE >58:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
 7E5 maintext CODE >86:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-7AB inittext CODE >521:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AB inittext CODE >522:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AC inittext CODE >523:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AD inittext CODE >524:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AE inittext CODE >525:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AF inittext CODE >532:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7AF inittext CODE >533:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B4 inittext CODE >534:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B5 inittext CODE >535:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B6 inittext CODE >536:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B7 inittext CODE >537:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B8 inittext CODE >538:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7B9 inittext CODE >539:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7BA inittext CODE >540:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7BB inittext CODE >541:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7BC inittext CODE >542:C:\Users\juanz\AppData\Local\Temp\sjps.s
-7BD inittext CODE >543:C:\Users\juanz\AppData\Local\Temp\sjps.s
+7AB inittext CODE >521:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AB inittext CODE >522:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AC inittext CODE >523:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AD inittext CODE >524:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AE inittext CODE >525:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AF inittext CODE >532:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7AF inittext CODE >533:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B4 inittext CODE >534:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B5 inittext CODE >535:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B6 inittext CODE >536:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B7 inittext CODE >537:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B8 inittext CODE >538:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7B9 inittext CODE >539:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7BA inittext CODE >540:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7BB inittext CODE >541:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7BC inittext CODE >542:C:\Users\juanz\AppData\Local\Temp\sdug.s
+7BD inittext CODE >543:C:\Users\juanz\AppData\Local\Temp\sdug.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -155,21 +155,21 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
-___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sjps.o
+___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sdug.o
 _main F7C 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sjps.o
+start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sdug.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sjps.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sdug.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
@@ -178,13 +178,13 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 1E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sjps.o
-___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sjps.o
+___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sdug.o
+___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sdug.o
 _variable 70 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 start_initialization FD0 0 CODE 0 cinit dist/default/production\Laboratorio_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sjps.o
+___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sdug.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -230,7 +230,7 @@ __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.productio
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __end_of_pot F56 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sjps.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sdug.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Laboratorio_2.X.production.o
 __pmaintext F7C 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
 __Lcommon 0 0 ABS 0 common -

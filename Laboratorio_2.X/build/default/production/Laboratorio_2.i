@@ -2749,7 +2749,7 @@ void main(void) {
 }
 
 void pot(void){
-    while(0.05){
+    while(1){
         _delay((unsigned long)((1)*(4000000/4000.0)));
         ADCON0bits.ADON =1;
         if (ADCON0bits.GO_DONE ==0){

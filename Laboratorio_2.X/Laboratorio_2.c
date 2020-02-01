@@ -28,6 +28,16 @@
 #include <pic16f887.h>
 #define _XTAL_FREQ 4000000
 
+void __interrupt() ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0;
+        //Enter your code here
+        TMR0IF = 0;
+        TMR0 = 4;
+        contador++; // Se incrementa la variable de contador cada 0.5 mS
+    }
+}
+
 void pot ();
 uint16_t contador =0;
 int antirebote =0;
@@ -36,14 +46,20 @@ uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 
 void main(void) {
     OSCCONbits.IRCF =0b110;
- //   OSCCON = 0b110;
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.TMR0IF = 0;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.T0SE = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS0 = 1;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS2 = 1;
     TRISA = 0b00000000;
- //   TRISB = 0b00000001;
     ANSEL = 0b00000000;
     ANSELH = 0b00100000;
- //   ANSELH = 0b00000000;
     PORTA = 0b00000000;
- //   PORTB =0b00000000;
     PORTB = 0b00100011;
     TRISB = 0b00100011;
     ADCON0bits.ADCS0 =1;
@@ -57,8 +73,7 @@ void main(void) {
     ADCON1bits.VCFG1 =0;
     pot();
     return;
-
-
+    
    while (1){
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
@@ -84,9 +99,8 @@ void main(void) {
         }
     }
 }
-
 void pot(void){
-    while(0.05){
+    while(1){
         __delay_ms(1);
         ADCON0bits.ADON =1;
         if (ADCON0bits.GO_DONE ==0){
