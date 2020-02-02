@@ -34,16 +34,20 @@ void __interrupt() ISR(void) {
         //Enter your code here
         TMR0IF = 0;
         TMR0 = 4;
-        contador++; // Se incrementa la variable de contador cada 0.5 mS
+//        contador++; // Se incrementa la variable de contador cada 0.5 mS
     }
 }
-
+//VALORES INICIALES Y DECLARACIÓN DE FUNCIONES
 void pot ();
+void split ();
 uint16_t contador =0;
-int antirebote =0;
+unsigned char valana;
+uint16_t antirebote =0;
 uint16_t variable = 0;
 uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 
+
+//DECLARAR TODAS LAS VARIABLES, INICIALIZADORES
 void main(void) {
     OSCCONbits.IRCF =0b110;
     INTCONbits.GIE = 1;
@@ -57,8 +61,10 @@ void main(void) {
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
     TRISA = 0b00000000;
+    TRISD = 0b00000000;
     ANSEL = 0b00000000;
     ANSELH = 0b00100000;
+    PORTD = 0b00000000;
     PORTA = 0b00000000;
     PORTB = 0b00100011;
     TRISB = 0b00100011;
@@ -71,10 +77,10 @@ void main(void) {
     ADCON1bits.ADFM =0;
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
-    pot();
-    return;
     
+//PARTE 1 CONTADOR DE 8 BITS SIN INTERRUPTOR     
    while (1){
+        pot();
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             __delay_ms (1);
@@ -86,19 +92,36 @@ void main(void) {
                 contador = 8;
             }
             variable = array[contador];
-            PORTA = variable; 
+            PORTA = variable;
         }
         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
             antirebote= 0;
             contador--;
-            if(contador ==-1){
+            if(contador ==(-1)){
                 contador = 0;
             }
             variable = array[contador];
             PORTA = variable;   
         }
+//        valana = ADRESH;
+        if(ADRESH >= contador){
+            PORTD = 0b10000000;
+        }
+            if (ADRESH << contador){
+                PORTD = 0b00000000;      
+            }
     }
 }
+/*
+uint8_t n;
+uint8_t numero1;
+uint8_t numero2;
+void split (void){
+    numero1 = ( (n & 0x0F)<<4 );
+    numero2 = ((n & 0xF0)>>4 );
+    return;
+}
+*/
 void pot(void){
     while(1){
         __delay_ms(1);
@@ -106,7 +129,8 @@ void pot(void){
         if (ADCON0bits.GO_DONE ==0){
             ADCON0bits.GO_DONE = 1;
         }
-        PORTA = ADRESH;
- //       return;
+            valana = ADRESH;
+            return;
     }
+//    return;
 }

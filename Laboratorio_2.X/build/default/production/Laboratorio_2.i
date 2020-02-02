@@ -2691,22 +2691,44 @@ typedef uint16_t uintptr_t;
 
 
 
+void __attribute__((picinterrupt(("")))) ISR(void) {
+    if (INTCONbits.TMR0IF) {
+        INTCONbits.TMR0IF = 0;
+
+        TMR0IF = 0;
+        TMR0 = 4;
+
+    }
+}
+
 void pot ();
+void split ();
 uint16_t contador =0;
-int antirebote =0;
+unsigned char valana;
+uint16_t antirebote =0;
 uint16_t variable = 0;
 uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 
+
+
 void main(void) {
     OSCCONbits.IRCF =0b110;
-
+    INTCONbits.GIE = 1;
+    INTCONbits.PEIE = 1;
+    INTCONbits.TMR0IE = 1;
+    INTCONbits.TMR0IF = 0;
+    OPTION_REGbits.T0CS = 0;
+    OPTION_REGbits.T0SE = 0;
+    OPTION_REGbits.PSA = 0;
+    OPTION_REGbits.PS0 = 1;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS2 = 1;
     TRISA = 0b00000000;
-
+    TRISD = 0b00000000;
     ANSEL = 0b00000000;
     ANSELH = 0b00100000;
-
+    PORTD = 0b00000000;
     PORTA = 0b00000000;
-
     PORTB = 0b00100011;
     TRISB = 0b00100011;
     ADCON0bits.ADCS0 =1;
@@ -2718,11 +2740,10 @@ void main(void) {
     ADCON1bits.ADFM =0;
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
-    pot();
-    return;
 
 
    while (1){
+        pot();
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             _delay((unsigned long)((1)*(4000000/4000.0)));
@@ -2739,15 +2760,23 @@ void main(void) {
         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
             antirebote= 0;
             contador--;
-            if(contador ==-1){
+            if(contador ==(-1)){
                 contador = 0;
             }
             variable = array[contador];
             PORTA = variable;
         }
+
+        if(ADRESH >= contador){
+            PORTD = 0b10000000;
+            if (ADRESH << contador){
+                PORTD = 0b00000000;
+
+            }
+        }
     }
 }
-
+# 126 "Laboratorio_2.c"
 void pot(void){
     while(1){
         _delay((unsigned long)((1)*(4000000/4000.0)));
@@ -2755,7 +2784,8 @@ void pot(void){
         if (ADCON0bits.GO_DONE ==0){
             ADCON0bits.GO_DONE = 1;
         }
-        PORTA = ADRESH;
-
+            valana = ADRESH;
+            return;
     }
+
 }

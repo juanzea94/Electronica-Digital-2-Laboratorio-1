@@ -1,6 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[t ~ __interrupt . k ]
+[t T1 __interrupt ]
+"465 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 465:     struct {
+[s S16 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S16 . RBIF INTF T0IF RBIE INTE T0IE PEIE GIE ]
+"475
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 475:     struct {
+[s S17 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
+[n S17 . . TMR0IF . TMR0IE ]
+"464
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 464: typedef union {
+[u S15 `S16 1 `S17 1 ]
+[n S15 . . . ]
+"482
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 482: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
+[v _INTCONbits `VS15 ~T0 @X0 0 e@11 ]
+"4361
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 4361: extern volatile __bit TMR0IF __attribute__((address(0x5A)));
+[v _TMR0IF `Vb ~T0 @X0 0 e@90 ]
+"59
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 59: extern volatile unsigned char TMR0 __attribute__((address(0x001)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@1 ]
 [p mainexit ]
-"1868 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+"1868
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1868:     struct {
 [s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
 [n S70 . SCS LTS HTS OSTS IRCF ]
@@ -15,15 +38,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1882
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
 [v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"1352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1352:     struct {
+[s S50 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S50 . PS PSA T0SE T0CS INTEDG nRBPU ]
+"1360
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1360:     struct {
+[s S51 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S51 . PS0 PS1 PS2 ]
+"1351
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1351: typedef union {
+[u S49 `S50 1 `S51 1 ]
+[n S49 . . . ]
+"1366
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1366: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x081)));
+[v _OPTION_REGbits `VS49 ~T0 @X0 0 e@129 ]
 "1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1602
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1602: extern volatile unsigned char TRISD __attribute__((address(0x088)));
+[v _TRISD `Vuc ~T0 @X0 0 e@136 ]
 "3387
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
 [v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
 "3449
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
 "166
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
 [v _PORTA `Vuc ~T0 @X0 0 e@5 ]
@@ -67,8 +111,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "2991
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2991: extern volatile ADCON1bits_t ADCON1bits __attribute__((address(0x09F)));
 [v _ADCON1bits `VS115 ~T0 @X0 0 e@159 ]
-"31 Laboratorio_2.c
-[; ;Laboratorio_2.c: 31: void pot ();
+"41 Laboratorio_2.c
+[; ;Laboratorio_2.c: 41: void pot ();
 [v _pot `(v ~T0 @X0 0 e? ]
 "234 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 234:     struct {
@@ -346,26 +390,57 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"32 Laboratorio_2.c
-[; ;Laboratorio_2.c: 32: uint16_t contador =0;
+[v $root$_ISR `(v ~T0 @X0 0 e ]
+"31 Laboratorio_2.c
+[; ;Laboratorio_2.c: 31: void __attribute__((picinterrupt(("")))) ISR(void) {
+[v _ISR `(v ~T1 @X0 1 ef ]
+{
+[e :U _ISR ]
+[f ]
+"32
+[; ;Laboratorio_2.c: 32:     if (INTCONbits.TMR0IF) {
+[e $ ! != -> . . _INTCONbits 1 1 `i -> 0 `i 139  ]
+{
+"33
+[; ;Laboratorio_2.c: 33:         INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
+"35
+[; ;Laboratorio_2.c: 35:         TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"36
+[; ;Laboratorio_2.c: 36:         TMR0 = 4;
+[e = _TMR0 -> -> 4 `i `uc ]
+"38
+[; ;Laboratorio_2.c: 38:     }
+}
+[e :U 139 ]
+"39
+[; ;Laboratorio_2.c: 39: }
+[e :UE 138 ]
+}
+"43
+[; ;Laboratorio_2.c: 43: uint16_t contador =0;
 [v _contador `ui ~T0 @X0 1 e ]
 [i _contador
 -> -> 0 `i `ui
 ]
-"33
-[; ;Laboratorio_2.c: 33: int antirebote =0;
-[v _antirebote `i ~T0 @X0 1 e ]
+"44
+[; ;Laboratorio_2.c: 44: unsigned char valana;
+[v _valana `uc ~T0 @X0 1 e ]
+"45
+[; ;Laboratorio_2.c: 45: uint16_t antirebote =0;
+[v _antirebote `ui ~T0 @X0 1 e ]
 [i _antirebote
--> 0 `i
+-> -> 0 `i `ui
 ]
-"34
-[; ;Laboratorio_2.c: 34: uint16_t variable = 0;
+"46
+[; ;Laboratorio_2.c: 46: uint16_t variable = 0;
 [v _variable `ui ~T0 @X0 1 e ]
 [i _variable
 -> -> 0 `i `ui
 ]
-"35
-[; ;Laboratorio_2.c: 35: uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
+"47
+[; ;Laboratorio_2.c: 47: uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 [v _array `ui ~T0 @X0 -> 9 `i e ]
 [i _array
 :U ..
@@ -381,193 +456,251 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"37
-[; ;Laboratorio_2.c: 37: void main(void) {
+"51
+[; ;Laboratorio_2.c: 51: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"38
-[; ;Laboratorio_2.c: 38:     OSCCONbits.IRCF =0b110;
-[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
-"40
-[; ;Laboratorio_2.c: 40:     TRISA = 0b00000000;
-[e = _TRISA -> -> 0 `i `uc ]
-"42
-[; ;Laboratorio_2.c: 42:     ANSEL = 0b00000000;
-[e = _ANSEL -> -> 0 `i `uc ]
-"43
-[; ;Laboratorio_2.c: 43:     ANSELH = 0b00100000;
-[e = _ANSELH -> -> 32 `i `uc ]
-"45
-[; ;Laboratorio_2.c: 45:     PORTA = 0b00000000;
-[e = _PORTA -> -> 0 `i `uc ]
-"47
-[; ;Laboratorio_2.c: 47:     PORTB = 0b00100011;
-[e = _PORTB -> -> 35 `i `uc ]
-"48
-[; ;Laboratorio_2.c: 48:     TRISB = 0b00100011;
-[e = _TRISB -> -> 35 `i `uc ]
-"49
-[; ;Laboratorio_2.c: 49:     ADCON0bits.ADCS0 =1;
-[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
-"50
-[; ;Laboratorio_2.c: 50:     ADCON0bits.ADCS1 =0;
-[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
-"51
-[; ;Laboratorio_2.c: 51:     ADCON0bits.CHS0 =1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "52
-[; ;Laboratorio_2.c: 52:     ADCON0bits.CHS1 =0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+[; ;Laboratorio_2.c: 52:     OSCCONbits.IRCF =0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 "53
-[; ;Laboratorio_2.c: 53:     ADCON0bits.CHS2 =1;
-[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+[; ;Laboratorio_2.c: 53:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "54
-[; ;Laboratorio_2.c: 54:     ADCON0bits.CHS3 =1;
-[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+[; ;Laboratorio_2.c: 54:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "55
-[; ;Laboratorio_2.c: 55:     ADCON1bits.ADFM =0;
-[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+[; ;Laboratorio_2.c: 55:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 1 3 -> -> 1 `i `uc ]
 "56
-[; ;Laboratorio_2.c: 56:     ADCON1bits.VCFG0 =0;
-[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+[; ;Laboratorio_2.c: 56:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 1 1 -> -> 0 `i `uc ]
 "57
-[; ;Laboratorio_2.c: 57:     ADCON1bits.VCFG1 =0;
-[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+[; ;Laboratorio_2.c: 57:     OPTION_REGbits.T0CS = 0;
+[e = . . _OPTION_REGbits 0 3 -> -> 0 `i `uc ]
 "58
-[; ;Laboratorio_2.c: 58:     pot();
-[e ( _pot ..  ]
+[; ;Laboratorio_2.c: 58:     OPTION_REGbits.T0SE = 0;
+[e = . . _OPTION_REGbits 0 2 -> -> 0 `i `uc ]
 "59
-[; ;Laboratorio_2.c: 59:     return;
-[e $UE 138  ]
+[; ;Laboratorio_2.c: 59:     OPTION_REGbits.PSA = 0;
+[e = . . _OPTION_REGbits 0 1 -> -> 0 `i `uc ]
+"60
+[; ;Laboratorio_2.c: 60:     OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"61
+[; ;Laboratorio_2.c: 61:     OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
 "62
-[; ;Laboratorio_2.c: 62:    while (1){
-[e :U 140 ]
-{
+[; ;Laboratorio_2.c: 62:     OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
 "63
-[; ;Laboratorio_2.c: 63:         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
-[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 142  ]
-{
+[; ;Laboratorio_2.c: 63:     TRISA = 0b00000000;
+[e = _TRISA -> -> 0 `i `uc ]
 "64
-[; ;Laboratorio_2.c: 64:             antirebote = 1;
-[e = _antirebote -> 1 `i ]
+[; ;Laboratorio_2.c: 64:     TRISD = 0b00000000;
+[e = _TRISD -> -> 0 `i `uc ]
 "65
-[; ;Laboratorio_2.c: 65:             _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Laboratorio_2.c: 65:     ANSEL = 0b00000000;
+[e = _ANSEL -> -> 0 `i `uc ]
 "66
-[; ;Laboratorio_2.c: 66:         }
-}
-[e :U 142 ]
+[; ;Laboratorio_2.c: 66:     ANSELH = 0b00100000;
+[e = _ANSELH -> -> 32 `i `uc ]
 "67
-[; ;Laboratorio_2.c: 67:         if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8 && contador >=0){
-[e $ ! && && && == -> . . _PORTBbits 0 0 `i -> 1 `i == _antirebote -> 1 `i <= _contador -> -> 8 `i `ui >= _contador -> -> 0 `i `ui 143  ]
-{
+[; ;Laboratorio_2.c: 67:     PORTD = 0b00000000;
+[e = _PORTD -> -> 0 `i `uc ]
 "68
-[; ;Laboratorio_2.c: 68:             antirebote=0;
-[e = _antirebote -> 0 `i ]
+[; ;Laboratorio_2.c: 68:     PORTA = 0b00000000;
+[e = _PORTA -> -> 0 `i `uc ]
 "69
-[; ;Laboratorio_2.c: 69:             contador++;
-[e ++ _contador -> -> 1 `i `ui ]
+[; ;Laboratorio_2.c: 69:     PORTB = 0b00100011;
+[e = _PORTB -> -> 35 `i `uc ]
 "70
-[; ;Laboratorio_2.c: 70:             if(contador == 9){
-[e $ ! == _contador -> -> 9 `i `ui 144  ]
-{
+[; ;Laboratorio_2.c: 70:     TRISB = 0b00100011;
+[e = _TRISB -> -> 35 `i `uc ]
 "71
-[; ;Laboratorio_2.c: 71:                 contador = 8;
-[e = _contador -> -> 8 `i `ui ]
+[; ;Laboratorio_2.c: 71:     ADCON0bits.ADCS0 =1;
+[e = . . _ADCON0bits 1 6 -> -> 1 `i `uc ]
 "72
-[; ;Laboratorio_2.c: 72:             }
+[; ;Laboratorio_2.c: 72:     ADCON0bits.ADCS1 =0;
+[e = . . _ADCON0bits 1 7 -> -> 0 `i `uc ]
+"73
+[; ;Laboratorio_2.c: 73:     ADCON0bits.CHS0 =1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+"74
+[; ;Laboratorio_2.c: 74:     ADCON0bits.CHS1 =0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+"75
+[; ;Laboratorio_2.c: 75:     ADCON0bits.CHS2 =1;
+[e = . . _ADCON0bits 1 4 -> -> 1 `i `uc ]
+"76
+[; ;Laboratorio_2.c: 76:     ADCON0bits.CHS3 =1;
+[e = . . _ADCON0bits 1 5 -> -> 1 `i `uc ]
+"77
+[; ;Laboratorio_2.c: 77:     ADCON1bits.ADFM =0;
+[e = . . _ADCON1bits 0 4 -> -> 0 `i `uc ]
+"78
+[; ;Laboratorio_2.c: 78:     ADCON1bits.VCFG0 =0;
+[e = . . _ADCON1bits 0 1 -> -> 0 `i `uc ]
+"79
+[; ;Laboratorio_2.c: 79:     ADCON1bits.VCFG1 =0;
+[e = . . _ADCON1bits 0 2 -> -> 0 `i `uc ]
+"82
+[; ;Laboratorio_2.c: 82:    while (1){
+[e :U 142 ]
+{
+"83
+[; ;Laboratorio_2.c: 83:         pot();
+[e ( _pot ..  ]
+"84
+[; ;Laboratorio_2.c: 84:         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
+[e $ ! && == -> . . _PORTBbits 0 1 `i -> 0 `i == -> . . _PORTBbits 0 0 `i -> 0 `i 144  ]
+{
+"85
+[; ;Laboratorio_2.c: 85:             antirebote = 1;
+[e = _antirebote -> -> 1 `i `ui ]
+"86
+[; ;Laboratorio_2.c: 86:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"87
+[; ;Laboratorio_2.c: 87:         }
 }
 [e :U 144 ]
-"73
-[; ;Laboratorio_2.c: 73:             variable = array[contador];
-[e = _variable *U + &U _array * -> _contador `ux -> -> # *U &U _array `ui `ux ]
-"74
-[; ;Laboratorio_2.c: 74:             PORTA = variable;
-[e = _PORTA -> _variable `uc ]
-"75
-[; ;Laboratorio_2.c: 75:         }
-}
-[e :U 143 ]
-"76
-[; ;Laboratorio_2.c: 76:         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
-[e $ ! && && && == -> . . _PORTBbits 0 1 `i -> 1 `i == _antirebote -> 1 `i >= _contador -> -> 0 `i `ui <= _contador -> -> 8 `i `ui 145  ]
+"88
+[; ;Laboratorio_2.c: 88:         if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8 && contador >=0){
+[e $ ! && && && == -> . . _PORTBbits 0 0 `i -> 1 `i == _antirebote -> -> 1 `i `ui <= _contador -> -> 8 `i `ui >= _contador -> -> 0 `i `ui 145  ]
 {
-"77
-[; ;Laboratorio_2.c: 77:             antirebote= 0;
-[e = _antirebote -> 0 `i ]
-"78
-[; ;Laboratorio_2.c: 78:             contador--;
-[e -- _contador -> -> 1 `i `ui ]
-"79
-[; ;Laboratorio_2.c: 79:             if(contador ==-1){
-[e $ ! == _contador -> -U -> 1 `i `ui 146  ]
+"89
+[; ;Laboratorio_2.c: 89:             antirebote=0;
+[e = _antirebote -> -> 0 `i `ui ]
+"90
+[; ;Laboratorio_2.c: 90:             contador++;
+[e ++ _contador -> -> 1 `i `ui ]
+"91
+[; ;Laboratorio_2.c: 91:             if(contador == 9){
+[e $ ! == _contador -> -> 9 `i `ui 146  ]
 {
-"80
-[; ;Laboratorio_2.c: 80:                 contador = 0;
-[e = _contador -> -> 0 `i `ui ]
-"81
-[; ;Laboratorio_2.c: 81:             }
+"92
+[; ;Laboratorio_2.c: 92:                 contador = 8;
+[e = _contador -> -> 8 `i `ui ]
+"93
+[; ;Laboratorio_2.c: 93:             }
 }
 [e :U 146 ]
-"82
-[; ;Laboratorio_2.c: 82:             variable = array[contador];
+"94
+[; ;Laboratorio_2.c: 94:             variable = array[contador];
 [e = _variable *U + &U _array * -> _contador `ux -> -> # *U &U _array `ui `ux ]
-"83
-[; ;Laboratorio_2.c: 83:             PORTA = variable;
+"95
+[; ;Laboratorio_2.c: 95:             PORTA = variable;
 [e = _PORTA -> _variable `uc ]
-"84
-[; ;Laboratorio_2.c: 84:         }
+"96
+[; ;Laboratorio_2.c: 96:         }
 }
 [e :U 145 ]
-"85
-[; ;Laboratorio_2.c: 85:     }
+"97
+[; ;Laboratorio_2.c: 97:         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
+[e $ ! && && && == -> . . _PORTBbits 0 1 `i -> 1 `i == _antirebote -> -> 1 `i `ui >= _contador -> -> 0 `i `ui <= _contador -> -> 8 `i `ui 147  ]
+{
+"98
+[; ;Laboratorio_2.c: 98:             antirebote= 0;
+[e = _antirebote -> -> 0 `i `ui ]
+"99
+[; ;Laboratorio_2.c: 99:             contador--;
+[e -- _contador -> -> 1 `i `ui ]
+"100
+[; ;Laboratorio_2.c: 100:             if(contador ==(-1)){
+[e $ ! == _contador -> -U -> 1 `i `ui 148  ]
+{
+"101
+[; ;Laboratorio_2.c: 101:                 contador = 0;
+[e = _contador -> -> 0 `i `ui ]
+"102
+[; ;Laboratorio_2.c: 102:             }
 }
-[e :U 139 ]
-[e $U 140  ]
+[e :U 148 ]
+"103
+[; ;Laboratorio_2.c: 103:             variable = array[contador];
+[e = _variable *U + &U _array * -> _contador `ux -> -> # *U &U _array `ui `ux ]
+"104
+[; ;Laboratorio_2.c: 104:             PORTA = variable;
+[e = _PORTA -> _variable `uc ]
+"105
+[; ;Laboratorio_2.c: 105:         }
+}
+[e :U 147 ]
+"107
+[; ;Laboratorio_2.c: 107:         if(ADRESH >= contador){
+[e $ ! >= -> _ADRESH `ui _contador 149  ]
+{
+"108
+[; ;Laboratorio_2.c: 108:             PORTD = 0b10000000;
+[e = _PORTD -> -> 128 `i `uc ]
+"109
+[; ;Laboratorio_2.c: 109:             if (ADRESH << contador){
+[e $ ! != << -> _ADRESH `i _contador -> 0 `i 150  ]
+{
+"110
+[; ;Laboratorio_2.c: 110:                 PORTD = 0b00000000;
+[e = _PORTD -> -> 0 `i `uc ]
+"112
+[; ;Laboratorio_2.c: 112:             }
+}
+[e :U 150 ]
+"113
+[; ;Laboratorio_2.c: 113:         }
+}
+[e :U 149 ]
+"114
+[; ;Laboratorio_2.c: 114:     }
+}
 [e :U 141 ]
-"86
-[; ;Laboratorio_2.c: 86: }
-[e :UE 138 ]
+[e $U 142  ]
+[e :U 143 ]
+"115
+[; ;Laboratorio_2.c: 115: }
+[e :UE 140 ]
 }
-"88
-[; ;Laboratorio_2.c: 88: void pot(void){
+"126
+[; ;Laboratorio_2.c: 126: void pot(void){
 [v _pot `(v ~T0 @X0 1 ef ]
 {
 [e :U _pot ]
 [f ]
-"89
-[; ;Laboratorio_2.c: 89:     while(1){
-[e :U 149 ]
+"127
+[; ;Laboratorio_2.c: 127:     while(1){
+[e :U 153 ]
 {
-"90
-[; ;Laboratorio_2.c: 90:         _delay((unsigned long)((1)*(4000000/4000.0)));
+"128
+[; ;Laboratorio_2.c: 128:         _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"91
-[; ;Laboratorio_2.c: 91:         ADCON0bits.ADON =1;
+"129
+[; ;Laboratorio_2.c: 129:         ADCON0bits.ADON =1;
 [e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-"92
-[; ;Laboratorio_2.c: 92:         if (ADCON0bits.GO_DONE ==0){
-[e $ ! == -> . . _ADCON0bits 3 1 `i -> 0 `i 151  ]
+"130
+[; ;Laboratorio_2.c: 130:         if (ADCON0bits.GO_DONE ==0){
+[e $ ! == -> . . _ADCON0bits 3 1 `i -> 0 `i 155  ]
 {
-"93
-[; ;Laboratorio_2.c: 93:             ADCON0bits.GO_DONE = 1;
+"131
+[; ;Laboratorio_2.c: 131:             ADCON0bits.GO_DONE = 1;
 [e = . . _ADCON0bits 3 1 -> -> 1 `i `uc ]
-"94
-[; ;Laboratorio_2.c: 94:         }
+"132
+[; ;Laboratorio_2.c: 132:         }
 }
-[e :U 151 ]
-"95
-[; ;Laboratorio_2.c: 95:         PORTA = ADRESH;
-[e = _PORTA _ADRESH ]
-"97
-[; ;Laboratorio_2.c: 97:     }
+[e :U 155 ]
+"133
+[; ;Laboratorio_2.c: 133:             valana = ADRESH;
+[e = _valana _ADRESH ]
+"134
+[; ;Laboratorio_2.c: 134:             return;
+[e $UE 151  ]
+"135
+[; ;Laboratorio_2.c: 135:     }
 }
-[e :U 148 ]
-[e $U 149  ]
-[e :U 150 ]
-"98
-[; ;Laboratorio_2.c: 98: }
-[e :UE 147 ]
+[e :U 152 ]
+[e $U 153  ]
+[e :U 154 ]
+"137
+[; ;Laboratorio_2.c: 137: }
+[e :UE 151 ]
 }
