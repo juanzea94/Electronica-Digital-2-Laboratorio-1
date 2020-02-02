@@ -15,9 +15,9 @@
 [v _ISR ISR `II(v  1 e 1 0 ]
 "52
 [v _main main `(v  1 e 1 0 ]
-"123
+"124
 [v _pot pot `(v  1 e 1 0 ]
-"137
+"138
 [v _conec conec `(v  1 e 1 0 ]
 "59 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _TMR0 TMR0 `VEuc  1 e 1 @1 ]
@@ -39,6 +39,18 @@
 [v _PORTBbits PORTBbits `VES194  1 e 1 @6 ]
 "352
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
+[s S213 . 1 `uc 1 RD0 1 0 :1:0 
+`uc 1 RD1 1 0 :1:1 
+`uc 1 RD2 1 0 :1:2 
+`uc 1 RD3 1 0 :1:3 
+`uc 1 RD4 1 0 :1:4 
+`uc 1 RD5 1 0 :1:5 
+`uc 1 RD6 1 0 :1:6 
+`uc 1 RD7 1 0 :1:7 
+]
+"369
+[u S222 . 1 `S213 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES222  1 e 1 @8 ]
 [s S22 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
@@ -131,29 +143,29 @@
 "4361
 [v _TMR0IF TMR0IF `VEb  1 e 0 @90 ]
 "44 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-[v _contador contador `ui  1 e 2 0 ]
+[v _contador contador `uc  1 e 1 0 ]
 "45
-[v _valana valana `ui  1 e 2 0 ]
+[v _valana valana `uc  1 e 1 0 ]
 "46
-[v _antirebote antirebote `ui  1 e 2 0 ]
+[v _antirebote antirebote `uc  1 e 1 0 ]
 "47
-[v _variable variable `ui  1 e 2 0 ]
+[v _variable variable `uc  1 e 1 0 ]
 "48
-[v _array array `[9]ui  1 e 18 0 ]
+[v _array array `[9]uc  1 e 9 0 ]
 "52
 [v _main main `(v  1 e 1 0 ]
 {
-"112
+"113
 } 0
-"123
+"124
 [v _pot pot `(v  1 e 1 0 ]
 {
-"135
+"136
 } 0
-"137
+"138
 [v _conec conec `(v  1 e 1 0 ]
 {
-"147
+"156
 } 0
 "31
 [v _ISR ISR `II(v  1 e 1 0 ]

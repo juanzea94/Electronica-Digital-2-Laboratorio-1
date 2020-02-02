@@ -29,27 +29,27 @@
 #define _XTAL_FREQ 4000000
 
 void __interrupt() ISR(void) {
-    if (INTCONbits.TMR0IF) {
-        INTCONbits.TMR0IF = 0;
         //Enter your code here
         TMR0IF = 0;
         TMR0 = 4;
-//        contador++; // Se incrementa la variable de contador cada 0.5 mS
-    }
 }
+
 //VALORES INICIALES Y DECLARACIÓN DE FUNCIONES
 void pot ();
 void split ();
 void conec ();
-uint16_t contador =0;
-uint16_t valana = 0;
-uint16_t antirebote =0;
-uint16_t variable = 0;
-uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
+uint8_t contador =0;
+uint8_t valana = 0;
+uint8_t antirebote =0;
+uint8_t variable = 0;
+uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
+uint8_t array2[16] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
+uint8_t sino;
 
 
 //DECLARAR TODAS LAS VARIABLES, INICIALIZADORES
 void main(void) {
+    
     OSCCONbits.IRCF =0b110;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
@@ -61,14 +61,20 @@ void main(void) {
     OPTION_REGbits.PS0 = 1;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
+//    TMRO = 3;
+    OPTION_REGbits.nRBPU =1;
+    OPTION_REGbits.INTEDG = 0;
     TRISA = 0b00000000;
+    TRISB = 0b00100011;
+    TRISC = 0b00000000;
     TRISD = 0b00000000;
+    TRISE = 0b00000000;
     ANSEL = 0b00000000;
     ANSELH = 0b00100000;
     PORTD = 0b00000000;
-    PORTA = 0b00000000;
-    PORTB = 0b00000000;
-    TRISB = 0b00100011;
+    PORTA = 0;
+    PORTB = 0;
+    PORTD = 0
     ADCON0bits.ADCS0 =1;
     ADCON0bits.ADCS1 =0;
     ADCON0bits.CHS0 =1;
@@ -83,6 +89,7 @@ void main(void) {
    while (1){
         pot();
         conec();
+        //Antirebote
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             __delay_ms (1);
@@ -101,7 +108,7 @@ void main(void) {
         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
             antirebote= 0;
             contador--;
-            if(contador ==(-1)){
+            if(contador ==-1){
                 contador = 0;
             }
             variable = array[contador];
@@ -136,11 +143,19 @@ void pot(){
     
 void conec (void){
     while(1){
-        if(valana <= variable){
-            PORTD = 255;
+//        variable2 = array2[contador];
+//        valor = (valana*(contador/8));
+//        if (PORTAbits.RA0 == 0){
+//            PORTDbits.RD7 =0;
+//       }
+        if((valana) >= (variable)){
+            PORTDbits.RD7 = 1;
         }
-        if (valana >= variable){
-            PORTD = 0;    
+/*        else{
+            PORTDbits.RD7 =0;
+        }*/
+       if ((valana) <= (variable)){
+            PORTDbits.RD7 = 0;    
         }
         return;
     }
