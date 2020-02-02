@@ -2691,28 +2691,32 @@ typedef uint16_t uintptr_t;
 
 
 
-void __attribute__((picinterrupt(("")))) ISR(void) {
-
-        TMR0IF = 0;
-        TMR0 = 4;
-}
-
 
 void pot ();
 void split ();
 void conec ();
-uint8_t contador =0;
+void segme ();
+char contador =0;
 uint8_t valana = 0;
 uint8_t antirebote =0;
 uint8_t variable = 0;
 uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 uint8_t array2[16] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
 uint8_t sino;
+uint8_t numero1;
+uint8_t numero2;
 
+void __attribute__((picinterrupt(("")))) ISR(void) {
+
+        PORTA = valana;
+        TMR0IF = 0;
+        TMR0 = 4;
+}
 
 
 void main(void) {
-
+    pot();
+    sino = 0;
     OSCCONbits.IRCF =0b110;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
@@ -2737,7 +2741,7 @@ void main(void) {
     PORTD = 0b00000000;
     PORTA = 0;
     PORTB = 0;
-    PORTD = 0
+    PORTD = 0;
     ADCON0bits.ADCS0 =1;
     ADCON0bits.ADCS1 =0;
     ADCON0bits.CHS0 =1;
@@ -2779,8 +2783,15 @@ void main(void) {
             PORTA = variable;
         }
     }
+    pot();
+    return;
 }
-# 130 "Laboratorio_2.c"
+
+
+
+
+
+
 void pot(){
     while(1){
         _delay((unsigned long)((1)*(4000000/4000.0)));
@@ -2789,6 +2800,13 @@ void pot(){
             ADCON0bits.GO_DONE = 1;
         }
         valana = ADRESH;
+        numero1 = ( (valana & 0x0F)<<4 );
+        numero2 = ((valana & 0xF0)>>4 );
+        PORTC = 0b00000000;
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD1 = 0;
+        segme();
+
 
         return;
     }
@@ -2811,6 +2829,23 @@ void conec (void){
        if ((valana) <= (variable)){
             PORTDbits.RD7 = 0;
         }
+        return;
+    }
+}
+
+void segme (void){
+    if (sino == 1 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 0;
+        PORTC = array2[valana];
+        sino = 0;
+        return;
+    }
+    if (sino == 0 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD1 = 1;
+        PORTC = array2[valana];
+        sino = 1;
         return;
     }
 }

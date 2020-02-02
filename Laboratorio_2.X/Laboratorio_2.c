@@ -28,28 +28,32 @@
 #include <pic16f887.h>
 #define _XTAL_FREQ 4000000
 
-void __interrupt() ISR(void) {
-        //Enter your code here
-        TMR0IF = 0;
-        TMR0 = 4;
-}
-
 //VALORES INICIALES Y DECLARACIÓN DE FUNCIONES
 void pot ();
 void split ();
 void conec ();
-uint8_t contador =0;
+void segme ();
+char contador =0;
 uint8_t valana = 0;
 uint8_t antirebote =0;
 uint8_t variable = 0;
 uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 uint8_t array2[16] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
 uint8_t sino;
+uint8_t numero1;
+uint8_t numero2;
 
+void __interrupt() ISR(void) {
+        //Enter your code here
+        PORTA = valana;
+        TMR0IF = 0;
+        TMR0 = 4;
+}
 
 //DECLARAR TODAS LAS VARIABLES, INICIALIZADORES
 void main(void) {
-    
+    pot();
+    sino = 0;
     OSCCONbits.IRCF =0b110;
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
@@ -74,7 +78,7 @@ void main(void) {
     PORTD = 0b00000000;
     PORTA = 0;
     PORTB = 0;
-    PORTD = 0
+    PORTD = 0;
     ADCON0bits.ADCS0 =1;
     ADCON0bits.ADCS1 =0;
     ADCON0bits.CHS0 =1;
@@ -84,7 +88,7 @@ void main(void) {
     ADCON1bits.ADFM =0;
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
-    
+     
 //PARTE 1 CONTADOR DE 8 BITS SIN INTERRUPTOR     
    while (1){
         pot();
@@ -116,17 +120,15 @@ void main(void) {
             PORTA = variable; 
         }
     }
-}
-/*
-uint8_t n;
-uint8_t numero1;
-uint8_t numero2;
-void split (void){
-    numero1 = ( (n & 0x0F)<<4 );
-    numero2 = ((n & 0xF0)>>4 );
+    pot();
     return;
 }
-*/
+/*
+void split (void){
+    numero1 = ( (valana & 0x0F)<<4 );
+    numero2 = ((valana & 0xF0)>>4 );
+    return;
+}*/
 void pot(){
     while(1){
         __delay_ms(1);
@@ -135,7 +137,14 @@ void pot(){
             ADCON0bits.GO_DONE = 1;
         }
         valana = ADRESH;
+        numero1 = ( (valana & 0x0F)<<4 );
+        numero2 = ((valana & 0xF0)>>4 );
+        PORTC = 0b00000000;
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD1 = 0;
+        segme();
 //        PORTA = valana;
+        
         return;
     }
     return;
@@ -157,6 +166,23 @@ void conec (void){
        if ((valana) <= (variable)){
             PORTDbits.RD7 = 0;    
         }
+        return;
+    }
+}
+
+void segme (void){
+    if (sino == 1 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 0;
+        PORTC = array2[valana];
+        sino = 0;
+        return;
+    }
+    if (sino == 0 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD1 = 1;
+        PORTC = array2[valana];
+        sino = 1;
         return;
     }
 }
