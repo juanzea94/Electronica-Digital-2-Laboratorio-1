@@ -2703,8 +2703,9 @@ void __attribute__((picinterrupt(("")))) ISR(void) {
 
 void pot ();
 void split ();
+void conec ();
 uint16_t contador =0;
-unsigned char valana;
+uint16_t valana = 0;
 uint16_t antirebote =0;
 uint16_t variable = 0;
 uint16_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
@@ -2729,7 +2730,7 @@ void main(void) {
     ANSELH = 0b00100000;
     PORTD = 0b00000000;
     PORTA = 0b00000000;
-    PORTB = 0b00100011;
+    PORTB = 0b00000000;
     TRISB = 0b00100011;
     ADCON0bits.ADCS0 =1;
     ADCON0bits.ADCS1 =0;
@@ -2744,10 +2745,12 @@ void main(void) {
 
    while (1){
         pot();
+        conec();
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             _delay((unsigned long)((1)*(4000000/4000.0)));
         }
+        conec();
         if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8 && contador >=0){
             antirebote=0;
             contador++;
@@ -2755,6 +2758,7 @@ void main(void) {
                 contador = 8;
             }
             variable = array[contador];
+            conec ();
             PORTA = variable;
         }
         if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
@@ -2764,28 +2768,34 @@ void main(void) {
                 contador = 0;
             }
             variable = array[contador];
+            conec ();
             PORTA = variable;
-        }
-
-        if(ADRESH >= contador){
-            PORTD = 0b10000000;
-            if (ADRESH << contador){
-                PORTD = 0b00000000;
-
-            }
         }
     }
 }
-# 126 "Laboratorio_2.c"
-void pot(void){
+# 123 "Laboratorio_2.c"
+void pot(){
     while(1){
         _delay((unsigned long)((1)*(4000000/4000.0)));
         ADCON0bits.ADON =1;
         if (ADCON0bits.GO_DONE ==0){
             ADCON0bits.GO_DONE = 1;
         }
-            valana = ADRESH;
-            return;
-    }
+        valana = ADRESH;
 
+        return;
+    }
+    return;
+}
+
+void conec (void){
+    while(1){
+        if(valana <= variable){
+            PORTD = 255;
+        }
+        if (valana >= variable){
+            PORTD = 0;
+        }
+        return;
+    }
 }
