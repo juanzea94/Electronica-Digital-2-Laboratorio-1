@@ -23,27 +23,8 @@
 #include <stdint.h>
 #include "Labor2.h"
 #define _XTAL_FREQ 4000000
-//#include "Labor2.h"
 
 
-//VALORES INICIALES Y DECLARACIÓN DE FUNCIONES
-/*void pot (void);
-void split (void);
-void conec (void);
-//void segme (void);
-void change (void);
-void loop (void);
-uint8_t contador;
-uint8_t valana;
-uint8_t antirebote;
-uint8_t variable = 0;
-uint8_t sino;
-uint8_t numero1;
-uint8_t numero2;
-uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
-uint8_t array2[] = {0x77,0x41,0x3B,0x6B,0x4D,0x6E,0x7E,0x47,0x7F,0x6F,0x5F,0x7C,0x38,0x79,0x3E,0x1E};
-
-*/
 void __interrupt() ISR(void) {
     if (TMR0IF) {
         change();
@@ -99,87 +80,3 @@ void main(void) {
     return;
     
 }
-/*
-void loop(void){    
-   while (1){
-        //Antirebote
-        if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
-            antirebote = 1;
-            __delay_ms (1);
-        }
-        if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8){
-            antirebote=0;
-            contador++;
-            if(contador == 9){
-                contador = 8;
-            }
-        }
-        if(PORTBbits.RB1 == 1 && antirebote ==1 && contador<=8){
-            antirebote= 0;
-            contador--;
-            if(contador <=0){
-                contador = 0;
-            }
-        }
-        __delay_ms(1);
-        if (ADCON0bits.GO_DONE ==0){
-            ADCON0bits.GO_DONE = 1;
-        }
-        valana = ADRESH;
-        variable = array[contador];
-        PORTA = variable;
-        numero1 =valana;
-        numero2 =valana;
-        conec();
-        split();
-        segme();
-    }
-}
-    
-void conec (void){
-    while(1){
-        if((valana) >= (variable)){
-            PORTDbits.RD7 = 1;          
-        }
-       if ((valana) <= (variable)){
-            PORTDbits.RD7 = 0;    
-        }
-        return;
-    }
-}
-
-void split(void){
-    numero1 = ((valana & 0x0F));
-    numero2 = ((valana & 0xF0)>>4 );
-    return;
-}
-
-void segme (void){
-    PORTC = 0;
-    PORTDbits.RD0 = 0;
-    PORTDbits.RD1 = 0;
-    if (sino == 0){
-        PORTC = array2[numero1];
-        PORTDbits.RD0 = 1;
-        PORTDbits.RD1 = 0;
-        return;
-    }
-    if (sino == 1){
-        PORTC = array2[numero2];
-        PORTDbits.RD0 = 0;
-        PORTDbits.RD1 = 1;
-        return;
-    }
-}
-
-void change (void){
-    if (sino==0){
-        sino = 1;
-        return;
-    }
-    else{
-        sino =0;
-        return;
-    }
-}
-*/
