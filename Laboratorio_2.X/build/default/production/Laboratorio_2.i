@@ -2518,40 +2518,6 @@ extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
 # 25 "Laboratorio_2.c" 2
 
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\math.h" 1 3
-
-
-
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\__unsupported.h" 1 3
-# 4 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\math.h" 2 3
-# 30 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\math.h" 3
-extern double fabs(double);
-extern double floor(double);
-extern double ceil(double);
-extern double modf(double, double *);
-extern double sqrt(double);
-extern double atof(const char *);
-extern double sin(double) ;
-extern double cos(double) ;
-extern double tan(double) ;
-extern double asin(double) ;
-extern double acos(double) ;
-extern double atan(double);
-extern double atan2(double, double) ;
-extern double log(double);
-extern double log10(double);
-extern double pow(double, double) ;
-extern double exp(double) ;
-extern double sinh(double) ;
-extern double cosh(double) ;
-extern double tanh(double);
-extern double eval_poly(double, const double *, int);
-extern double frexp(double, int *);
-extern double ldexp(double, int);
-extern double fmod(double, double);
-extern double trunc(double);
-extern double round(double);
-# 26 "Laboratorio_2.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2692,43 +2658,51 @@ typedef uint16_t uintptr_t;
 
 
 
-void pot ();
-void split ();
-void conec ();
-void segme ();
+
+
+void pot (void);
+void split (void);
+void conec (void);
+void segme (void);
+void change (void);
 char contador =0;
 uint8_t valana = 0;
 uint8_t antirebote =0;
 uint8_t variable = 0;
-uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
-uint8_t array2[16] = {0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F,0x77,0x7C,0x39,0x5E,0x79,0x71};
-uint8_t sino;
-uint8_t numero1;
-uint8_t numero2;
+unsigned char array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
+uint16_t array2[16] = {0xE7,0x81,0x6B,0xCB,0x8D,0xCE,0x7D,0x83,0xEF,0xCF,0xAF,0xEC,0x68,0xE9,0x6E,0x2E};
+uint8_t sino =0;
+uint8_t numero1 =0;
+uint8_t numero2=0;
 
 void __attribute__((picinterrupt(("")))) ISR(void) {
 
-        PORTA = valana;
-        TMR0IF = 0;
-        TMR0 = 4;
-}
+    change();
+
+    TMR0IF = 0;
+    TMR0 = 3;
+    return;
+    }
+
 
 
 void main(void) {
-    pot();
-    sino = 0;
     OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
     INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    INTCONbits.TMR0IE = 1;
-    INTCONbits.TMR0IF = 0;
+
+    INTCONbits.T0IE = 1;
+    INTCONbits.T0IF = 1;
+
+
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.T0SE = 0;
     OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS0 = 1;
-    OPTION_REGbits.PS1 = 1;
-    OPTION_REGbits.PS2 = 1;
-
+    OPTION_REGbits.PS = 0b000;
+    TMR0 = 3;
     OPTION_REGbits.nRBPU =1;
     OPTION_REGbits.INTEDG = 0;
     TRISA = 0b00000000;
@@ -2748,43 +2722,51 @@ void main(void) {
     ADCON0bits.CHS1 =0;
     ADCON0bits.CHS2 =1;
     ADCON0bits.CHS3 =1;
+    ADCON0bits.ADON = 1;
     ADCON1bits.ADFM =0;
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
 
-
    while (1){
-        pot();
-        conec();
 
         if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
             antirebote = 1;
             _delay((unsigned long)((1)*(4000000/4000.0)));
         }
-        conec();
-        if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8 && contador >=0){
+        if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8){
             antirebote=0;
             contador++;
             if(contador == 9){
                 contador = 8;
             }
-            variable = array[contador];
-            conec ();
-            PORTA = variable;
+
+
+
+
+
         }
-        if(PORTBbits.RB1 == 1 && antirebote ==1 && contador>= 0 && contador<=8){
+        if(PORTBbits.RB1 == 1 && antirebote ==1 && contador<=8){
             antirebote= 0;
             contador--;
-            if(contador ==-1){
+            if(contador <=0){
                 contador = 0;
             }
-            variable = array[contador];
-            conec ();
-            PORTA = variable;
+
+
+
+
+
         }
+        variable = array[contador];
+        PORTA = variable;
+        numero1 =0;
+        numero2 =0;
+        sino=0;
+        conec();
+        pot();
+
     }
-    pot();
-    return;
+
 }
 
 
@@ -2800,32 +2782,21 @@ void pot(){
             ADCON0bits.GO_DONE = 1;
         }
         valana = ADRESH;
-        numero1 = ( (valana & 0x0F)<<4 );
+        numero1 = ((valana & 0x0F));
         numero2 = ((valana & 0xF0)>>4 );
-        PORTC = 0b00000000;
+        PORTC = 0;
         PORTDbits.RD0 = 0;
         PORTDbits.RD1 = 0;
         segme();
-
-
         return;
     }
-    return;
 }
 
 void conec (void){
     while(1){
-
-
-
-
-
         if((valana) >= (variable)){
             PORTDbits.RD7 = 1;
         }
-
-
-
        if ((valana) <= (variable)){
             PORTDbits.RD7 = 0;
         }
@@ -2834,18 +2805,26 @@ void conec (void){
 }
 
 void segme (void){
-    if (sino == 1 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+    if (sino == 1){
         PORTDbits.RD0 = 1;
         PORTDbits.RD1 = 0;
-        PORTC = array2[valana];
-        sino = 0;
+        PORTC = array2[numero1];
         return;
     }
-    if (sino == 0 && PORTC ==0 && PORTDbits.RD0 == 0 && PORTDbits.RD1 ==0){
+    if (sino == 0){
         PORTDbits.RD0 = 0;
         PORTDbits.RD1 = 1;
-        PORTC = array2[valana];
-        sino = 1;
+        PORTC = array2[numero2];
         return;
+    }
+
+}
+
+void change (void){
+    if (sino==1){
+        sino = 0;
+    }
+    else{
+        sino =1;
     }
 }
