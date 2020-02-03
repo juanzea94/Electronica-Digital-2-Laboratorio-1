@@ -1,4 +1,4 @@
-# 1 "Laboratorio_2.c"
+# 1 "Labor2.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,29 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Laboratorio_2.c" 2
-
-
-
-
-
-
-#pragma config FOSC = INTRC_NOCLKOUT
-#pragma config WDTE = OFF
-#pragma config PWRTE = OFF
-#pragma config MCLRE = OFF
-#pragma config CP = OFF
-#pragma config CPD = OFF
-#pragma config BOREN = OFF
-#pragma config IESO = OFF
-#pragma config FCMEN = OFF
-#pragma config LVP = OFF
-
-
-#pragma config BOR4V = BOR40V
-#pragma config WRT = OFF
-
-
+# 1 "Labor2.c" 2
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -2513,7 +2491,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 22 "Laboratorio_2.c" 2
+# 1 "Labor2.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2648,7 +2626,8 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 23 "Laboratorio_2.c" 2
+# 2 "Labor2.c" 2
+
 
 # 1 "./Labor2.h" 1
 # 14 "./Labor2.h"
@@ -2673,60 +2652,86 @@ uint8_t numero1;
 uint8_t numero2;
 uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 uint8_t array2[] = {0x77,0x41,0x3B,0x6B,0x4D,0x6E,0x7E,0x47,0x7F,0x6F,0x5F,0x7C,0x38,0x79,0x3E,0x1E};
-# 24 "Laboratorio_2.c" 2
-# 47 "Laboratorio_2.c"
-void __attribute__((picinterrupt(("")))) ISR(void) {
-    if (TMR0IF) {
-        change();
-    TMR0IF = 0;
-    TMR0 = 4;
-    return;
+# 4 "Labor2.c" 2
+
+
+
+void segme (void){
+    if (sino == 1){
+        PORTDbits.RD0 = 1;
+        PORTDbits.RD1 = 0;
+        PORTC = array2[numero1];
+        return;
+    }
+    if (sino == 0){
+        PORTDbits.RD0 = 0;
+        PORTDbits.RD1 = 1;
+        PORTC = array2[numero2];
+        return;
     }
 }
 
+void loop(void){
+   while (1){
 
-void main(void) {
-    OSCCONbits.IRCF =0b110;
-    OSCCONbits.OSTS= 0;
-    OSCCONbits.HTS = 0;
-    OSCCONbits.LTS = 0;
-    OSCCONbits.SCS = 1;
+        if (PORTBbits.RB1 == 0 && PORTBbits.RB0 == 0){
+            antirebote = 1;
+            _delay((unsigned long)((1)*(4000000/4000.0)));
+        }
+        if(PORTBbits.RB0 == 1 && antirebote ==1 && contador<=8){
+            antirebote=0;
+            contador++;
+            if(contador == 9){
+                contador = 8;
+            }
+        }
+        if(PORTBbits.RB1 == 1 && antirebote ==1 && contador<=8){
+            antirebote= 0;
+            contador--;
+            if(contador <=0){
+                contador = 0;
+            }
+        }
+        _delay((unsigned long)((1)*(4000000/4000.0)));
+        if (ADCON0bits.GO_DONE ==0){
+            ADCON0bits.GO_DONE = 1;
+        }
+        valana = ADRESH;
+        variable = array[contador];
+        PORTA = variable;
+        numero1 =valana;
+        numero2 =valana;
+        conec();
+        split();
+        segme();
+    }
+}
 
-    INTCONbits.GIE = 1;
-    INTCONbits.T0IE = 1;
-    INTCONbits.T0IF = 1;
+void conec (void){
+    while(1){
+        if((valana) >= (variable)){
+            PORTDbits.RD7 = 1;
+        }
+       if ((valana) <= (variable)){
+            PORTDbits.RD7 = 0;
+        }
+        return;
+    }
+}
 
-    OPTION_REGbits.T0CS = 0;
-    OPTION_REGbits.T0SE = 0;
-    OPTION_REGbits.PSA = 0;
-    OPTION_REGbits.PS = 0b000;
-    TMR0 = 4;
-    OPTION_REGbits.nRBPU =1;
-    OPTION_REGbits.INTEDG = 0;
-
-    ADCON0bits.ADCS0 =1;
-    ADCON0bits.ADCS1 =0;
-    ADCON0bits.CHS0 =1;
-    ADCON0bits.CHS1 =0;
-    ADCON0bits.CHS2 =1;
-    ADCON0bits.CHS3 =1;
-    ADCON0bits.ADON = 1;
-    ADCON1bits.ADFM =0;
-    ADCON1bits.VCFG0 =0;
-    ADCON1bits.VCFG1 =0;
-
-    TRISA = 0b00000000;
-    TRISB = 0b00100011;
-    TRISC = 0b00000000;
-    TRISD = 0b00000000;
-    TRISE = 0b00000000;
-    ANSEL = 0b00000000;
-    ANSELH = 0b00100000;
-    PORTD = 0b00000000;
-    PORTA = 0;
-    PORTB = 0;
-    PORTD = 0;
-    loop();
+void split(void){
+    numero1 = ((valana & 0x0F));
+    numero2 = ((valana & 0xF0)>>4 );
     return;
+}
 
+void change (void){
+    if (sino==0){
+        sino = 1;
+        return;
+    }
+    else{
+        sino =0;
+        return;
+    }
 }

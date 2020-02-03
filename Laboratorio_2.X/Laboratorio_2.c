@@ -21,15 +21,16 @@
 
 #include <xc.h>
 #include <stdint.h>
+#include "Labor2.h"
 #define _XTAL_FREQ 4000000
 //#include "Labor2.h"
 
 
 //VALORES INICIALES Y DECLARACIÓN DE FUNCIONES
-void pot (void);
+/*void pot (void);
 void split (void);
 void conec (void);
-void segme (void);
+//void segme (void);
 void change (void);
 void loop (void);
 uint8_t contador;
@@ -42,7 +43,7 @@ uint8_t numero2;
 uint8_t array[9] = {0, 1, 3, 7, 15, 31, 63, 127, 255};
 uint8_t array2[] = {0x77,0x41,0x3B,0x6B,0x4D,0x6E,0x7E,0x47,0x7F,0x6F,0x5F,0x7C,0x38,0x79,0x3E,0x1E};
 
-
+*/
 void __interrupt() ISR(void) {
     if (TMR0IF) {
         change();
@@ -98,6 +99,7 @@ void main(void) {
     return;
     
 }
+/*
 void loop(void){    
    while (1){
         //Antirebote
@@ -180,3 +182,4 @@ void change (void){
         return;
     }
 }
+*/
