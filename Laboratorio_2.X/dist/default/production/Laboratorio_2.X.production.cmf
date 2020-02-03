@@ -11,24 +11,24 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\juanz\AppData\Local\Temp\sif0.o
+$C:\Users\juanz\AppData\Local\Temp\setg.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 C C 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Laboratorio_2.X.production.o
 cinit CODE 0 F F 19 2
-text1 CODE 0 C6 C6 2E 2
-text2 CODE 0 11D 11D 24 2
-text3 CODE 0 154 154 13 2
-text4 CODE 0 167 167 11 2
-text5 CODE 0 178 178 A 2
-maintext CODE 0 28 28 9E 2
+text1 CODE 0 28 28 80 2
+text2 CODE 0 149 149 13 2
+text3 CODE 0 E7 E7 21 2
+text4 CODE 0 15C 15C 13 2
+text5 CODE 0 121 121 15 2
+text6 CODE 0 16F 16F A 2
+maintext CODE 0 A8 A8 3F 2
 cstackCOMMON COMMON 1 77 77 5 1
-cstackBANK0 BANK0 1 49 49 1 1
-inittext CODE 0 141 141 13 2
+inittext CODE 0 136 136 13 2
 intentry CODE 0 4 4 8 2
-idataBANK0 CODE 0 F4 F4 29 2
-dataBANK0 BANK0 1 20 20 29 1
+idataBANK0 CODE 0 108 108 19 2
+dataBANK0 BANK0 1 20 20 19 1
 bssCOMMON COMMON 1 70 70 7 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
@@ -36,22 +36,22 @@ bssCOMMON COMMON 1 70 70 7 1
 #    <class name> <range> <delta>
 # Addresses given in the range are in hexadecimal and units of delta.
 %UNUSED
-RAM 4A-6F 1
+RAM 39-6F 1
 RAM A0-EF 1
 RAM 110-16F 1
 RAM 190-1EF 1
-BANK0 4A-6F 1
+BANK0 39-6F 1
 BANK1 A0-EF 1
 BANK2 110-16F 1
 BANK3 190-1EF 1
 CONST 3-3 2
-CONST 182-1FFF 2
+CONST 179-1FFF 2
 ENTRY 3-3 2
-ENTRY 182-1FFF 2
+ENTRY 179-1FFF 2
 IDLOC 2000-2003 2
 STACK 110-16F 1
 CODE 3-3 2
-CODE 182-1FFF 2
+CODE 179-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-10F 1
@@ -59,9 +59,9 @@ SFR3 180-18F 1
 COMMON 7C-7D 1
 EEDATA 2100-21FF 2
 STRCODE 3-3 2
-STRCODE 182-1FFF 2
+STRCODE 179-1FFF 2
 STRING 3-3 2
-STRING 182-1FFF 2
+STRING 179-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -76,146 +76,147 @@ STRING 182-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_2.X.production.o
-F cinit CODE >555:C:\Users\juanz\AppData\Local\Temp\sif0.s
-F cinit CODE >558:C:\Users\juanz\AppData\Local\Temp\sif0.s
-F cinit CODE >629:C:\Users\juanz\AppData\Local\Temp\sif0.s
-10 cinit CODE >630:C:\Users\juanz\AppData\Local\Temp\sif0.s
-11 cinit CODE >631:C:\Users\juanz\AppData\Local\Temp\sif0.s
-12 cinit CODE >632:C:\Users\juanz\AppData\Local\Temp\sif0.s
-13 cinit CODE >633:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14 cinit CODE >634:C:\Users\juanz\AppData\Local\Temp\sif0.s
-15 cinit CODE >635:C:\Users\juanz\AppData\Local\Temp\sif0.s
-16 cinit CODE >636:C:\Users\juanz\AppData\Local\Temp\sif0.s
-17 cinit CODE >637:C:\Users\juanz\AppData\Local\Temp\sif0.s
-18 cinit CODE >638:C:\Users\juanz\AppData\Local\Temp\sif0.s
-1D cinit CODE >642:C:\Users\juanz\AppData\Local\Temp\sif0.s
-1E cinit CODE >643:C:\Users\juanz\AppData\Local\Temp\sif0.s
-1F cinit CODE >644:C:\Users\juanz\AppData\Local\Temp\sif0.s
-20 cinit CODE >645:C:\Users\juanz\AppData\Local\Temp\sif0.s
-21 cinit CODE >646:C:\Users\juanz\AppData\Local\Temp\sif0.s
-22 cinit CODE >647:C:\Users\juanz\AppData\Local\Temp\sif0.s
-23 cinit CODE >648:C:\Users\juanz\AppData\Local\Temp\sif0.s
-24 cinit CODE >654:C:\Users\juanz\AppData\Local\Temp\sif0.s
-24 cinit CODE >656:C:\Users\juanz\AppData\Local\Temp\sif0.s
-25 cinit CODE >657:C:\Users\juanz\AppData\Local\Temp\sif0.s
-4 intentry CODE >49:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-178 text5 CODE >194:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-178 text5 CODE >195:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-17D text5 CODE >196:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-17E text5 CODE >197:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-17F text5 CODE >198:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-17F text5 CODE >199:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-181 text5 CODE >201:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-167 text4 CODE >49:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-167 text4 CODE >51:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-16C text4 CODE >53:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-16D text4 CODE >54:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-171 text4 CODE >56:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-154 text3 CODE >166:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-154 text3 CODE >167:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-154 text3 CODE >168:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-15A text3 CODE >169:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-15D text3 CODE >171:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-163 text3 CODE >172:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-166 text3 CODE >176:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-11D text2 CODE >178:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-11D text2 CODE >179:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-122 text2 CODE >180:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-125 text2 CODE >181:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-126 text2 CODE >182:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-12F text2 CODE >185:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-134 text2 CODE >186:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-137 text2 CODE >187:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-138 text2 CODE >188:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-140 text2 CODE >192:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-C6 text1 CODE >148:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-C6 text1 CODE >149:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-C6 text1 CODE >150:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-CD text1 CODE >151:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-D0 text1 CODE >152:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-D4 text1 CODE >153:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-D5 text1 CODE >155:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-D9 text1 CODE >156:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-DE text1 CODE >157:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-EB text1 CODE >158:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-EC text1 CODE >159:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-ED text1 CODE >160:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-EE text1 CODE >161:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-F3 text1 CODE >164:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-28 maintext CODE >60:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-28 maintext CODE >61:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-2E maintext CODE >62:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-2F maintext CODE >63:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-30 maintext CODE >64:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-31 maintext CODE >65:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-32 maintext CODE >66:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-33 maintext CODE >68:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-34 maintext CODE >69:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-35 maintext CODE >72:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-36 maintext CODE >73:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-37 maintext CODE >74:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-38 maintext CODE >75:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-3A maintext CODE >76:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-3E maintext CODE >77:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-41 maintext CODE >78:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-42 maintext CODE >79:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-43 maintext CODE >80:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-45 maintext CODE >81:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-46 maintext CODE >82:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-47 maintext CODE >83:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-48 maintext CODE >84:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-4B maintext CODE >85:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-4D maintext CODE >86:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-50 maintext CODE >87:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-51 maintext CODE >88:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-52 maintext CODE >89:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-53 maintext CODE >90:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-54 maintext CODE >91:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-55 maintext CODE >92:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-56 maintext CODE >93:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-57 maintext CODE >94:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-58 maintext CODE >95:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-59 maintext CODE >96:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-5A maintext CODE >97:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-5D maintext CODE >98:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-5E maintext CODE >99:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-5F maintext CODE >103:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-69 maintext CODE >104:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-6B maintext CODE >105:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-73 maintext CODE >107:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-84 maintext CODE >108:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-85 maintext CODE >109:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-89 maintext CODE >110:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-8F maintext CODE >111:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-93 maintext CODE >119:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-A2 maintext CODE >120:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-A3 maintext CODE >121:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-A5 maintext CODE >122:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-AA maintext CODE >123:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-AB maintext CODE >131:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-B3 maintext CODE >132:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-B5 maintext CODE >133:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-B6 maintext CODE >134:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-B7 maintext CODE >135:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-B8 maintext CODE >136:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-BD maintext CODE >137:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
-141 inittext CODE >603:C:\Users\juanz\AppData\Local\Temp\sif0.s
-141 inittext CODE >604:C:\Users\juanz\AppData\Local\Temp\sif0.s
-142 inittext CODE >605:C:\Users\juanz\AppData\Local\Temp\sif0.s
-143 inittext CODE >606:C:\Users\juanz\AppData\Local\Temp\sif0.s
-144 inittext CODE >607:C:\Users\juanz\AppData\Local\Temp\sif0.s
-145 inittext CODE >614:C:\Users\juanz\AppData\Local\Temp\sif0.s
-145 inittext CODE >615:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14A inittext CODE >616:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14B inittext CODE >617:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14C inittext CODE >618:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14D inittext CODE >619:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14E inittext CODE >620:C:\Users\juanz\AppData\Local\Temp\sif0.s
-14F inittext CODE >621:C:\Users\juanz\AppData\Local\Temp\sif0.s
-150 inittext CODE >622:C:\Users\juanz\AppData\Local\Temp\sif0.s
-151 inittext CODE >623:C:\Users\juanz\AppData\Local\Temp\sif0.s
-152 inittext CODE >624:C:\Users\juanz\AppData\Local\Temp\sif0.s
-153 inittext CODE >625:C:\Users\juanz\AppData\Local\Temp\sif0.s
+F cinit CODE >524:C:\Users\juanz\AppData\Local\Temp\setg.s
+F cinit CODE >527:C:\Users\juanz\AppData\Local\Temp\setg.s
+F cinit CODE >598:C:\Users\juanz\AppData\Local\Temp\setg.s
+10 cinit CODE >599:C:\Users\juanz\AppData\Local\Temp\setg.s
+11 cinit CODE >600:C:\Users\juanz\AppData\Local\Temp\setg.s
+12 cinit CODE >601:C:\Users\juanz\AppData\Local\Temp\setg.s
+13 cinit CODE >602:C:\Users\juanz\AppData\Local\Temp\setg.s
+14 cinit CODE >603:C:\Users\juanz\AppData\Local\Temp\setg.s
+15 cinit CODE >604:C:\Users\juanz\AppData\Local\Temp\setg.s
+16 cinit CODE >605:C:\Users\juanz\AppData\Local\Temp\setg.s
+17 cinit CODE >606:C:\Users\juanz\AppData\Local\Temp\setg.s
+18 cinit CODE >607:C:\Users\juanz\AppData\Local\Temp\setg.s
+1D cinit CODE >611:C:\Users\juanz\AppData\Local\Temp\setg.s
+1E cinit CODE >612:C:\Users\juanz\AppData\Local\Temp\setg.s
+1F cinit CODE >613:C:\Users\juanz\AppData\Local\Temp\setg.s
+20 cinit CODE >614:C:\Users\juanz\AppData\Local\Temp\setg.s
+21 cinit CODE >615:C:\Users\juanz\AppData\Local\Temp\setg.s
+22 cinit CODE >616:C:\Users\juanz\AppData\Local\Temp\setg.s
+23 cinit CODE >617:C:\Users\juanz\AppData\Local\Temp\setg.s
+24 cinit CODE >623:C:\Users\juanz\AppData\Local\Temp\setg.s
+24 cinit CODE >625:C:\Users\juanz\AppData\Local\Temp\setg.s
+25 cinit CODE >626:C:\Users\juanz\AppData\Local\Temp\setg.s
+4 intentry CODE >46:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+16F text6 CODE >173:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+16F text6 CODE >174:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+174 text6 CODE >175:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+176 text6 CODE >176:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+177 text6 CODE >179:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+178 text6 CODE >182:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+121 text5 CODE >46:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+121 text5 CODE >47:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+125 text5 CODE >48:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+12A text5 CODE >49:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+12B text5 CODE >50:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+12F text5 CODE >53:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+15C text4 CODE >137:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+15C text4 CODE >138:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+15C text4 CODE >139:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+162 text4 CODE >140:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+165 text4 CODE >142:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+16B text4 CODE >143:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+16E text4 CODE >147:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+E7 text3 CODE >155:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+E7 text3 CODE >156:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+EA text3 CODE >157:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+EB text3 CODE >158:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+EC text3 CODE >159:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+F1 text3 CODE >160:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+F7 text3 CODE >161:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+F8 text3 CODE >162:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+FA text3 CODE >165:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+FF text3 CODE >166:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+105 text3 CODE >167:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+106 text3 CODE >168:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+107 text3 CODE >171:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+149 text2 CODE >149:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+149 text2 CODE >150:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+14E text2 CODE >151:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+15B text2 CODE >153:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+28 text1 CODE >101:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+28 text1 CODE >102:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+28 text1 CODE >104:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+32 text1 CODE >105:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+34 text1 CODE >106:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+3B text1 CODE >108:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+4C text1 CODE >109:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+4D text1 CODE >110:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+51 text1 CODE >111:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+57 text1 CODE >112:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+5B text1 CODE >115:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+6A text1 CODE >116:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+6B text1 CODE >117:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+6D text1 CODE >118:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+72 text1 CODE >119:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+73 text1 CODE >122:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+7A text1 CODE >123:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+80 text1 CODE >124:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+81 text1 CODE >126:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+85 text1 CODE >127:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+8D text1 CODE >128:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+8F text1 CODE >129:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+93 text1 CODE >130:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+97 text1 CODE >131:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+9C text1 CODE >132:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+A1 text1 CODE >133:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+A8 maintext CODE >56:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+A8 maintext CODE >57:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+AE maintext CODE >58:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+AF maintext CODE >59:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B0 maintext CODE >60:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B1 maintext CODE >61:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B2 maintext CODE >63:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B3 maintext CODE >65:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B4 maintext CODE >66:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B5 maintext CODE >69:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B6 maintext CODE >70:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B7 maintext CODE >71:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+B8 maintext CODE >72:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+BA maintext CODE >73:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+BE maintext CODE >74:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C1 maintext CODE >75:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C2 maintext CODE >76:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C3 maintext CODE >77:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C5 maintext CODE >78:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C6 maintext CODE >79:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C7 maintext CODE >80:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+C8 maintext CODE >81:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+CB maintext CODE >82:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+CD maintext CODE >83:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D0 maintext CODE >84:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D1 maintext CODE >85:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D2 maintext CODE >86:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D3 maintext CODE >87:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D4 maintext CODE >88:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D5 maintext CODE >89:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D6 maintext CODE >90:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D7 maintext CODE >91:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D8 maintext CODE >92:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+D9 maintext CODE >93:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+DA maintext CODE >94:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+DD maintext CODE >95:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+DE maintext CODE >96:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+DF maintext CODE >97:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+E4 maintext CODE >100:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_2.X\Laboratorio_2.c
+136 inittext CODE >572:C:\Users\juanz\AppData\Local\Temp\setg.s
+136 inittext CODE >573:C:\Users\juanz\AppData\Local\Temp\setg.s
+137 inittext CODE >574:C:\Users\juanz\AppData\Local\Temp\setg.s
+138 inittext CODE >575:C:\Users\juanz\AppData\Local\Temp\setg.s
+139 inittext CODE >576:C:\Users\juanz\AppData\Local\Temp\setg.s
+13A inittext CODE >583:C:\Users\juanz\AppData\Local\Temp\setg.s
+13A inittext CODE >584:C:\Users\juanz\AppData\Local\Temp\setg.s
+13F inittext CODE >585:C:\Users\juanz\AppData\Local\Temp\setg.s
+140 inittext CODE >586:C:\Users\juanz\AppData\Local\Temp\setg.s
+141 inittext CODE >587:C:\Users\juanz\AppData\Local\Temp\setg.s
+142 inittext CODE >588:C:\Users\juanz\AppData\Local\Temp\setg.s
+143 inittext CODE >589:C:\Users\juanz\AppData\Local\Temp\setg.s
+144 inittext CODE >590:C:\Users\juanz\AppData\Local\Temp\setg.s
+145 inittext CODE >591:C:\Users\juanz\AppData\Local\Temp\setg.s
+146 inittext CODE >592:C:\Users\juanz\AppData\Local\Temp\setg.s
+147 inittext CODE >593:C:\Users\juanz\AppData\Local\Temp\setg.s
+148 inittext CODE >594:C:\Users\juanz\AppData\Local\Temp\setg.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -239,23 +240,25 @@ __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _TMR0 1 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sif0.o
-_main 50 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
+___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\setg.o
+_loop 50 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
+_main 150 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
 _sino 72 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-start 18 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sif0.o
+start 18 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\setg.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
+__size_of_loop 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sif0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\setg.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
@@ -264,20 +267,20 @@ __Hclrtext 0 0 ABS 0 clrtext -
 _ADRESH 1E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _ANSELH 189 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-__end_of_change 304 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sif0.o
-___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sif0.o
+__end_of_change 2F2 0 CODE 0 text6 dist/default/production\Laboratorio_2.X.production.o
+___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\setg.o
+___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\setg.o
 __size_of_conec 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __size_of_segme 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
+__size_of_split 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _variable 73 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 start_initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_2.X.production.o
 _numero1 71 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
 _numero2 70 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
-__pcstackBANK0 49 0 BANK0 1 cstackBANK0 dist/default/production\Laboratorio_2.X.production.o
 _TMR0IF 5A 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sif0.o
+___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\setg.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -315,26 +318,23 @@ __Lsfr1 0 0 ABS 0 sfr1 -
 __Lsfr2 0 0 ABS 0 sfr2 -
 __Lsfr3 0 0 ABS 0 sfr3 -
 __Ltext 0 0 ABS 0 text -
-__LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
-_ISR 2CE 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
+_ISR 242 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
 __S0 2009 0 ABS 0 - -
 __S1 7C 0 ABS 0 - -
 __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
-_pot 18C 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _array2 20 0 BANK0 1 dataBANK0 dist/default/production\Laboratorio_2.X.production.o
 saved_w 7E 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-_change 2F0 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
+_change 2DE 0 CODE 0 text6 dist/default/production\Laboratorio_2.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-__end_of_ISR 2F0 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
-__end_of_pot 1E8 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
+__end_of_ISR 26C 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sif0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\setg.o
 __pdataBANK0 20 0 BANK0 1 dataBANK0 dist/default/production\Laboratorio_2.X.production.o
 __size_of_change 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-__pmaintext 50 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
+__pmaintext 150 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
 __Lcommon 0 0 ABS 0 common -
 __Lconfig 400E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
@@ -350,32 +350,33 @@ __Lspace_1 0 0 ABS 0 - -
 __Lspace_2 0 0 ABS 0 - -
 __Lspace_3 0 0 ABS 0 - -
 __pbssCOMMON 70 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
-init_fetch0 282 0 CODE 0 inittext dist/default/production\Laboratorio_2.X.production.o
-__HcstackBANK0 0 0 ABS 0 cstackBANK0 -
+init_fetch0 26C 0 CODE 0 inittext dist/default/production\Laboratorio_2.X.production.o
 __Lend_init 18 0 CODE 0 end_init -
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 end_of_initialization 48 0 CODE 0 cinit dist/default/production\Laboratorio_2.X.production.o
 __Hintentry 18 0 CODE 0 intentry -
 __Lstrings 0 0 ABS 0 strings -
 __Hreset_vec 6 0 CODE 0 reset_vec -
-__ptext1 18C 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
-__ptext2 23A 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
-__ptext3 2A8 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
-__ptext4 2CE 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
-__ptext5 2F0 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
+__ptext1 50 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
+__ptext2 292 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
+__ptext3 1CE 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
+__ptext4 2B8 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
+__ptext5 242 0 CODE 0 text5 dist/default/production\Laboratorio_2.X.production.o
+__ptext6 2DE 0 CODE 0 text6 dist/default/production\Laboratorio_2.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __end_of__initialization 48 0 CODE 0 cinit dist/default/production\Laboratorio_2.X.production.o
 __Lfunctab 0 0 ENTRY 0 functab -
-__pidataBANK0 1E8 0 CODE 0 idataBANK0 dist/default/production\Laboratorio_2.X.production.o
+__pidataBANK0 210 0 CODE 0 idataBANK0 dist/default/production\Laboratorio_2.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
 __pcstackCOMMON 77 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_2.X.production.o
 __Hend_init 1E 0 CODE 0 end_init -
-init_ram0 28A 0 CODE 0 inittext dist/default/production\Laboratorio_2.X.production.o
-__end_of_main 18C 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
+init_ram0 274 0 CODE 0 inittext dist/default/production\Laboratorio_2.X.production.o
+__end_of_loop 150 0 CODE 0 text1 dist/default/production\Laboratorio_2.X.production.o
+__end_of_main 1CE 0 CODE 0 maintext dist/default/production\Laboratorio_2.X.production.o
 _ANSEL 188 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-__end_of_conec 2CE 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
+__end_of_conec 2DE 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
 _PORTA 5 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _PORTB 6 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _PORTC 7 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
@@ -385,17 +386,18 @@ _TRISB 86 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _TRISC 87 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _TRISD 88 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 _TRISE 89 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-__end_of_segme 282 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
+__end_of_segme 210 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
+__end_of_split 2B8 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_array 40 0 BANK0 1 dataBANK0 dist/default/production\Laboratorio_2.X.production.o
-_conec 2A8 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
+_array 30 0 BANK0 1 dataBANK0 dist/default/production\Laboratorio_2.X.production.o
+_conec 2B8 0 CODE 0 text4 dist/default/production\Laboratorio_2.X.production.o
 interrupt_function 8 0 CODE 0 intentry dist/default/production\Laboratorio_2.X.production.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-_segme 23A 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
+_segme 1CE 0 CODE 0 text3 dist/default/production\Laboratorio_2.X.production.o
+_split 292 0 CODE 0 text2 dist/default/production\Laboratorio_2.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\Laboratorio_2.X.production.o
 __size_of_ISR 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
-__size_of_pot 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
 _contador 76 0 COMMON 1 bssCOMMON dist/default/production\Laboratorio_2.X.production.o
 __initialization 1E 0 CODE 0 cinit dist/default/production\Laboratorio_2.X.production.o
@@ -426,9 +428,9 @@ __CFG_WRT$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_2.X.production.o
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-intentry 0 4 8 17E 2
+intentry 0 4 8 175 2
 reset_vec 0 0 0 3 2
-dataBANK0 1 20 20 2A 1
+dataBANK0 1 20 20 19 1
 bssCOMMON 1 70 70 C 1
 config 0 2007 400E 2 2
 # OTES Section

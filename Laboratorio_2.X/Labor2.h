@@ -33,7 +33,7 @@
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-void segme(void);
+//void segme(void);
 // TODO Insert appropriate #include <>
 
 // TODO Insert C++ class definitions if appropriate
