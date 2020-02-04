@@ -19,12 +19,13 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
+//Se incluyen librerias y las librerias creadas. También se define la frecuencia
 #include <xc.h>
 #include <stdint.h>
 #include "Labor2.h"
 #define _XTAL_FREQ 4000000
 
-
+//Interrupción del sistema ADC
 void __interrupt() ISR(void) {
     if (TMR0IF) {
         change();
@@ -33,19 +34,16 @@ void __interrupt() ISR(void) {
     return;
     }
 }
-
-//DECLARAR TODAS LAS VARIABLES, INICIALIZADORES
+//Se declaram los valores iniciales del oscilador interno y los del ADC
 void main(void) {
     OSCCONbits.IRCF =0b110;
     OSCCONbits.OSTS= 0;
     OSCCONbits.HTS = 0;
     OSCCONbits.LTS = 0;
     OSCCONbits.SCS = 1;
-    
     INTCONbits.GIE = 1;
     INTCONbits.T0IE = 1;
     INTCONbits.T0IF = 1;
-    
     OPTION_REGbits.T0CS = 0;
     OPTION_REGbits.T0SE = 0;
     OPTION_REGbits.PSA = 0;
@@ -53,7 +51,6 @@ void main(void) {
     TMR0 = 4;
     OPTION_REGbits.nRBPU =1;
     OPTION_REGbits.INTEDG = 0; 
-    
     ADCON0bits.ADCS0 =1;
     ADCON0bits.ADCS1 =0;
     ADCON0bits.CHS0 =1;
@@ -65,6 +62,7 @@ void main(void) {
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
     
+//Valores iniciales de los pines del PIC16F887    
     TRISA = 0b00000000;
     TRISB = 0b00100011;
     TRISC = 0b00000000;
@@ -76,7 +74,8 @@ void main(void) {
     PORTA = 0;
     PORTB = 0;
     PORTD = 0;
+//Se manda a llamar la primera función que se encuentra en el archivo Labor2.c
     loop();
     return;
-    
+//Finaliza el programa y se repite de nuevo
 }
