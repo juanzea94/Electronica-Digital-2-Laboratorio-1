@@ -2848,48 +2848,40 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 19 "./Labor4Slave.h" 2
-# 30 "./Labor4Slave.h"
+# 34 "./Labor4Slave.h"
 uint8_t valana;
 uint8_t m;
 char pot1;
-
 char buffer [20];
 uint8_t num1;
 uint8_t num2;
 uint8_t num3;
 float number;
+unsigned char slaveIn;
+unsigned char slaveOut;
 
-void SPI_SLAVE_INIT();
-void ADC (void);
-void POT (uint8_t m);
-void IntToString (float number);
+
+
+
+
+void adcInit (void);
+void POT (void);
+
+void spiSlaveInit();
+void spiWrite(char dat);
+unsigned spiDataReady();
+char spiRead();
+void spiFunctionReadMaster(void);
+void spiFunctionWriteMaster(void);
 # 3 "Labor4Slave.c" 2
 
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 5 "Labor4Slave.c" 2
-
-
-
-
-
-
-void SPI_SLAVE_INIT(){
-    SSPSTATbits.SMP = 0;
-    SSPCONbits.CKP = 0;
-    SSPCONbits.SSPM0 = 0;
-    SSPCONbits.SSPM1 = 0;
-    SSPCONbits.SSPM2 = 1;
-    SSPCONbits.SSPM3 = 0;
-    SSPSTATbits.CKE = 0;
-
-    TRISCbits.TRISC5 = 0;
-    TRISCbits.TRISC3 = 1;
-
-    SSPCONbits.SSPEN = 1;
-}
-
-void ADC (void){
+# 15 "Labor4Slave.c"
+void adcInit (void){
+    ANSEL = 0b01000111;
+    ANSELH = 0b00000000;
     ADCON1bits.ADFM =0;
     ADCON1bits.VCFG0 =0;
     ADCON1bits.VCFG1 =0;
@@ -2897,47 +2889,71 @@ void ADC (void){
     ADCON0bits.ADCS1 =0;
     ADCON0bits.CHS = 0;
     ADCON0bits.ADON = 1;
-    ANSEL = 0b01000011;
-    ANSELH = 0b00000000;
 }
 
-void POT (uint8_t m){
+void POT (){
     _delay((unsigned long)((10)*(4000000/4000.0)));
-    ADCON0bits.CHS = m;
+    ADCON0bits.CHS = 1;
+    ADCON0bits.ADON =1;
+    _delay((unsigned long)((1)*(4000000/4000.0)));
     ADCON0bits.GO_DONE=1;
     while(ADCON0bits.GO_DONE);
-    valana=ADRESH;
+        PORTB=ADRESH;
+
+
+        _delay((unsigned long)((5)*(4000000/4000.0)));
+        valana =0;
+    return;
+}
+# 55 "Labor4Slave.c"
+void spiSlaveInit(){
+    SSPSTATbits.SMP = 0;
+    SSPCONbits.CKP = 1;
+    SSPSTATbits.CKE = 0;
+    SSPCONbits.SSPM0 = 0;
+    SSPCONbits.SSPM1 = 0;
+    SSPCONbits.SSPM2 = 1;
+    SSPCONbits.SSPM3 = 0;
+
+    TRISCbits.TRISC5 = 0;
+    TRISCbits.TRISC3 = 1;
+
+    SSPCONbits.SSPEN = 1;
 }
 
-void IntToString (float number){
-    if (number <= 9.999 & number >=1.000){
-        num1 = number;
-        num2 = 10*(number - num1);
-        num3 = 100*(number - num1 - (num2*10));
-        printf (65);
+void spiFunctionReadMaster (void){
+    while(1){
+        if (spiDataReady()){
+            _delay((unsigned long)((10)*(4000000/4000.0)));
+            slaveIn = spiRead();
+            SSPCONbits.SSPOV = 0;
+            _delay((unsigned long)((50)*(4000000/4000.0)));
+        }
+
     }
 }
 
-static void spiReceiveWait()
-{
-    while ( !SSPSTATbits.BF );
+void spiFunctionWriteMaster(void){
+    _delay((unsigned long)((5)*(4000000/4000.0)));
+    spiWrite(slaveOut);
+
+    _delay((unsigned long)((5)*(4000000/4000.0)));
 }
 
-void spiWrite(char dat)
-{
+void spiWrite(char dat) {
+    PORTAbits.RA5 = 1;
     SSPBUF = dat;
+    PORTAbits.RA5 = 0;
 }
 
-unsigned spiDataReady()
-{
+unsigned spiDataReady() {
     if(SSPSTATbits.BF)
         return 1;
     else
         return 0;
 }
 
-char spiRead()
-{
-    spiReceiveWait();
+char spiRead(){
+    while (!SSPSTATbits.BF);
     return(SSPBUF);
 }

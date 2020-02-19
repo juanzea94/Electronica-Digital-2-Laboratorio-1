@@ -1,7 +1,6 @@
 /*
  * File:   Laboratorio_4_Master.c
  * Author: juanz
- *
  * Created on February 14, 2020, 5:22 PM
  */
 #pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
@@ -26,13 +25,45 @@
 #include <string.h>
 #define _XTAL_FREQ  4000000
 
-
 void main(void) {
     
-    TRISCbits.TRISC5 = 0;
-    TRISCbits.TRISC4 = 1;
+    OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
     
-    SPI_MASTER_INIT();
+    ANSEL = 0b000000000;
+    ANSELH = 0b00000000;
     
-    return;
+    SDO = 0;
+    SDI = 1;
+    SCK = 0;
+    SS = 0;
+    CONTADOR = 0;
+    BANDERA =0;
+    
+    PORTA = 0b00000000;
+    PORTB = 0b00000000;
+    PORTC = 0b00000000;
+    PORTD = 0b00000000;
+    PORTE = 0b0000;
+    UART_Init(9600);
+    //spiMasterInit();
+    
+    while(1){
+//        PORTB = 0b00000100;
+        //spiWrite (BANDERA);
+        //PORTB = 0b00000010;
+        //nRBPU = 0;
+        //spiFuctionReadSlave();
+        //PORTB = masterIn;
+        //if (masterIn == 49){
+            //PORTB = 8;
+        //}
+    
+        //UARTR ();
+        UARTW ();
+    }    
+    //return;
 }

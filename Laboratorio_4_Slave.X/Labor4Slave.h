@@ -27,20 +27,34 @@
 #define POT2 TRISAbits.TRISA6
 
 
+//****************************************************************************//
+//**********************************VARIABLES**********************************//
+//****************************************************************************//
+
 uint8_t valana;
 uint8_t m;
 char pot1;
-//char numeros [10] = ['0','1','2','3','4','5','6','7','8','9'];
 char buffer [20];
 uint8_t num1;
 uint8_t num2;
 uint8_t num3;
 float number;
+unsigned char slaveIn;
+unsigned char slaveOut;
 
-void SPI_SLAVE_INIT();
-void ADC (void);
-void POT (uint8_t m);
-void IntToString (float number);
+//****************************************************************************//
+//**********************************PROTOTIPOS**********************************//
+//****************************************************************************//
+
+void adcInit (void);
+void POT (void);
+//void IntToString (float number);
+void spiSlaveInit();
+void spiWrite(char dat);
+unsigned spiDataReady();
+char spiRead();
+void spiFunctionReadMaster(void);
+void spiFunctionWriteMaster(void);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

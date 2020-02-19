@@ -1,14 +1,75 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"40 ./Labor4Slave.h
-[; ;./Labor4Slave.h: 40: void SPI_SLAVE_INIT();
-[v _SPI_SLAVE_INIT `(v ~T0 @X0 0 e? ]
-"41
-[; ;./Labor4Slave.h: 41: void ADC (void);
-[v _ADC `(v ~T0 @X0 0 ef ]
-"113 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdlib.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\c90\stdlib.h: 113: extern char * itoa(char * buf, int val, int base);
-[v _itoa `(*uc ~T0 @X0 0 ef3`*uc`i`i ]
+"1868 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1868:     struct {
+[s S70 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 ]
+[n S70 . SCS LTS HTS OSTS IRCF ]
+"1875
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1875:     struct {
+[s S71 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S71 . . IRCF0 IRCF1 IRCF2 ]
+"1867
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1867: typedef union {
+[u S69 `S70 1 `S71 1 ]
+[n S69 . . . ]
+"1882
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1882: extern volatile OSCCONbits_t OSCCONbits __attribute__((address(0x08F)));
+[v _OSCCONbits `VS69 ~T0 @X0 0 e@143 ]
+"1546
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1546:     struct {
+[s S57 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S57 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1545
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1545: typedef union {
+[u S56 `S57 1 ]
+[n S56 . . ]
+"1557
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
+[v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
+"1422
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
+"1421
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"1433
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
+[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
+"1416
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1478
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1478: extern volatile unsigned char TRISB __attribute__((address(0x086)));
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+"166
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 166: extern volatile unsigned char PORTA __attribute__((address(0x005)));
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"228
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"290
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 290: extern volatile unsigned char PORTC __attribute__((address(0x007)));
+[v _PORTC `Vuc ~T0 @X0 0 e@7 ]
+"352
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
+[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"414
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
+[v _PORTE `Vuc ~T0 @X0 0 e@9 ]
+"3387
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3387: extern volatile unsigned char ANSEL __attribute__((address(0x188)));
+[v _ANSEL `Vuc ~T0 @X0 0 e@392 ]
+"3449
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
+[v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
+"49 ./Labor4Slave.h
+[; ;./Labor4Slave.h: 49: void adcInit (void);
+[v _adcInit `(v ~T0 @X0 0 ef ]
+"50
+[; ;./Labor4Slave.h: 50: void POT (void);
+[v _POT `(v ~T0 @X0 0 ef ]
 "7 Laboratorio_4_Slave.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "8
@@ -267,30 +328,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"30 ./Labor4Slave.h
-[; ;./Labor4Slave.h: 30: uint8_t valana;
+"34 ./Labor4Slave.h
+[; ;./Labor4Slave.h: 34: uint8_t valana;
 [v _valana `uc ~T0 @X0 1 e ]
-"31
-[; ;./Labor4Slave.h: 31: uint8_t m;
-[v _m `uc ~T0 @X0 1 e ]
-"32
-[; ;./Labor4Slave.h: 32: char pot1;
-[v _pot1 `uc ~T0 @X0 1 e ]
-"34
-[; ;./Labor4Slave.h: 34: char buffer [20];
-[v _buffer `uc ~T0 @X0 -> 20 `i e ]
 "35
-[; ;./Labor4Slave.h: 35: uint8_t num1;
-[v _num1 `uc ~T0 @X0 1 e ]
+[; ;./Labor4Slave.h: 35: uint8_t m;
+[v _m `uc ~T0 @X0 1 e ]
 "36
-[; ;./Labor4Slave.h: 36: uint8_t num2;
-[v _num2 `uc ~T0 @X0 1 e ]
+[; ;./Labor4Slave.h: 36: char pot1;
+[v _pot1 `uc ~T0 @X0 1 e ]
 "37
-[; ;./Labor4Slave.h: 37: uint8_t num3;
-[v _num3 `uc ~T0 @X0 1 e ]
+[; ;./Labor4Slave.h: 37: char buffer [20];
+[v _buffer `uc ~T0 @X0 -> 20 `i e ]
 "38
-[; ;./Labor4Slave.h: 38: float number;
+[; ;./Labor4Slave.h: 38: uint8_t num1;
+[v _num1 `uc ~T0 @X0 1 e ]
+"39
+[; ;./Labor4Slave.h: 39: uint8_t num2;
+[v _num2 `uc ~T0 @X0 1 e ]
+"40
+[; ;./Labor4Slave.h: 40: uint8_t num3;
+[v _num3 `uc ~T0 @X0 1 e ]
+"41
+[; ;./Labor4Slave.h: 41: float number;
 [v _number `f ~T0 @X0 1 e ]
+"42
+[; ;./Labor4Slave.h: 42: unsigned char slaveIn;
+[v _slaveIn `uc ~T0 @X0 1 e ]
+"43
+[; ;./Labor4Slave.h: 43: unsigned char slaveOut;
+[v _slaveOut `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "30 Laboratorio_4_Slave.c
 [; ;Laboratorio_4_Slave.c: 30: void main(void) {
@@ -299,18 +366,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _main ]
 [f ]
 "32
-[; ;Laboratorio_4_Slave.c: 32:     SPI_SLAVE_INIT();
-[e ( _SPI_SLAVE_INIT ..  ]
+[; ;Laboratorio_4_Slave.c: 32:     OSCCONbits.IRCF =0b110;
+[e = . . _OSCCONbits 0 4 -> -> 6 `i `uc ]
 "33
-[; ;Laboratorio_4_Slave.c: 33:     ADC ();
-[e ( _ADC ..  ]
+[; ;Laboratorio_4_Slave.c: 33:     OSCCONbits.OSTS= 0;
+[e = . . _OSCCONbits 0 3 -> -> 0 `i `uc ]
 "34
-[; ;Laboratorio_4_Slave.c: 34:     itoa (valana,buffer,10);
-[e ( _itoa (3 , , -> _valana `*uc -> &U _buffer `i -> 10 `i ]
-"37
-[; ;Laboratorio_4_Slave.c: 37:     return;
-[e $UE 143  ]
-"38
-[; ;Laboratorio_4_Slave.c: 38: }
+[; ;Laboratorio_4_Slave.c: 34:     OSCCONbits.HTS = 0;
+[e = . . _OSCCONbits 0 2 -> -> 0 `i `uc ]
+"35
+[; ;Laboratorio_4_Slave.c: 35:     OSCCONbits.LTS = 0;
+[e = . . _OSCCONbits 0 1 -> -> 0 `i `uc ]
+"36
+[; ;Laboratorio_4_Slave.c: 36:     OSCCONbits.SCS = 1;
+[e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
+"40
+[; ;Laboratorio_4_Slave.c: 40:     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"41
+[; ;Laboratorio_4_Slave.c: 41:     TRISCbits.TRISC4 = 1;
+[e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
+"42
+[; ;Laboratorio_4_Slave.c: 42:     TRISCbits.TRISC3 = 1;
+[e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
+"43
+[; ;Laboratorio_4_Slave.c: 43:     TRISAbits.TRISA5 = 1;
+[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
+"45
+[; ;Laboratorio_4_Slave.c: 45:     TRISA = 0b00000111;
+[e = _TRISA -> -> 7 `i `uc ]
+"46
+[; ;Laboratorio_4_Slave.c: 46:     TRISB = 0;
+[e = _TRISB -> -> 0 `i `uc ]
+"47
+[; ;Laboratorio_4_Slave.c: 47:     PORTA = 0b00000000;
+[e = _PORTA -> -> 0 `i `uc ]
+"48
+[; ;Laboratorio_4_Slave.c: 48:     PORTB = 0b00000000;
+[e = _PORTB -> -> 0 `i `uc ]
+"49
+[; ;Laboratorio_4_Slave.c: 49:     PORTC = 0b00000000;
+[e = _PORTC -> -> 0 `i `uc ]
+"50
+[; ;Laboratorio_4_Slave.c: 50:     PORTD = 0b00000000;
+[e = _PORTD -> -> 0 `i `uc ]
+"51
+[; ;Laboratorio_4_Slave.c: 51:     PORTE = 0b0000;
+[e = _PORTE -> -> 0 `i `uc ]
+"53
+[; ;Laboratorio_4_Slave.c: 53:     ANSEL = 0b01000111;
+[e = _ANSEL -> -> 71 `i `uc ]
+"54
+[; ;Laboratorio_4_Slave.c: 54:     ANSELH = 0b00000000;
+[e = _ANSELH -> -> 0 `i `uc ]
+"57
+[; ;Laboratorio_4_Slave.c: 57:     adcInit();
+[e ( _adcInit ..  ]
+"59
+[; ;Laboratorio_4_Slave.c: 59:     while(1){
+[e :U 145 ]
+{
+"62
+[; ;Laboratorio_4_Slave.c: 62:         POT();
+[e ( _POT ..  ]
+"72
+[; ;Laboratorio_4_Slave.c: 72:     }
+}
+[e :U 144 ]
+[e $U 145  ]
+[e :U 146 ]
+"74
+[; ;Laboratorio_4_Slave.c: 74: }
 [e :UE 143 ]
 }

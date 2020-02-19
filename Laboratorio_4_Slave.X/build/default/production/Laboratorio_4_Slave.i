@@ -2867,21 +2867,31 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 19 "./Labor4Slave.h" 2
-# 30 "./Labor4Slave.h"
+# 34 "./Labor4Slave.h"
 uint8_t valana;
 uint8_t m;
 char pot1;
-
 char buffer [20];
 uint8_t num1;
 uint8_t num2;
 uint8_t num3;
 float number;
+unsigned char slaveIn;
+unsigned char slaveOut;
 
-void SPI_SLAVE_INIT();
-void ADC (void);
-void POT (uint8_t m);
-void IntToString (float number);
+
+
+
+
+void adcInit (void);
+void POT (void);
+
+void spiSlaveInit();
+void spiWrite(char dat);
+unsigned spiDataReady();
+char spiRead();
+void spiFunctionReadMaster(void);
+void spiFunctionWriteMaster(void);
 # 21 "Laboratorio_4_Slave.c" 2
 
 
@@ -2896,10 +2906,38 @@ void IntToString (float number);
 
 void main(void) {
 
-    SPI_SLAVE_INIT();
-    ADC ();
-    itoa (valana,buffer,10);
+    OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
 
 
-    return;
+
+    TRISCbits.TRISC5 = 0;
+    TRISCbits.TRISC4 = 1;
+    TRISCbits.TRISC3 = 1;
+    TRISAbits.TRISA5 = 1;
+
+    TRISA = 0b00000111;
+    TRISB = 0;
+    PORTA = 0b00000000;
+    PORTB = 0b00000000;
+    PORTC = 0b00000000;
+    PORTD = 0b00000000;
+    PORTE = 0b0000;
+
+    ANSEL = 0b01000111;
+    ANSELH = 0b00000000;
+
+
+    adcInit();
+
+    while(1){
+
+
+        POT();
+# 72 "Laboratorio_4_Slave.c"
+    }
+
 }

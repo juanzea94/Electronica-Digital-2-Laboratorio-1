@@ -29,18 +29,46 @@
 
 void main(void) {
     
-    TRISAbits.TRISA1 = 1;
-    TRISAbits.TRISA6 = 1;
-    TRISCbits.TRISC5 = 0;
-    TRISCbits.TRISC4 = 1;
-    TRISAbits.TRISA5 = 1;
+    OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
     
+    //POT1 = 1;
+   // POT2 = 1;
+    SDO = 0;
+    SDI = 1;
+    SCK = 1;
+    SS = 1;
     
+    TRISA = 0b00000111;
+    TRISB = 0;
+    PORTA = 0b00000000;
+    PORTB = 0b00000000;
+    PORTC = 0b00000000;
+    PORTD = 0b00000000;
+    PORTE = 0b0000;
     
-    SPI_SLAVE_INIT();
-    ADC ();
-    itoa (valana,buffer,10);
+    ANSEL = 0b01000111;  //defino los puertos analogicos
+    ANSELH = 0b00000000;
     
+    //spiSlaveInit();
+    adcInit();
     
-    return;
+    while(1){
+        
+        //PORTAbits.RA3 = 1;
+        POT();
+//        if (spiDataReady()){
+//            PORTAbits.RA2 = spiRead();
+//            spiFunctionWriteMaster();}
+        
+        
+        
+        
+        //POT(2);
+        //spiFunctionWriteMaster();
+    }
+    //return;
 }
