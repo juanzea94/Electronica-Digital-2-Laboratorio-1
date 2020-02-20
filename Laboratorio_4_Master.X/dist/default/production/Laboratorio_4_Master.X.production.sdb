@@ -11,26 +11,32 @@
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"37 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
+"16 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
+[v _UARTR UARTR `(v  1 e 1 0 ]
+"27
+[v _UARTW UARTW `(v  1 e 1 0 ]
+"42
 [v _UART_Init UART_Init `(uc  1 e 1 0 ]
-"64
+"69
 [v _UART_Read UART_Read `(uc  1 e 1 0 ]
-"75
+"80
 [v _UART_Write UART_Write `(v  1 e 1 0 ]
-"92
+"93
 [v _spiMasterInit spiMasterInit `(v  1 e 1 0 ]
-"106
+"107
 [v _spiFunctionReadSlave spiFunctionReadSlave `(v  1 e 1 0 ]
-"123
+"124
 [v _spiFunctionWriteSlave spiFunctionWriteSlave `(v  1 e 1 0 ]
-"134
+"135
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
-"145
+"146
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 "28 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Laboratorio_4_Master.c
 [v _main main `(v  1 e 1 0 ]
 "45 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X/Labor4Master.h
 [v _masterIn masterIn `uc  1 e 1 0 ]
+"48
+[v _uartIn uartIn `uc  1 e 1 0 ]
 "166 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "228
@@ -41,7 +47,7 @@
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
 "414
 [v _PORTE PORTE `VEuc  1 e 1 @9 ]
-[s S279 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S289 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
 `uc 1 SSPIF 1 0 :1:3 
@@ -50,25 +56,25 @@
 `uc 1 ADIF 1 0 :1:6 
 ]
 "553
-[u S287 . 1 `S279 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES287  1 e 1 @12 ]
+[u S297 . 1 `S289 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES297  1 e 1 @12 ]
 "843
 [v _SSPBUF SSPBUF `VEuc  1 e 1 @19 ]
-[s S388 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S398 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "870
-[s S394 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S404 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[u S399 . 1 `S388 1 . 1 0 `S394 1 . 1 0 ]
-[v _SSPCONbits SSPCONbits `VES399  1 e 1 @20 ]
-[s S200 . 1 `uc 1 RX9D 1 0 :1:0 
+[u S409 . 1 `S398 1 . 1 0 `S404 1 . 1 0 ]
+[v _SSPCONbits SSPCONbits `VES409  1 e 1 @20 ]
+[s S210 . 1 `uc 1 RX9D 1 0 :1:0 
 `uc 1 OERR 1 0 :1:1 
 `uc 1 FERR 1 0 :1:2 
 `uc 1 ADDEN 1 0 :1:3 
@@ -78,18 +84,18 @@
 `uc 1 SPEN 1 0 :1:7 
 ]
 "1068
-[s S209 . 1 `uc 1 RCD8 1 0 :1:0 
+[s S219 . 1 `uc 1 RCD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 RC9 1 0 :1:6 
 ]
-[s S213 . 1 `uc 1 . 1 0 :6:0 
+[s S223 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 nRC8 1 0 :1:6 
 ]
-[s S216 . 1 `uc 1 . 1 0 :6:0 
+[s S226 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 RC8_9 1 0 :1:6 
 ]
-[u S219 . 1 `S200 1 . 1 0 `S209 1 . 1 0 `S213 1 . 1 0 `S216 1 . 1 0 ]
-[v _RCSTAbits RCSTAbits `VES219  1 e 1 @24 ]
+[u S229 . 1 `S210 1 . 1 0 `S219 1 . 1 0 `S223 1 . 1 0 `S226 1 . 1 0 ]
+[v _RCSTAbits RCSTAbits `VES229  1 e 1 @24 ]
 "1133
 [v _TXREG TXREG `VEuc  1 e 1 @25 ]
 "1140
@@ -136,7 +142,7 @@
 ]
 [u S33 . 1 `S22 1 . 1 0 `S28 1 . 1 0 ]
 [v _OSCCONbits OSCCONbits `VES33  1 e 1 @143 ]
-[s S299 . 1 `uc 1 BF 1 0 :1:0 
+[s S309 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -146,40 +152,40 @@
 `uc 1 SMP 1 0 :1:7 
 ]
 "2231
-[s S308 . 1 `uc 1 . 1 0 :2:0 
+[s S318 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D 1 0 :1:5 
 ]
-[s S313 . 1 `uc 1 . 1 0 :2:0 
+[s S323 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DATA 1 0 :1:5 
 ]
-[s S319 . 1 `uc 1 . 1 0 :2:0 
+[s S329 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S324 . 1 `uc 1 . 1 0 :2:0 
+[s S334 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S329 . 1 `uc 1 . 1 0 :2:0 
+[s S339 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S334 . 1 `uc 1 . 1 0 :2:0 
+[s S344 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[u S339 . 1 `S299 1 . 1 0 `S308 1 . 1 0 `S313 1 . 1 0 `S319 1 . 1 0 `S324 1 . 1 0 `S329 1 . 1 0 `S334 1 . 1 0 ]
-[v _SSPSTATbits SSPSTATbits `VES339  1 e 1 @148 ]
-[s S163 . 1 `uc 1 TX9D 1 0 :1:0 
+[u S349 . 1 `S309 1 . 1 0 `S318 1 . 1 0 `S323 1 . 1 0 `S329 1 . 1 0 `S334 1 . 1 0 `S339 1 . 1 0 `S344 1 . 1 0 ]
+[v _SSPSTATbits SSPSTATbits `VES349  1 e 1 @148 ]
+[s S173 . 1 `uc 1 TX9D 1 0 :1:0 
 `uc 1 TRMT 1 0 :1:1 
 `uc 1 BRGH 1 0 :1:2 
 `uc 1 SENDB 1 0 :1:3 
@@ -189,18 +195,18 @@
 `uc 1 CSRC 1 0 :1:7 
 ]
 "2582
-[s S172 . 1 `uc 1 TXD8 1 0 :1:0 
+[s S182 . 1 `uc 1 TXD8 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 nTX8 1 0 :1:6 
 ]
-[s S176 . 1 `uc 1 . 1 0 :6:0 
+[s S186 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 TX8_9 1 0 :1:6 
 ]
-[u S179 . 1 `S163 1 . 1 0 `S172 1 . 1 0 `S176 1 . 1 0 ]
-[v _TXSTAbits TXSTAbits `VES179  1 e 1 @152 ]
+[u S189 . 1 `S173 1 . 1 0 `S182 1 . 1 0 `S186 1 . 1 0 ]
+[v _TXSTAbits TXSTAbits `VES189  1 e 1 @152 ]
 "2642
 [v _SPBRG SPBRG `VEuc  1 e 1 @153 ]
-[s S256 . 1 `uc 1 ABDEN 1 0 :1:0 
+[s S266 . 1 `uc 1 ABDEN 1 0 :1:0 
 `uc 1 WUE 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 BRG16 1 0 :1:3 
@@ -210,8 +216,8 @@
 `uc 1 ABDOVF 1 0 :1:7 
 ]
 "3352
-[u S265 . 1 `S256 1 . 1 0 ]
-[v _BAUDCTLbits BAUDCTLbits `VES265  1 e 1 @391 ]
+[u S275 . 1 `S266 1 . 1 0 ]
+[v _BAUDCTLbits BAUDCTLbits `VES275  1 e 1 @391 ]
 "3387
 [v _ANSEL ANSEL `VEuc  1 e 1 @392 ]
 "3449
@@ -223,39 +229,65 @@
 "28 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Laboratorio_4_Master.c
 [v _main main `(v  1 e 1 0 ]
 {
-"85
+"90
 } 0
-"92 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
+"93 C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
 [v _spiMasterInit spiMasterInit `(v  1 e 1 0 ]
 {
-"104
+"105
 } 0
-"123
+"124
 [v _spiFunctionWriteSlave spiFunctionWriteSlave `(v  1 e 1 0 ]
 {
-"132
+"133
 } 0
-"134
+"135
 [v _spiWrite spiWrite `(v  1 e 1 0 ]
 {
 [v spiWrite@dat dat `uc  1 a 1 wreg ]
 [v spiWrite@dat dat `uc  1 a 1 wreg ]
 [v spiWrite@dat dat `uc  1 a 1 0 ]
-"136
+"137
 } 0
-"106
+"107
 [v _spiFunctionReadSlave spiFunctionReadSlave `(v  1 e 1 0 ]
 {
-"121
+"122
 } 0
-"145
+"146
 [v _spiRead spiRead `(uc  1 e 1 0 ]
 {
-"148
+"149
 } 0
-"37
+"42
 [v _UART_Init UART_Init `(uc  1 e 1 0 ]
 {
 [v UART_Init@baudrate baudrate `DCl  1 p 4 0 ]
-"55
+"60
+} 0
+"27
+[v _UARTW UARTW `(v  1 e 1 0 ]
+{
+[v UARTW@m m `uc  1 a 1 wreg ]
+[v UARTW@m m `uc  1 a 1 wreg ]
+[v UARTW@m m `uc  1 a 1 3 ]
+"33
+} 0
+"80
+[v _UART_Write UART_Write `(v  1 e 1 0 ]
+{
+[v UART_Write@data data `uc  1 a 1 wreg ]
+[v UART_Write@data data `uc  1 a 1 wreg ]
+[v UART_Write@data data `uc  1 a 1 0 ]
+"86
+} 0
+"16
+[v _UARTR UARTR `(v  1 e 1 0 ]
+{
+"25
+} 0
+"69
+[v _UART_Read UART_Read `(uc  1 e 1 0 ]
+{
+"72
 } 0

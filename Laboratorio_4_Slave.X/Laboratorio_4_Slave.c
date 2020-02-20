@@ -35,12 +35,9 @@ void main(void) {
     OSCCONbits.LTS = 0;
     OSCCONbits.SCS = 1;
     
-    //POT1 = 1;
-   // POT2 = 1;
     SDO = 0;
     SDI = 1;
     SCK = 1;
-    //SS = 1;
     
     TRISA = 0b00000111;
     TRISB = 0;
@@ -58,38 +55,18 @@ void main(void) {
     adcInit();
     
     while(1){
-        
-        //PORTAbits.RA3 = 1;
-        
-//        if (spiDataReady()){
-//            PORTAbits.RA2 = spiRead();
+
         spiFunctionReadMaster();
-        //if (spiDataReady()){
-        //    variableValeVerga = spiRead();
-        //    spiFunctionWriteMaster();//}
-        //}
-        spiFunctionWriteMaster(1);//}
+        spiFunctionWriteMaster(1);
         POT(1);
         spiFunctionReadMaster();
         spiFunctionWriteMaster(slaveOut);
-//        __delay_ms(10);
+        
         spiFunctionReadMaster();
-        //if (spiDataReady()){
-        //    variableValeVerga = spiRead();
-        //    spiFunctionWriteMaster();//}
-        //}
-        spiFunctionWriteMaster(2);//}
+        spiFunctionWriteMaster(2);
         POT(7);
         spiFunctionReadMaster();
         spiFunctionWriteMaster(slaveOut);
-//        __delay_ms(10);
-        
-        
-        
-        
-        
-        //POT(2);
-        //spiFunctionWriteMaster();
     }
     //return;
 }

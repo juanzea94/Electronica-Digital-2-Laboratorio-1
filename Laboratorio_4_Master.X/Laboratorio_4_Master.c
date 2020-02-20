@@ -62,21 +62,26 @@ void main(void) {
             spiFunctionWriteSlave();
             spiFunctionReadSlave();
             PORTD = masterIn;
+            UARTR();
+            UARTW(1);
+            if (uartIn ==1){
+                UARTR ();
+                UARTW(masterOut);
+                //UARTR
+                
+            }
+                
+            UARTW(masterIn);
+            //UARTW(masterIn);
 //            PORTB = masterIn;
         }
-        if (masterIn == 2){
-            spiFunctionWriteSlave();
-            spiFunctionReadSlave();
-            PORTB = masterIn;
-        }
-        
-        //if (masterIn == 49){
-            //PORTB = 8;
-        //}
-        
-        
-        
-        
+//        if (masterIn == 2){
+//            spiFunctionWriteSlave();
+//            spiFunctionReadSlave();
+//            PORTB = masterIn;
+            //UARTW('B');
+            //UARTW(masterIn);
+//        }
     /*ESTA PARTE DE UARTR Y UARTW SI FUNCIONA SIN INTERFAZ Y SIN POTS*/
         //UARTR ();
         //UARTW ();

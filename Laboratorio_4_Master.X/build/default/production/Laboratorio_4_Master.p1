@@ -64,18 +64,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "414
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 414: extern volatile unsigned char PORTE __attribute__((address(0x009)));
 [v _PORTE `Vuc ~T0 @X0 0 e@9 ]
-"54 ./Labor4Master.h
-[; ;./Labor4Master.h: 54: char UART_Init(const long int baudrate);
+"56 ./Labor4Master.h
+[; ;./Labor4Master.h: 56: char UART_Init(const long int baudrate);
 [v _UART_Init `(uc ~T0 @X0 0 ef1`Cl ]
-"62
-[; ;./Labor4Master.h: 62: void spiMasterInit(void);
+"65
+[; ;./Labor4Master.h: 65: void spiMasterInit(void);
 [v _spiMasterInit `(v ~T0 @X0 0 ef ]
-"67
-[; ;./Labor4Master.h: 67: void spiFunctionWriteSlave (void);
+"70
+[; ;./Labor4Master.h: 70: void spiFunctionWriteSlave (void);
 [v _spiFunctionWriteSlave `(v ~T0 @X0 0 ef ]
-"66
-[; ;./Labor4Master.h: 66: void spiFunctionReadSlave (void);
+"69
+[; ;./Labor4Master.h: 69: void spiFunctionReadSlave (void);
 [v _spiFunctionReadSlave `(v ~T0 @X0 0 ef ]
+"54
+[; ;./Labor4Master.h: 54: void UARTR (void);
+[v _UARTR `(v ~T0 @X0 0 ef ]
+"55
+[; ;./Labor4Master.h: 55: void UARTW (char m);
+[v _UARTW `(v ~T0 @X0 0 ef1`uc ]
 "6 Laboratorio_4_Master.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "7
@@ -343,6 +349,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "46
 [; ;./Labor4Master.h: 46: unsigned char masterOut;
 [v _masterOut `uc ~T0 @X0 1 e ]
+"47
+[; ;./Labor4Master.h: 47: char m;
+[v _m `uc ~T0 @X0 1 e ]
+"48
+[; ;./Labor4Master.h: 48: uint8_t uartIn;
+[v _uartIn `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "28 Laboratorio_4_Master.c
 [; ;Laboratorio_4_Master.c: 28: void main(void) {
@@ -436,34 +448,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 "64
 [; ;Laboratorio_4_Master.c: 64:             PORTD = masterIn;
 [e = _PORTD _masterIn ]
+"65
+[; ;Laboratorio_4_Master.c: 65:             UARTR();
+[e ( _UARTR ..  ]
 "66
-[; ;Laboratorio_4_Master.c: 66:         }
-}
-[e :U 147 ]
+[; ;Laboratorio_4_Master.c: 66:             UARTW(1);
+[e ( _UARTW (1 -> -> 1 `i `uc ]
 "67
-[; ;Laboratorio_4_Master.c: 67:         if (masterIn == 2){
-[e $ ! == -> _masterIn `i -> 2 `i 148  ]
+[; ;Laboratorio_4_Master.c: 67:             if (uartIn ==1){
+[e $ ! == -> _uartIn `i -> 1 `i 148  ]
 {
 "68
-[; ;Laboratorio_4_Master.c: 68:             spiFunctionWriteSlave();
-[e ( _spiFunctionWriteSlave ..  ]
+[; ;Laboratorio_4_Master.c: 68:                 UARTR ();
+[e ( _UARTR ..  ]
 "69
-[; ;Laboratorio_4_Master.c: 69:             spiFunctionReadSlave();
-[e ( _spiFunctionReadSlave ..  ]
-"70
-[; ;Laboratorio_4_Master.c: 70:             PORTB = masterIn;
-[e = _PORTB _masterIn ]
-"71
-[; ;Laboratorio_4_Master.c: 71:         }
+[; ;Laboratorio_4_Master.c: 69:                 UARTW(masterOut);
+[e ( _UARTW (1 -> _masterOut `uc ]
+"72
+[; ;Laboratorio_4_Master.c: 72:             }
 }
 [e :U 148 ]
-"83
-[; ;Laboratorio_4_Master.c: 83:     }
+"74
+[; ;Laboratorio_4_Master.c: 74:             UARTW(masterIn);
+[e ( _UARTW (1 -> _masterIn `uc ]
+"77
+[; ;Laboratorio_4_Master.c: 77:         }
+}
+[e :U 147 ]
+"88
+[; ;Laboratorio_4_Master.c: 88:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"85
-[; ;Laboratorio_4_Master.c: 85: }
+"90
+[; ;Laboratorio_4_Master.c: 90: }
 [e :UE 143 ]
 }

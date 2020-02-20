@@ -14,22 +14,27 @@
 //**************************************************************************//
 
 void UARTR (void){
-        while(1){
-            if(RCIF == 1){
-            PORTB = UART_Read();
+//    while(1){
+        if(RCIF == 1){
+            uartIn = UART_Read();
             __delay_ms(100);
+//            break;
         }
-//    do{
-//        if(!(UART_Data_Ready()))
-//        PORTB = UART_Read();
-//        __delay_ms(10);
-//    }while(1);
-}
+        return;
+//    }
 }
 
-void UARTW (void){
+void UARTW (char m){
+    while(1){
+        UART_Write(m);
+        __delay_ms(100);
+        return;
+    }
+}
+
+void UARTWCHAR (char n){
     do{
-        UART_Write(7);
+        UART_Write(n);
         __delay_ms(10000);
     }while(1);
 }
@@ -75,15 +80,11 @@ void UART_Read_Text(char *Output, unsigned int length){
 void UART_Write(char data){
     while(!TRMT);
     if (PIR1bits.TXIF == 1){
-    TXREG = data;
+        TXREG = data;
+//        break;
     }
 }
 
-void UART_Write_Text(char *text){
-    int i;
-    for(i=0;text[i]!='\0';i++)
-        UART_Write(text[i]);
-}
 
 //**************************************************************************//
 //************************************SPI***********************************//

@@ -2852,13 +2852,15 @@ extern char * strrichr(const char *, int);
 char dat;
 unsigned char masterIn;
 unsigned char masterOut;
+char m;
+uint8_t uartIn;
 
 
 
 
 
 void UARTR (void);
-void UARTW (void);
+void UARTW (char m);
 char UART_Init(const long int baudrate);
 char UART_TX_Empty();
 char UART_Data_Ready();
@@ -2866,6 +2868,7 @@ char UART_Read();
 void UART_Read_Text(char *Output, unsigned int length);
 void UART_Write(char data);
 void UART_Write_Text(char *text);
+void UARTWCHAR (char n);
 
 void spiMasterInit(void);
 void spiWrite(char dat);
@@ -2880,22 +2883,27 @@ void spiFunctionWriteSlave (void);
 # 5 "Labor4Master.c" 2
 # 16 "Labor4Master.c"
 void UARTR (void){
-        while(1){
-            if(RCIF == 1){
-            PORTB = UART_Read();
+
+        if(RCIF == 1){
+            uartIn = UART_Read();
             _delay((unsigned long)((100)*(4000000/4000.0)));
+
         }
-
-
-
-
+        return;
 
 }
+
+void UARTW (char m){
+    while(1){
+        UART_Write(m);
+        _delay((unsigned long)((100)*(4000000/4000.0)));
+        return;
+    }
 }
 
-void UARTW (void){
+void UARTWCHAR (char n){
     do{
-        UART_Write(7);
+        UART_Write(n);
         _delay((unsigned long)((10000)*(4000000/4000.0)));
     }while(1);
 }
@@ -2941,15 +2949,11 @@ void UART_Read_Text(char *Output, unsigned int length){
 void UART_Write(char data){
     while(!TRMT);
     if (PIR1bits.TXIF == 1){
-    TXREG = data;
+        TXREG = data;
+
     }
 }
 
-void UART_Write_Text(char *text){
-    int i;
-    for(i=0;text[i]!='\0';i++)
-        UART_Write(text[i]);
-}
 
 
 

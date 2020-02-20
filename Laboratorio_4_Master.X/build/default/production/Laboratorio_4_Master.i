@@ -2870,13 +2870,15 @@ extern char * strrichr(const char *, int);
 char dat;
 unsigned char masterIn;
 unsigned char masterOut;
+char m;
+uint8_t uartIn;
 
 
 
 
 
 void UARTR (void);
-void UARTW (void);
+void UARTW (char m);
 char UART_Init(const long int baudrate);
 char UART_TX_Empty();
 char UART_Data_Ready();
@@ -2884,6 +2886,7 @@ char UART_Read();
 void UART_Read_Text(char *Output, unsigned int length);
 void UART_Write(char data);
 void UART_Write_Text(char *text);
+void UARTWCHAR (char n);
 
 void spiMasterInit(void);
 void spiWrite(char dat);
@@ -2939,14 +2942,20 @@ void main(void) {
             spiFunctionWriteSlave();
             spiFunctionReadSlave();
             PORTD = masterIn;
+            UARTR();
+            UARTW(1);
+            if (uartIn ==1){
+                UARTR ();
+                UARTW(masterOut);
+
+
+            }
+
+            UARTW(masterIn);
+
 
         }
-        if (masterIn == 2){
-            spiFunctionWriteSlave();
-            spiFunctionReadSlave();
-            PORTB = masterIn;
-        }
-# 83 "Laboratorio_4_Master.c"
+# 88 "Laboratorio_4_Master.c"
     }
 
 }

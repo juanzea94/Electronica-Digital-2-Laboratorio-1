@@ -24,7 +24,7 @@ cstackCOMMON COMMON 1 7A 7A 4 1
 bssBANK0 BANK0 1 20 20 18 1
 clrtext CODE 0 6EC 6EC 8 2
 bssCOMMON COMMON 1 70 70 A 1
-$C:\Users\juanz\AppData\Local\Temp\sfoo.o
+$C:\Users\juanz\AppData\Local\Temp\seo0.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 # %UNUSED Section
@@ -72,20 +72,20 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_4_Slave.X.production.o
-7EB cinit CODE >630:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7EB cinit CODE >633:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7EB cinit CODE >695:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7EC cinit CODE >696:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7ED cinit CODE >697:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7EE cinit CODE >698:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7F3 cinit CODE >701:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7F4 cinit CODE >702:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7F5 cinit CODE >703:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7F6 cinit CODE >704:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7F7 cinit CODE >705:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7FC cinit CODE >711:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7FC cinit CODE >713:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-7FD cinit CODE >714:C:\Users\juanz\AppData\Local\Temp\sfoo.s
+7EB cinit CODE >630:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7EB cinit CODE >633:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7EB cinit CODE >695:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7EC cinit CODE >696:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7ED cinit CODE >697:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7EE cinit CODE >698:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7F3 cinit CODE >701:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7F4 cinit CODE >702:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7F5 cinit CODE >703:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7F6 cinit CODE >704:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7F7 cinit CODE >705:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7FC cinit CODE >711:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7FC cinit CODE >713:C:\Users\juanz\AppData\Local\Temp\seo0.s
+7FD cinit CODE >714:C:\Users\juanz\AppData\Local\Temp\seo0.s
 755 text6 CODE >27:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Labor4Slave.c
 756 text6 CODE >28:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Labor4Slave.c
 757 text6 CODE >29:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Labor4Slave.c
@@ -139,41 +139,41 @@ $dist/default/production\Laboratorio_4_Slave.X.production.o
 78E maintext CODE >34:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
 78F maintext CODE >35:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
 790 maintext CODE >36:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-791 maintext CODE >40:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-792 maintext CODE >41:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-793 maintext CODE >42:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-794 maintext CODE >45:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-796 maintext CODE >46:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-797 maintext CODE >47:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-799 maintext CODE >48:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-79C maintext CODE >49:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-79D maintext CODE >50:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-79E maintext CODE >51:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-79F maintext CODE >52:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7A0 maintext CODE >54:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7A4 maintext CODE >55:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7A5 maintext CODE >57:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7AA maintext CODE >58:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7AF maintext CODE >66:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7B4 maintext CODE >71:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7BA maintext CODE >72:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7C0 maintext CODE >73:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7C5 maintext CODE >74:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7CB maintext CODE >76:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7D0 maintext CODE >81:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7D6 maintext CODE >82:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7DC maintext CODE >83:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-7E1 maintext CODE >84:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
-6EC clrtext CODE >682:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6EC clrtext CODE >683:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6ED clrtext CODE >684:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6ED clrtext CODE >685:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6EE clrtext CODE >686:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6EF clrtext CODE >687:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6F0 clrtext CODE >688:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6F1 clrtext CODE >689:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6F2 clrtext CODE >690:C:\Users\juanz\AppData\Local\Temp\sfoo.s
-6F3 clrtext CODE >691:C:\Users\juanz\AppData\Local\Temp\sfoo.s
+791 maintext CODE >38:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+792 maintext CODE >39:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+793 maintext CODE >40:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+794 maintext CODE >42:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+796 maintext CODE >43:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+797 maintext CODE >44:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+799 maintext CODE >45:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+79C maintext CODE >46:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+79D maintext CODE >47:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+79E maintext CODE >48:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+79F maintext CODE >49:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7A0 maintext CODE >51:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7A4 maintext CODE >52:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7A5 maintext CODE >54:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7AA maintext CODE >55:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7AF maintext CODE >59:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7B4 maintext CODE >60:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7BA maintext CODE >61:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7C0 maintext CODE >62:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7C5 maintext CODE >63:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7CB maintext CODE >65:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7D0 maintext CODE >66:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7D6 maintext CODE >67:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7DC maintext CODE >68:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+7E1 maintext CODE >69:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Slave.X\Laboratorio_4_Slave.c
+6EC clrtext CODE >682:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6EC clrtext CODE >683:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6ED clrtext CODE >684:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6ED clrtext CODE >685:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6EE clrtext CODE >686:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6EF clrtext CODE >687:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6F0 clrtext CODE >688:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6F1 clrtext CODE >689:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6F2 clrtext CODE >690:C:\Users\juanz\AppData\Local\Temp\seo0.s
+6F3 clrtext CODE >691:C:\Users\juanz\AppData\Local\Temp\seo0.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -195,20 +195,20 @@ __CFG_IESO$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.product
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 POT@m 7C 0 COMMON 1 cstackCOMMON dist/default/production\Laboratorio_4_Slave.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sfoo.o
+___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\seo0.o
 _main F0E 0 CODE 0 maintext dist/default/production\Laboratorio_4_Slave.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
-start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sfoo.o
+start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\seo0.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfoo.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\seo0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
@@ -221,8 +221,8 @@ _SSPCONbits 14 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.productio
 _spiFunctionReadMaster E66 0 CODE 0 text4 dist/default/production\Laboratorio_4_Slave.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 _adcInit DE8 0 CODE 0 text5 dist/default/production\Laboratorio_4_Slave.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sfoo.o
-___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sfoo.o
+___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\seo0.o
+___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\seo0.o
 __end_of_spiFunctionWriteMaster E66 0 CODE 0 text2 dist/default/production\Laboratorio_4_Slave.X.production.o
 __CFG_FCMEN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 __CFG_MCLRE$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
@@ -230,7 +230,7 @@ start_initialization FD6 0 CODE 0 cinit dist/default/production\Laboratorio_4_Sl
 _TRISCbits 87 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 clear_ram0 DD8 0 CODE 0 clrtext dist/default/production\Laboratorio_4_Slave.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sfoo.o
+___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\seo0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -274,7 +274,7 @@ __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.pro
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o
 __end_of_POT F0E 0 CODE 0 text6 dist/default/production\Laboratorio_4_Slave.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sfoo.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\seo0.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 _spiSlaveInit E0C 0 CODE 0 text1 dist/default/production\Laboratorio_4_Slave.X.production.o
 __size_of_spiFunctionWriteMaster 0 0 ABS 0 - dist/default/production\Laboratorio_4_Slave.X.production.o

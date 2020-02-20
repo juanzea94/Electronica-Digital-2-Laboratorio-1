@@ -2914,12 +2914,9 @@ void main(void) {
     OSCCONbits.LTS = 0;
     OSCCONbits.SCS = 1;
 
-
-
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC4 = 1;
     TRISCbits.TRISC3 = 1;
-
 
     TRISA = 0b00000111;
     TRISB = 0;
@@ -2938,30 +2935,17 @@ void main(void) {
 
     while(1){
 
-
-
-
-
         spiFunctionReadMaster();
-
-
-
-
         spiFunctionWriteMaster(1);
         POT(1);
         spiFunctionReadMaster();
         spiFunctionWriteMaster(slaveOut);
 
         spiFunctionReadMaster();
-
-
-
-
         spiFunctionWriteMaster(2);
         POT(7);
         spiFunctionReadMaster();
         spiFunctionWriteMaster(slaveOut);
-# 93 "Laboratorio_4_Slave.c"
     }
 
 }

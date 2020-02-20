@@ -387,92 +387,92 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36
 [; ;Laboratorio_4_Slave.c: 36:     OSCCONbits.SCS = 1;
 [e = . . _OSCCONbits 0 0 -> -> 1 `i `uc ]
-"40
-[; ;Laboratorio_4_Slave.c: 40:     TRISCbits.TRISC5 = 0;
+"38
+[; ;Laboratorio_4_Slave.c: 38:     TRISCbits.TRISC5 = 0;
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"41
-[; ;Laboratorio_4_Slave.c: 41:     TRISCbits.TRISC4 = 1;
+"39
+[; ;Laboratorio_4_Slave.c: 39:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"42
-[; ;Laboratorio_4_Slave.c: 42:     TRISCbits.TRISC3 = 1;
+"40
+[; ;Laboratorio_4_Slave.c: 40:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"45
-[; ;Laboratorio_4_Slave.c: 45:     TRISA = 0b00000111;
+"42
+[; ;Laboratorio_4_Slave.c: 42:     TRISA = 0b00000111;
 [e = _TRISA -> -> 7 `i `uc ]
-"46
-[; ;Laboratorio_4_Slave.c: 46:     TRISB = 0;
+"43
+[; ;Laboratorio_4_Slave.c: 43:     TRISB = 0;
 [e = _TRISB -> -> 0 `i `uc ]
-"47
-[; ;Laboratorio_4_Slave.c: 47:     TRISE = 0b0100;
+"44
+[; ;Laboratorio_4_Slave.c: 44:     TRISE = 0b0100;
 [e = _TRISE -> -> 4 `i `uc ]
-"48
-[; ;Laboratorio_4_Slave.c: 48:     PORTA = 0b00000000;
+"45
+[; ;Laboratorio_4_Slave.c: 45:     PORTA = 0b00000000;
 [e = _PORTA -> -> 0 `i `uc ]
-"49
-[; ;Laboratorio_4_Slave.c: 49:     PORTB = 0b00000000;
+"46
+[; ;Laboratorio_4_Slave.c: 46:     PORTB = 0b00000000;
 [e = _PORTB -> -> 0 `i `uc ]
-"50
-[; ;Laboratorio_4_Slave.c: 50:     PORTC = 0b00000000;
+"47
+[; ;Laboratorio_4_Slave.c: 47:     PORTC = 0b00000000;
 [e = _PORTC -> -> 0 `i `uc ]
-"51
-[; ;Laboratorio_4_Slave.c: 51:     PORTD = 0b00000000;
+"48
+[; ;Laboratorio_4_Slave.c: 48:     PORTD = 0b00000000;
 [e = _PORTD -> -> 0 `i `uc ]
-"52
-[; ;Laboratorio_4_Slave.c: 52:     PORTE = 0b0000;
+"49
+[; ;Laboratorio_4_Slave.c: 49:     PORTE = 0b0000;
 [e = _PORTE -> -> 0 `i `uc ]
-"54
-[; ;Laboratorio_4_Slave.c: 54:     ANSEL = 0b11000111;
+"51
+[; ;Laboratorio_4_Slave.c: 51:     ANSEL = 0b11000111;
 [e = _ANSEL -> -> 199 `i `uc ]
-"55
-[; ;Laboratorio_4_Slave.c: 55:     ANSELH = 0b00000000;
+"52
+[; ;Laboratorio_4_Slave.c: 52:     ANSELH = 0b00000000;
 [e = _ANSELH -> -> 0 `i `uc ]
-"57
-[; ;Laboratorio_4_Slave.c: 57:     spiSlaveInit();
+"54
+[; ;Laboratorio_4_Slave.c: 54:     spiSlaveInit();
 [e ( _spiSlaveInit ..  ]
-"58
-[; ;Laboratorio_4_Slave.c: 58:     adcInit();
+"55
+[; ;Laboratorio_4_Slave.c: 55:     adcInit();
 [e ( _adcInit ..  ]
-"60
-[; ;Laboratorio_4_Slave.c: 60:     while(1){
+"57
+[; ;Laboratorio_4_Slave.c: 57:     while(1){
 [e :U 145 ]
 {
-"66
-[; ;Laboratorio_4_Slave.c: 66:         spiFunctionReadMaster();
+"59
+[; ;Laboratorio_4_Slave.c: 59:         spiFunctionReadMaster();
 [e ( _spiFunctionReadMaster ..  ]
-"71
-[; ;Laboratorio_4_Slave.c: 71:         spiFunctionWriteMaster(1);
+"60
+[; ;Laboratorio_4_Slave.c: 60:         spiFunctionWriteMaster(1);
 [e ( _spiFunctionWriteMaster (1 -> -> 1 `i `uc ]
-"72
-[; ;Laboratorio_4_Slave.c: 72:         POT(1);
+"61
+[; ;Laboratorio_4_Slave.c: 61:         POT(1);
 [e ( _POT (1 -> -> 1 `i `uc ]
-"73
-[; ;Laboratorio_4_Slave.c: 73:         spiFunctionReadMaster();
+"62
+[; ;Laboratorio_4_Slave.c: 62:         spiFunctionReadMaster();
 [e ( _spiFunctionReadMaster ..  ]
-"74
-[; ;Laboratorio_4_Slave.c: 74:         spiFunctionWriteMaster(slaveOut);
+"63
+[; ;Laboratorio_4_Slave.c: 63:         spiFunctionWriteMaster(slaveOut);
 [e ( _spiFunctionWriteMaster (1 _slaveOut ]
-"76
-[; ;Laboratorio_4_Slave.c: 76:         spiFunctionReadMaster();
+"65
+[; ;Laboratorio_4_Slave.c: 65:         spiFunctionReadMaster();
 [e ( _spiFunctionReadMaster ..  ]
-"81
-[; ;Laboratorio_4_Slave.c: 81:         spiFunctionWriteMaster(2);
+"66
+[; ;Laboratorio_4_Slave.c: 66:         spiFunctionWriteMaster(2);
 [e ( _spiFunctionWriteMaster (1 -> -> 2 `i `uc ]
-"82
-[; ;Laboratorio_4_Slave.c: 82:         POT(7);
+"67
+[; ;Laboratorio_4_Slave.c: 67:         POT(7);
 [e ( _POT (1 -> -> 7 `i `uc ]
-"83
-[; ;Laboratorio_4_Slave.c: 83:         spiFunctionReadMaster();
+"68
+[; ;Laboratorio_4_Slave.c: 68:         spiFunctionReadMaster();
 [e ( _spiFunctionReadMaster ..  ]
-"84
-[; ;Laboratorio_4_Slave.c: 84:         spiFunctionWriteMaster(slaveOut);
+"69
+[; ;Laboratorio_4_Slave.c: 69:         spiFunctionWriteMaster(slaveOut);
 [e ( _spiFunctionWriteMaster (1 _slaveOut ]
-"93
-[; ;Laboratorio_4_Slave.c: 93:     }
+"70
+[; ;Laboratorio_4_Slave.c: 70:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"95
-[; ;Laboratorio_4_Slave.c: 95: }
+"72
+[; ;Laboratorio_4_Slave.c: 72: }
 [e :UE 143 ]
 }
