@@ -24,20 +24,21 @@ void adcInit (void){
     ADCON0bits.ADON = 1;
 }
 
-void POT (){
+void POT (uint8_t m){        
+    slaveOut =0;
     __delay_ms(10);
-    ADCON0bits.CHS = 1;
+    ADCON0bits.CHS = m;
     ADCON0bits.ADON =1;
     __delay_ms(1);
     ADCON0bits.GO_DONE=1;
     while(ADCON0bits.GO_DONE);
         slaveOut = ADRESH;
-        //PORTB=ADRESH;
+//        PORTB=ADRESH;
         //valana = PORTB;
         //slaveOut=valana*5.0/255.0;
         //slaveOut = valana;
         __delay_ms(5);
-        valana =0;
+
     return;
 }
 
@@ -74,16 +75,16 @@ void spiFunctionReadMaster (void){
             SSPSTATbits.BF=0;
             //slaveIn = spiRead();
             //SSPCONbits.SSPOV = 0;
-            __delay_ms(50);
+            __delay_ms(20);
             break;
         }
 //    return;
     }
 }
 
-void spiFunctionWriteMaster(void){
+void spiFunctionWriteMaster(uint8_t bande){
     __delay_ms(5);
-    spiWrite(slaveOut);
+    spiWrite(bande);
     //SSPCONbits.SSPOV = 0;
     __delay_ms(5);
 }

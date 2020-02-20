@@ -42,20 +42,21 @@ float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
 uint8_t variableValeVerga;
+uint8_t bande;
 
 //****************************************************************************//
 //**********************************PROTOTIPOS**********************************//
 //****************************************************************************//
 
 void adcInit (void);
-void POT (void);
+void POT (uint8_t m);
 //void IntToString (float number);
 void spiSlaveInit();
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
 void spiFunctionReadMaster(void);
-void spiFunctionWriteMaster(void);
+void spiFunctionWriteMaster(uint8_t bande);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

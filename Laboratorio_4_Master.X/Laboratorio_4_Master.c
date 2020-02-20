@@ -41,6 +41,7 @@ void main(void) {
     SCK = 0;
     SS = 0;
     CONTADOR = 0;
+    CONTADORPROVICIONAL = 0;
     BANDERA =0;
     
     PORTA = 0b00000000;
@@ -48,7 +49,7 @@ void main(void) {
     PORTC = 0b00000000;
     PORTD = 0b00000000;
     PORTE = 0b0000;
-    //UART_Init(9600);
+    UART_Init(9600);
     spiMasterInit();
     
     while(1){
@@ -57,7 +58,18 @@ void main(void) {
         //nRBPU = 0;
         spiFunctionWriteSlave();
         spiFunctionReadSlave();
-        PORTB = masterIn;
+        if (masterIn == 1){
+            spiFunctionWriteSlave();
+            spiFunctionReadSlave();
+            PORTD = masterIn;
+//            PORTB = masterIn;
+        }
+        if (masterIn == 2){
+            spiFunctionWriteSlave();
+            spiFunctionReadSlave();
+            PORTB = masterIn;
+        }
+        
         //if (masterIn == 49){
             //PORTB = 8;
         //}

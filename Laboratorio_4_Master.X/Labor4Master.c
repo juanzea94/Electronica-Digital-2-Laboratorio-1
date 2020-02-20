@@ -35,14 +35,7 @@ void UARTW (void){
 }
 
 char UART_Init(const long int baudrate){
-//	unsigned int x;
-//	x = (_XTAL_FREQ - baudrate*16)/(baudrate*16);
-//	if(x>255)
-//	{
-//		x = (_XTAL_FREQ - baudrate*16)/(baudrate*16);
-//		BRGH = 1;
-//	}
-//	if(x<256){
+
 	  SPBRG = 25;
       //SPBRGH = 0;
 	  SYNC = 0;
@@ -112,7 +105,7 @@ void spiMasterInit(void){
 
 void spiFunctionReadSlave (void){
                 
-//        PORTAbits.RA4 = 1;       //Slave Select
+
         while( (!SSPSTATbits.BF));
             __delay_ms(1);
             masterIn = spiRead();
@@ -130,7 +123,7 @@ void spiFunctionReadSlave (void){
 void spiFunctionWriteSlave (void){
 //        PORTAbits.RA4 = 1;       //Slave Select
         __delay_ms(1);
-        spiWrite(PORTD);
+        spiWrite(0);
 //        SSPCONbits.SSPOV = 0;
         
 //        __delay_ms(1);

@@ -2860,20 +2860,21 @@ float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
 uint8_t variableValeVerga;
+uint8_t bande;
 
 
 
 
 
 void adcInit (void);
-void POT (void);
+void POT (uint8_t m);
 
 void spiSlaveInit();
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
 void spiFunctionReadMaster(void);
-void spiFunctionWriteMaster(void);
+void spiFunctionWriteMaster(uint8_t bande);
 # 3 "Labor4Slave.c" 2
 
 
@@ -2892,9 +2893,10 @@ void adcInit (void){
     ADCON0bits.ADON = 1;
 }
 
-void POT (){
+void POT (uint8_t m){
+    slaveOut =0;
     _delay((unsigned long)((10)*(4000000/4000.0)));
-    ADCON0bits.CHS = 1;
+    ADCON0bits.CHS = m;
     ADCON0bits.ADON =1;
     _delay((unsigned long)((1)*(4000000/4000.0)));
     ADCON0bits.GO_DONE=1;
@@ -2905,10 +2907,10 @@ void POT (){
 
 
         _delay((unsigned long)((5)*(4000000/4000.0)));
-        valana =0;
+
     return;
 }
-# 57 "Labor4Slave.c"
+# 58 "Labor4Slave.c"
 void spiSlaveInit(){
     SSPSTATbits.SMP = 0;
     SSPCONbits.CKP = 1;
@@ -2929,16 +2931,16 @@ void spiFunctionReadMaster (void){
             SSPSTATbits.BF=0;
 
 
-            _delay((unsigned long)((50)*(4000000/4000.0)));
+            _delay((unsigned long)((20)*(4000000/4000.0)));
             break;
         }
 
     }
 }
 
-void spiFunctionWriteMaster(void){
+void spiFunctionWriteMaster(uint8_t bande){
     _delay((unsigned long)((5)*(4000000/4000.0)));
-    spiWrite(slaveOut);
+    spiWrite(bande);
 
     _delay((unsigned long)((5)*(4000000/4000.0)));
 }

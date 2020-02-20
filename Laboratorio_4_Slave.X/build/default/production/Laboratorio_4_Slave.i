@@ -2879,20 +2879,21 @@ float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
 uint8_t variableValeVerga;
+uint8_t bande;
 
 
 
 
 
 void adcInit (void);
-void POT (void);
+void POT (uint8_t m);
 
 void spiSlaveInit();
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
 void spiFunctionReadMaster(void);
-void spiFunctionWriteMaster(void);
+void spiFunctionWriteMaster(uint8_t bande);
 # 21 "Laboratorio_4_Slave.c" 2
 
 
@@ -2922,13 +2923,14 @@ void main(void) {
 
     TRISA = 0b00000111;
     TRISB = 0;
+    TRISE = 0b0100;
     PORTA = 0b00000000;
     PORTB = 0b00000000;
     PORTC = 0b00000000;
     PORTD = 0b00000000;
     PORTE = 0b0000;
 
-    ANSEL = 0b01000111;
+    ANSEL = 0b11000111;
     ANSELH = 0b00000000;
 
     spiSlaveInit();
@@ -2937,7 +2939,7 @@ void main(void) {
     while(1){
 
 
-        POT();
+
 
 
         spiFunctionReadMaster();
@@ -2945,13 +2947,21 @@ void main(void) {
 
 
 
-        spiFunctionWriteMaster();
+        spiFunctionWriteMaster(1);
+        POT(1);
+        spiFunctionReadMaster();
+        spiFunctionWriteMaster(slaveOut);
+
+        spiFunctionReadMaster();
 
 
 
 
-
-
+        spiFunctionWriteMaster(2);
+        POT(7);
+        spiFunctionReadMaster();
+        spiFunctionWriteMaster(slaveOut);
+# 93 "Laboratorio_4_Slave.c"
     }
 
 }

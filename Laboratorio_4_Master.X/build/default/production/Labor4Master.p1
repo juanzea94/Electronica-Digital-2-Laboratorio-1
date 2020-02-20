@@ -5,15 +5,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "228
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 228: extern volatile unsigned char PORTB __attribute__((address(0x006)));
 [v _PORTB `Vuc ~T0 @X0 0 e@6 ]
-"56 ./Labor4Master.h
-[; ;./Labor4Master.h: 56: char UART_Read();
+"57 ./Labor4Master.h
+[; ;./Labor4Master.h: 57: char UART_Read();
 [v _UART_Read `(uc ~T0 @X0 0 e? ]
 [v F1256 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
 [v __delay `JF1256 ~T0 @X0 0 e ]
 [p i __delay ]
-"58 ./Labor4Master.h
-[; ;./Labor4Master.h: 58: void UART_Write(char data);
+"59 ./Labor4Master.h
+[; ;./Labor4Master.h: 59: void UART_Write(char data);
 [v _UART_Write `(v ~T0 @X0 0 ef1`uc ]
 "2642 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 2642: extern volatile unsigned char SPBRG __attribute__((address(0x099)));
@@ -152,16 +152,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "870
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 870: extern volatile SSPCONbits_t SSPCONbits __attribute__((address(0x014)));
 [v _SSPCONbits `VS29 ~T0 @X0 0 e@20 ]
-"64 ./Labor4Master.h
-[; ;./Labor4Master.h: 64: char spiRead();
+"65 ./Labor4Master.h
+[; ;./Labor4Master.h: 65: char spiRead();
 [v _spiRead `(uc ~T0 @X0 0 e? ]
-"62
-[; ;./Labor4Master.h: 62: void spiWrite(char dat);
+"63
+[; ;./Labor4Master.h: 63: void spiWrite(char dat);
 [v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
-"352 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 352: extern volatile unsigned char PORTD __attribute__((address(0x008)));
-[v _PORTD `Vuc ~T0 @X0 0 e@8 ]
-"843
+"843 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 843: extern volatile unsigned char SSPBUF __attribute__((address(0x013)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@19 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h
@@ -398,14 +395,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3546
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3546: __asm("EECON2 equ 018Dh");
 [; <" EECON2 equ 018Dh ;# ">
-"43 ./Labor4Master.h
-[; ;./Labor4Master.h: 43: char dat;
+"44 ./Labor4Master.h
+[; ;./Labor4Master.h: 44: char dat;
 [v _dat `uc ~T0 @X0 1 e ]
-"44
-[; ;./Labor4Master.h: 44: unsigned char masterIn;
-[v _masterIn `uc ~T0 @X0 1 e ]
 "45
-[; ;./Labor4Master.h: 45: unsigned char masterOut;
+[; ;./Labor4Master.h: 45: unsigned char masterIn;
+[v _masterIn `uc ~T0 @X0 1 e ]
+"46
+[; ;./Labor4Master.h: 46: unsigned char masterOut;
 [v _masterOut `uc ~T0 @X0 1 e ]
 "16 Labor4Master.c
 [; ;Labor4Master.c: 16: void UARTR (void){
@@ -473,319 +470,319 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _UART_Init ]
 [v _baudrate `Cl ~T0 @X0 1 r1 ]
 [f ]
-"46
-[; ;Labor4Master.c: 46:    SPBRG = 25;
+"39
+[; ;Labor4Master.c: 39:    SPBRG = 25;
 [e = _SPBRG -> -> 25 `i `uc ]
-"48
-[; ;Labor4Master.c: 48:    TXSTAbits.SYNC = 0;
+"41
+[; ;Labor4Master.c: 41:    TXSTAbits.SYNC = 0;
 [e = . . _TXSTAbits 0 4 -> -> 0 `i `uc ]
-"49
-[; ;Labor4Master.c: 49:    RCSTAbits.SPEN = 1;
+"42
+[; ;Labor4Master.c: 42:    RCSTAbits.SPEN = 1;
 [e = . . _RCSTAbits 0 7 -> -> 1 `i `uc ]
-"50
-[; ;Labor4Master.c: 50:       TRISCbits.TRISC7 = 1;
+"43
+[; ;Labor4Master.c: 43:       TRISCbits.TRISC7 = 1;
 [e = . . _TRISCbits 0 7 -> -> 1 `i `uc ]
-"51
-[; ;Labor4Master.c: 51:       TRISCbits.TRISC6 = 0;
+"44
+[; ;Labor4Master.c: 44:       TRISCbits.TRISC6 = 0;
 [e = . . _TRISCbits 0 6 -> -> 0 `i `uc ]
-"52
-[; ;Labor4Master.c: 52:       RCSTAbits.CREN = 1;
+"45
+[; ;Labor4Master.c: 45:       RCSTAbits.CREN = 1;
 [e = . . _RCSTAbits 0 4 -> -> 1 `i `uc ]
-"53
-[; ;Labor4Master.c: 53:       TXSTAbits.TXEN = 1;
+"46
+[; ;Labor4Master.c: 46:       TXSTAbits.TXEN = 1;
 [e = . . _TXSTAbits 0 5 -> -> 1 `i `uc ]
-"54
-[; ;Labor4Master.c: 54:       TXSTAbits.BRGH = 1;
+"47
+[; ;Labor4Master.c: 47:       TXSTAbits.BRGH = 1;
 [e = . . _TXSTAbits 0 2 -> -> 1 `i `uc ]
-"56
-[; ;Labor4Master.c: 56:       RCSTAbits.RX9 = 0;
+"49
+[; ;Labor4Master.c: 49:       RCSTAbits.RX9 = 0;
 [e = . . _RCSTAbits 0 6 -> -> 0 `i `uc ]
-"57
-[; ;Labor4Master.c: 57:       BAUDCTLbits.BRG16 = 0;
+"50
+[; ;Labor4Master.c: 50:       BAUDCTLbits.BRG16 = 0;
 [e = . . _BAUDCTLbits 0 3 -> -> 0 `i `uc ]
-"58
-[; ;Labor4Master.c: 58:       _delay((unsigned long)((80)*(4000000/4000.0)));
+"51
+[; ;Labor4Master.c: 51:       _delay((unsigned long)((80)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 80 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"62
-[; ;Labor4Master.c: 62: }
+"55
+[; ;Labor4Master.c: 55: }
 [e :UE 152 ]
 }
-"64
-[; ;Labor4Master.c: 64: char UART_TX_Empty(){
+"57
+[; ;Labor4Master.c: 57: char UART_TX_Empty(){
 [v _UART_TX_Empty `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_TX_Empty ]
 [f ]
-"65
-[; ;Labor4Master.c: 65:     return TRMT;
+"58
+[; ;Labor4Master.c: 58:     return TRMT;
 [e ) -> _TRMT `uc ]
 [e $UE 153  ]
-"66
-[; ;Labor4Master.c: 66: }
+"59
+[; ;Labor4Master.c: 59: }
 [e :UE 153 ]
 }
-"68
-[; ;Labor4Master.c: 68: char UART_Data_Ready(){
+"61
+[; ;Labor4Master.c: 61: char UART_Data_Ready(){
 [v _UART_Data_Ready `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Data_Ready ]
 [f ]
-"69
-[; ;Labor4Master.c: 69:     return RCIF;
+"62
+[; ;Labor4Master.c: 62:     return RCIF;
 [e ) -> _RCIF `uc ]
 [e $UE 154  ]
-"70
-[; ;Labor4Master.c: 70: }
+"63
+[; ;Labor4Master.c: 63: }
 [e :UE 154 ]
 }
-"71
-[; ;Labor4Master.c: 71: char UART_Read(){
+"64
+[; ;Labor4Master.c: 64: char UART_Read(){
 [v _UART_Read `(uc ~T0 @X0 1 ef ]
 {
 [e :U _UART_Read ]
 [f ]
-"72
-[; ;Labor4Master.c: 72:     while(!RCIF);
+"65
+[; ;Labor4Master.c: 65:     while(!RCIF);
 [e $U 156  ]
 [e :U 157 ]
 [e :U 156 ]
 [e $ ! _RCIF 157  ]
 [e :U 158 ]
-"73
-[; ;Labor4Master.c: 73:     return RCREG;
+"66
+[; ;Labor4Master.c: 66:     return RCREG;
 [e ) -> _RCREG `uc ]
 [e $UE 155  ]
-"74
-[; ;Labor4Master.c: 74: }
+"67
+[; ;Labor4Master.c: 67: }
 [e :UE 155 ]
 }
-"76
-[; ;Labor4Master.c: 76: void UART_Read_Text(char *Output, unsigned int length){
+"69
+[; ;Labor4Master.c: 69: void UART_Read_Text(char *Output, unsigned int length){
 [v _UART_Read_Text `(v ~T0 @X0 1 ef2`*uc`ui ]
 {
 [e :U _UART_Read_Text ]
 [v _Output `*uc ~T0 @X0 1 r1 ]
 [v _length `ui ~T0 @X0 1 r2 ]
 [f ]
-"77
-[; ;Labor4Master.c: 77:     unsigned int i;
+"70
+[; ;Labor4Master.c: 70:     unsigned int i;
 [v _i `ui ~T0 @X0 1 a ]
-"78
-[; ;Labor4Master.c: 78:  for(int i=0;i<length;i++)
+"71
+[; ;Labor4Master.c: 71:  for(int i=0;i<length;i++)
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
 [e $U 163  ]
 [e :U 160 ]
-"79
-[; ;Labor4Master.c: 79:   Output[i] = UART_Read();
+"72
+[; ;Labor4Master.c: 72:   Output[i] = UART_Read();
 [e = *U + _Output * -> _i `x -> -> # *U _Output `i `x ( _UART_Read ..  ]
 [e ++ _i -> 1 `i ]
 [e :U 163 ]
 [e $ < -> _i `ui _length 160  ]
 [e :U 161 ]
 }
-"80
-[; ;Labor4Master.c: 80: }
+"73
+[; ;Labor4Master.c: 73: }
 [e :UE 159 ]
 }
-"82
-[; ;Labor4Master.c: 82: void UART_Write(char data){
+"75
+[; ;Labor4Master.c: 75: void UART_Write(char data){
 [v _UART_Write `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _UART_Write ]
 [v _data `uc ~T0 @X0 1 r1 ]
 [f ]
-"83
-[; ;Labor4Master.c: 83:     while(!TRMT);
+"76
+[; ;Labor4Master.c: 76:     while(!TRMT);
 [e $U 165  ]
 [e :U 166 ]
 [e :U 165 ]
 [e $ ! _TRMT 166  ]
 [e :U 167 ]
-"84
-[; ;Labor4Master.c: 84:     if (PIR1bits.TXIF == 1){
+"77
+[; ;Labor4Master.c: 77:     if (PIR1bits.TXIF == 1){
 [e $ ! == -> . . _PIR1bits 0 4 `i -> 1 `i 168  ]
 {
-"85
-[; ;Labor4Master.c: 85:     TXREG = data;
+"78
+[; ;Labor4Master.c: 78:     TXREG = data;
 [e = _TXREG -> _data `uc ]
-"86
-[; ;Labor4Master.c: 86:     }
+"79
+[; ;Labor4Master.c: 79:     }
 }
 [e :U 168 ]
-"87
-[; ;Labor4Master.c: 87: }
+"80
+[; ;Labor4Master.c: 80: }
 [e :UE 164 ]
 }
-"89
-[; ;Labor4Master.c: 89: void UART_Write_Text(char *text){
+"82
+[; ;Labor4Master.c: 82: void UART_Write_Text(char *text){
 [v _UART_Write_Text `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _UART_Write_Text ]
 [v _text `*uc ~T0 @X0 1 r1 ]
 [f ]
-"90
-[; ;Labor4Master.c: 90:     int i;
+"83
+[; ;Labor4Master.c: 83:     int i;
 [v _i `i ~T0 @X0 1 a ]
-"91
-[; ;Labor4Master.c: 91:     for(i=0;text[i]!='\0';i++)
+"84
+[; ;Labor4Master.c: 84:     for(i=0;text[i]!='\0';i++)
 {
 [e = _i -> 0 `i ]
 [e $U 173  ]
 [e :U 170 ]
-"92
-[; ;Labor4Master.c: 92:         UART_Write(text[i]);
+"85
+[; ;Labor4Master.c: 85:         UART_Write(text[i]);
 [e ( _UART_Write (1 *U + _text * -> _i `x -> -> # *U _text `i `x ]
 [e ++ _i -> 1 `i ]
 [e :U 173 ]
 [e $ != -> *U + _text * -> _i `x -> -> # *U _text `i `x `ui -> 0 `ui 170  ]
 [e :U 171 ]
 }
-"93
-[; ;Labor4Master.c: 93: }
+"86
+[; ;Labor4Master.c: 86: }
 [e :UE 169 ]
 }
-"99
-[; ;Labor4Master.c: 99: void spiMasterInit(void){
+"92
+[; ;Labor4Master.c: 92: void spiMasterInit(void){
 [v _spiMasterInit `(v ~T0 @X0 1 ef ]
 {
 [e :U _spiMasterInit ]
 [f ]
-"100
-[; ;Labor4Master.c: 100:     SSPSTATbits.SMP = 0;
+"93
+[; ;Labor4Master.c: 93:     SSPSTATbits.SMP = 0;
 [e = . . _SSPSTATbits 0 7 -> -> 0 `i `uc ]
-"101
-[; ;Labor4Master.c: 101:     SSPSTATbits.CKE = 0;
+"94
+[; ;Labor4Master.c: 94:     SSPSTATbits.CKE = 0;
 [e = . . _SSPSTATbits 0 6 -> -> 0 `i `uc ]
-"103
-[; ;Labor4Master.c: 103:     SSPCONbits.CKP = 1;
+"96
+[; ;Labor4Master.c: 96:     SSPCONbits.CKP = 1;
 [e = . . _SSPCONbits 0 1 -> -> 1 `i `uc ]
-"104
-[; ;Labor4Master.c: 104:     SSPCONbits.SSPM = 0b0000;
+"97
+[; ;Labor4Master.c: 97:     SSPCONbits.SSPM = 0b0000;
 [e = . . _SSPCONbits 0 0 -> -> 0 `i `uc ]
-"105
-[; ;Labor4Master.c: 105:     SSPCONbits.SSPEN = 1;
+"98
+[; ;Labor4Master.c: 98:     SSPCONbits.SSPEN = 1;
 [e = . . _SSPCONbits 0 2 -> -> 1 `i `uc ]
-"106
-[; ;Labor4Master.c: 106:     TRISCbits.TRISC5 = 0;
+"99
+[; ;Labor4Master.c: 99:     TRISCbits.TRISC5 = 0;
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"107
-[; ;Labor4Master.c: 107:     TRISCbits.TRISC3 = 0;
+"100
+[; ;Labor4Master.c: 100:     TRISCbits.TRISC3 = 0;
 [e = . . _TRISCbits 0 3 -> -> 0 `i `uc ]
-"111
-[; ;Labor4Master.c: 111: }
+"104
+[; ;Labor4Master.c: 104: }
 [e :UE 174 ]
 }
-"113
-[; ;Labor4Master.c: 113: void spiFunctionReadSlave (void){
+"106
+[; ;Labor4Master.c: 106: void spiFunctionReadSlave (void){
 [v _spiFunctionReadSlave `(v ~T0 @X0 1 ef ]
 {
 [e :U _spiFunctionReadSlave ]
 [f ]
-"116
-[; ;Labor4Master.c: 116:         while( (!SSPSTATbits.BF));
+"109
+[; ;Labor4Master.c: 109:         while( (!SSPSTATbits.BF));
 [e $U 176  ]
 [e :U 177 ]
 [e :U 176 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 177  ]
 [e :U 178 ]
-"117
-[; ;Labor4Master.c: 117:             _delay((unsigned long)((1)*(4000000/4000.0)));
+"110
+[; ;Labor4Master.c: 110:             _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"118
-[; ;Labor4Master.c: 118:             masterIn = spiRead();
+"111
+[; ;Labor4Master.c: 111:             masterIn = spiRead();
 [e = _masterIn -> ( _spiRead ..  `uc ]
-"120
-[; ;Labor4Master.c: 120:             _delay((unsigned long)((1)*(4000000/4000.0)));
+"113
+[; ;Labor4Master.c: 113:             _delay((unsigned long)((1)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"114
+[; ;Labor4Master.c: 114:             SSPSTATbits.BF =0;
+[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
+"116
+[; ;Labor4Master.c: 116:             _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "121
-[; ;Labor4Master.c: 121:             SSPSTATbits.BF =0;
-[e = . . _SSPSTATbits 0 0 -> -> 0 `i `uc ]
-"123
-[; ;Labor4Master.c: 123:             _delay((unsigned long)((1)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"128
-[; ;Labor4Master.c: 128: }
+[; ;Labor4Master.c: 121: }
 [e :UE 175 ]
 }
-"130
-[; ;Labor4Master.c: 130: void spiFunctionWriteSlave (void){
+"123
+[; ;Labor4Master.c: 123: void spiFunctionWriteSlave (void){
 [v _spiFunctionWriteSlave `(v ~T0 @X0 1 ef ]
 {
 [e :U _spiFunctionWriteSlave ]
 [f ]
-"132
-[; ;Labor4Master.c: 132:         _delay((unsigned long)((1)*(4000000/4000.0)));
+"125
+[; ;Labor4Master.c: 125:         _delay((unsigned long)((1)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 1 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"133
-[; ;Labor4Master.c: 133:         spiWrite(PORTD);
-[e ( _spiWrite (1 -> _PORTD `uc ]
-"138
-[; ;Labor4Master.c: 138:         _delay((unsigned long)((100)*(4000000/4000.0)));
+"126
+[; ;Labor4Master.c: 126:         spiWrite(0);
+[e ( _spiWrite (1 -> -> 0 `i `uc ]
+"131
+[; ;Labor4Master.c: 131:         _delay((unsigned long)((100)*(4000000/4000.0)));
 [e ( __delay (1 -> * -> -> 100 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"139
-[; ;Labor4Master.c: 139: }
+"132
+[; ;Labor4Master.c: 132: }
 [e :UE 179 ]
 }
-"141
-[; ;Labor4Master.c: 141: void spiWrite(char dat){
+"134
+[; ;Labor4Master.c: 134: void spiWrite(char dat){
 [v _spiWrite `(v ~T0 @X0 1 ef1`uc ]
 {
 [e :U _spiWrite ]
 [v _dat `uc ~T0 @X0 1 r1 ]
 [f ]
-"142
-[; ;Labor4Master.c: 142:     SSPBUF = dat;
+"135
+[; ;Labor4Master.c: 135:     SSPBUF = dat;
 [e = _SSPBUF -> _dat `uc ]
-"143
-[; ;Labor4Master.c: 143: }
+"136
+[; ;Labor4Master.c: 136: }
 [e :UE 180 ]
 }
-"145
-[; ;Labor4Master.c: 145: unsigned spiDataReady(){
+"138
+[; ;Labor4Master.c: 138: unsigned spiDataReady(){
 [v _spiDataReady `(ui ~T0 @X0 1 ef ]
 {
 [e :U _spiDataReady ]
 [f ]
-"146
-[; ;Labor4Master.c: 146:     if(SSPSTATbits.BF)
+"139
+[; ;Labor4Master.c: 139:     if(SSPSTATbits.BF)
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 182  ]
-"147
-[; ;Labor4Master.c: 147:         return 1;
+"140
+[; ;Labor4Master.c: 140:         return 1;
 [e ) -> -> 1 `i `ui ]
 [e $UE 181  ]
 [e $U 183  ]
-"148
-[; ;Labor4Master.c: 148:     else
+"141
+[; ;Labor4Master.c: 141:     else
 [e :U 182 ]
-"149
-[; ;Labor4Master.c: 149:         return 0;
+"142
+[; ;Labor4Master.c: 142:         return 0;
 [e ) -> -> 0 `i `ui ]
 [e $UE 181  ]
 [e :U 183 ]
-"150
-[; ;Labor4Master.c: 150: }
+"143
+[; ;Labor4Master.c: 143: }
 [e :UE 181 ]
 }
-"152
-[; ;Labor4Master.c: 152: char spiRead(){
+"145
+[; ;Labor4Master.c: 145: char spiRead(){
 [v _spiRead `(uc ~T0 @X0 1 ef ]
 {
 [e :U _spiRead ]
 [f ]
-"153
-[; ;Labor4Master.c: 153:     while (!SSPSTATbits.BF);
+"146
+[; ;Labor4Master.c: 146:     while (!SSPSTATbits.BF);
 [e $U 185  ]
 [e :U 186 ]
 [e :U 185 ]
 [e $ ! != -> . . _SSPSTATbits 0 0 `i -> 0 `i 186  ]
 [e :U 187 ]
-"154
-[; ;Labor4Master.c: 154:     return(SSPBUF);
+"147
+[; ;Labor4Master.c: 147:     return(SSPBUF);
 [e ) -> _SSPBUF `uc ]
 [e $UE 184  ]
-"155
-[; ;Labor4Master.c: 155: }
+"148
+[; ;Labor4Master.c: 148: }
 [e :UE 184 ]
 }

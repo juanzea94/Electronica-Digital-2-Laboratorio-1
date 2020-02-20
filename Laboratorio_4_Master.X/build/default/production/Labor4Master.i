@@ -2848,7 +2848,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 19 "./Labor4Master.h" 2
-# 43 "./Labor4Master.h"
+# 44 "./Labor4Master.h"
 char dat;
 unsigned char masterIn;
 unsigned char masterOut;
@@ -2901,7 +2901,7 @@ void UARTW (void){
 }
 
 char UART_Init(const long int baudrate){
-# 46 "Labor4Master.c"
+
    SPBRG = 25;
 
    TXSTAbits.SYNC = 0;
@@ -2989,7 +2989,7 @@ void spiFunctionReadSlave (void){
 void spiFunctionWriteSlave (void){
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
-        spiWrite(PORTD);
+        spiWrite(0);
 
 
 

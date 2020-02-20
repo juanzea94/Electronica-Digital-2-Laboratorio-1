@@ -2866,7 +2866,7 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 19 "./Labor4Master.h" 2
-# 43 "./Labor4Master.h"
+# 44 "./Labor4Master.h"
 char dat;
 unsigned char masterIn;
 unsigned char masterOut;
@@ -2918,6 +2918,7 @@ void main(void) {
     TRISCbits.TRISC3 = 0;
     TRISAbits.TRISA4 = 0;
     TRISB = 0;
+    TRISD = 0;
     TRISAbits.TRISA1 =0;
 
     PORTA = 0b00000000;
@@ -2925,7 +2926,7 @@ void main(void) {
     PORTC = 0b00000000;
     PORTD = 0b00000000;
     PORTE = 0b0000;
-
+    UART_Init(9600);
     spiMasterInit();
 
     while(1){
@@ -2934,8 +2935,18 @@ void main(void) {
 
         spiFunctionWriteSlave();
         spiFunctionReadSlave();
-        PORTB = masterIn;
-# 71 "Laboratorio_4_Master.c"
+        if (masterIn == 1){
+            spiFunctionWriteSlave();
+            spiFunctionReadSlave();
+            PORTD = masterIn;
+
+        }
+        if (masterIn == 2){
+            spiFunctionWriteSlave();
+            spiFunctionReadSlave();
+            PORTB = masterIn;
+        }
+# 83 "Laboratorio_4_Master.c"
     }
 
 }
