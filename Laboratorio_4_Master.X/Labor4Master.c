@@ -101,42 +101,40 @@ void spiMasterInit(void){
     SSPSTATbits.CKE = 0;
     //SSPCONbits.WCOL = 1;
     SSPCONbits.CKP = 1;
-    SSPCONbits.SSPM0 = 0;
-    SSPCONbits.SSPM1 = 1;
-    SSPCONbits.SSPM2 = 0;
-    SSPCONbits.SSPM3 = 0;
-    
+    SSPCONbits.SSPM = 0b0000;
+    SSPCONbits.SSPEN = 1;
     SDO = 0;
     SCK = 0;
-    SS = 1;
+//    SS = 1;
     
-    SSPCONbits.SSPEN = 1;
+    
 }
 
-void spiFuctionReadSlave (void){
-    while(1){
-        if (spiDataReady()){
-            PORTAbits.RA4 = 1;       //Slave Select
+void spiFunctionReadSlave (void){
+                
+//        PORTAbits.RA4 = 1;       //Slave Select
+        while( (!SSPSTATbits.BF));
             __delay_ms(1);
             masterIn = spiRead();
             //SSPCONbits.SSPOV = 0;
+            __delay_ms(1);
+            SSPSTATbits.BF =0;
+//            PORTAbits.RA4 = 0;       //Slave Deselect 
+            __delay_ms(1);
+         
         
-            __delay_ms(1);
-            PORTAbits.RA4 = 0;       //Slave Deselect 
-            __delay_ms(1);
-        }
 //        return;
-    }
+    
 }
 
-void spiFuctionWriteSlave (void){
-        PORTAbits.RA4 = 1;       //Slave Select
+void spiFunctionWriteSlave (void){
+//        PORTAbits.RA4 = 1;       //Slave Select
         __delay_ms(1);
-        spiWrite(masterOut);
-        SSPCONbits.SSPOV = 0;
+        spiWrite(PORTD);
+//        SSPCONbits.SSPOV = 0;
         
-        __delay_ms(1);
-        PORTAbits.RA4 = 0;       //Slave Deselect 
+//        __delay_ms(1);
+//        PORTAbits.RA4 = 0;       //Slave Deselect 
         __delay_ms(100);
 }
 

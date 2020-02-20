@@ -2871,8 +2871,8 @@ void spiMasterInit(void);
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
-void spiFuctionReadSlave (void);
-void spiFuctionWriteSlave (void);
+void spiFunctionReadSlave (void);
+void spiFunctionWriteSlave (void);
 # 3 "Labor4Master.c" 2
 
 
@@ -2960,42 +2960,40 @@ void spiMasterInit(void){
     SSPSTATbits.CKE = 0;
 
     SSPCONbits.CKP = 1;
-    SSPCONbits.SSPM0 = 0;
-    SSPCONbits.SSPM1 = 1;
-    SSPCONbits.SSPM2 = 0;
-    SSPCONbits.SSPM3 = 0;
-
+    SSPCONbits.SSPM = 0b0000;
+    SSPCONbits.SSPEN = 1;
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC3 = 0;
-    TRISAbits.TRISA4 = 1;
 
-    SSPCONbits.SSPEN = 1;
+
+
 }
 
-void spiFuctionReadSlave (void){
-    while(1){
-        if (spiDataReady()){
-            PORTAbits.RA4 = 1;
+void spiFunctionReadSlave (void){
+
+
+        while( (!SSPSTATbits.BF));
             _delay((unsigned long)((1)*(4000000/4000.0)));
             masterIn = spiRead();
 
+            _delay((unsigned long)((1)*(4000000/4000.0)));
+            SSPSTATbits.BF =0;
 
             _delay((unsigned long)((1)*(4000000/4000.0)));
-            PORTAbits.RA4 = 0;
-            _delay((unsigned long)((1)*(4000000/4000.0)));
-        }
 
-    }
+
+
+
 }
 
-void spiFuctionWriteSlave (void){
-        PORTAbits.RA4 = 1;
-        _delay((unsigned long)((1)*(4000000/4000.0)));
-        spiWrite(masterOut);
-        SSPCONbits.SSPOV = 0;
+void spiFunctionWriteSlave (void){
 
         _delay((unsigned long)((1)*(4000000/4000.0)));
-        PORTAbits.RA4 = 0;
+        spiWrite(PORTD);
+
+
+
+
         _delay((unsigned long)((100)*(4000000/4000.0)));
 }
 

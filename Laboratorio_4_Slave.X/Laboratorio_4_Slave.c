@@ -40,7 +40,7 @@ void main(void) {
     SDO = 0;
     SDI = 1;
     SCK = 1;
-    SS = 1;
+    //SS = 1;
     
     TRISA = 0b00000111;
     TRISB = 0;
@@ -53,7 +53,7 @@ void main(void) {
     ANSEL = 0b01000111;  //defino los puertos analogicos
     ANSELH = 0b00000000;
     
-    //spiSlaveInit();
+    spiSlaveInit();
     adcInit();
     
     while(1){
@@ -62,7 +62,12 @@ void main(void) {
         POT();
 //        if (spiDataReady()){
 //            PORTAbits.RA2 = spiRead();
-//            spiFunctionWriteMaster();}
+        spiFunctionReadMaster();
+        //if (spiDataReady()){
+        //    variableValeVerga = spiRead();
+        //    spiFunctionWriteMaster();//}
+        //}
+        spiFunctionWriteMaster();//}
         
         
         

@@ -2878,6 +2878,7 @@ uint8_t num3;
 float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
+uint8_t variableValeVerga;
 
 
 
@@ -2917,7 +2918,7 @@ void main(void) {
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC4 = 1;
     TRISCbits.TRISC3 = 1;
-    TRISAbits.TRISA5 = 1;
+
 
     TRISA = 0b00000111;
     TRISB = 0;
@@ -2930,14 +2931,27 @@ void main(void) {
     ANSEL = 0b01000111;
     ANSELH = 0b00000000;
 
-
+    spiSlaveInit();
     adcInit();
 
     while(1){
 
 
         POT();
-# 72 "Laboratorio_4_Slave.c"
+
+
+        spiFunctionReadMaster();
+
+
+
+
+        spiFunctionWriteMaster();
+
+
+
+
+
+
     }
 
 }

@@ -62,8 +62,8 @@ void spiMasterInit(void);
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
-void spiFuctionReadSlave (void);
-void spiFuctionWriteSlave (void);
+void spiFunctionReadSlave (void);
+void spiFunctionWriteSlave (void);
 
 #endif	/* XC_HEADER_TEMPLATE_H */
 

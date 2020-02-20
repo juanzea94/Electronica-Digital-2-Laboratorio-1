@@ -26,17 +26,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1557
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1557: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x087)));
 [v _TRISCbits `VS56 ~T0 @X0 0 e@135 ]
-"1422
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1422:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . TRISA0 TRISA1 TRISA2 TRISA3 TRISA4 TRISA5 TRISA6 TRISA7 ]
-"1421
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1421: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"1433
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1433: extern volatile TRISAbits_t TRISAbits __attribute__((address(0x085)));
-[v _TRISAbits `VS52 ~T0 @X0 0 e@133 ]
 "1416
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 1416: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
@@ -64,12 +53,21 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3449
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic16f887.h: 3449: extern volatile unsigned char ANSELH __attribute__((address(0x189)));
 [v _ANSELH `Vuc ~T0 @X0 0 e@393 ]
-"49 ./Labor4Slave.h
-[; ;./Labor4Slave.h: 49: void adcInit (void);
-[v _adcInit `(v ~T0 @X0 0 ef ]
+"53 ./Labor4Slave.h
+[; ;./Labor4Slave.h: 53: void spiSlaveInit();
+[v _spiSlaveInit `(v ~T0 @X0 0 e? ]
 "50
-[; ;./Labor4Slave.h: 50: void POT (void);
+[; ;./Labor4Slave.h: 50: void adcInit (void);
+[v _adcInit `(v ~T0 @X0 0 ef ]
+"51
+[; ;./Labor4Slave.h: 51: void POT (void);
 [v _POT `(v ~T0 @X0 0 ef ]
+"57
+[; ;./Labor4Slave.h: 57: void spiFunctionReadMaster(void);
+[v _spiFunctionReadMaster `(v ~T0 @X0 0 ef ]
+"58
+[; ;./Labor4Slave.h: 58: void spiFunctionWriteMaster(void);
+[v _spiFunctionWriteMaster `(v ~T0 @X0 0 ef ]
 "7 Laboratorio_4_Slave.c
 [p x FOSC = INTRC_NOCLKOUT ]
 "8
@@ -358,6 +356,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "43
 [; ;./Labor4Slave.h: 43: unsigned char slaveOut;
 [v _slaveOut `uc ~T0 @X0 1 e ]
+"44
+[; ;./Labor4Slave.h: 44: uint8_t variableValeVerga;
+[v _variableValeVerga `uc ~T0 @X0 1 e ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "30 Laboratorio_4_Slave.c
 [; ;Laboratorio_4_Slave.c: 30: void main(void) {
@@ -389,9 +390,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42
 [; ;Laboratorio_4_Slave.c: 42:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"43
-[; ;Laboratorio_4_Slave.c: 43:     TRISAbits.TRISA5 = 1;
-[e = . . _TRISAbits 0 5 -> -> 1 `i `uc ]
 "45
 [; ;Laboratorio_4_Slave.c: 45:     TRISA = 0b00000111;
 [e = _TRISA -> -> 7 `i `uc ]
@@ -419,6 +417,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "54
 [; ;Laboratorio_4_Slave.c: 54:     ANSELH = 0b00000000;
 [e = _ANSELH -> -> 0 `i `uc ]
+"56
+[; ;Laboratorio_4_Slave.c: 56:     spiSlaveInit();
+[e ( _spiSlaveInit ..  ]
 "57
 [; ;Laboratorio_4_Slave.c: 57:     adcInit();
 [e ( _adcInit ..  ]
@@ -429,13 +430,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "62
 [; ;Laboratorio_4_Slave.c: 62:         POT();
 [e ( _POT ..  ]
-"72
-[; ;Laboratorio_4_Slave.c: 72:     }
+"65
+[; ;Laboratorio_4_Slave.c: 65:         spiFunctionReadMaster();
+[e ( _spiFunctionReadMaster ..  ]
+"70
+[; ;Laboratorio_4_Slave.c: 70:         spiFunctionWriteMaster();
+[e ( _spiFunctionWriteMaster ..  ]
+"77
+[; ;Laboratorio_4_Slave.c: 77:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"74
-[; ;Laboratorio_4_Slave.c: 74: }
+"79
+[; ;Laboratorio_4_Slave.c: 79: }
 [e :UE 143 ]
 }

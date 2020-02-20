@@ -41,6 +41,7 @@ uint8_t num3;
 float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
+uint8_t variableValeVerga;
 
 //****************************************************************************//
 //**********************************PROTOTIPOS**********************************//

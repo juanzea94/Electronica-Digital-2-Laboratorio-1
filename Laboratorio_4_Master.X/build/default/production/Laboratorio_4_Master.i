@@ -2889,8 +2889,8 @@ void spiMasterInit(void);
 void spiWrite(char dat);
 unsigned spiDataReady();
 char spiRead();
-void spiFuctionReadSlave (void);
-void spiFuctionWriteSlave (void);
+void spiFunctionReadSlave (void);
+void spiFunctionWriteSlave (void);
 # 20 "Laboratorio_4_Master.c" 2
 
 
@@ -2925,12 +2925,17 @@ void main(void) {
     PORTC = 0b00000000;
     PORTD = 0b00000000;
     PORTE = 0b0000;
-    UART_Init(9600);
 
+    spiMasterInit();
 
     while(1){
-# 66 "Laboratorio_4_Master.c"
-        UARTW ();
+
+
+
+        spiFunctionWriteSlave();
+        spiFunctionReadSlave();
+        PORTB = masterIn;
+# 71 "Laboratorio_4_Master.c"
     }
 
 }

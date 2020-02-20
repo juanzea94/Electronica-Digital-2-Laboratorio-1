@@ -31,9 +31,11 @@ void POT (){
     __delay_ms(1);
     ADCON0bits.GO_DONE=1;
     while(ADCON0bits.GO_DONE);
-        PORTB=ADRESH;
+        slaveOut = ADRESH;
+        //PORTB=ADRESH;
         //valana = PORTB;
         //slaveOut=valana*5.0/255.0;
+        //slaveOut = valana;
         __delay_ms(5);
         valana =0;
     return;
@@ -56,24 +58,24 @@ void spiSlaveInit(){
     SSPSTATbits.SMP = 0;
     SSPCONbits.CKP = 1;
     SSPSTATbits.CKE = 0;
-    SSPCONbits.SSPM0 = 0;
-    SSPCONbits.SSPM1 = 0;
-    SSPCONbits.SSPM2 = 1;
-    SSPCONbits.SSPM3 = 0;
-
+    SSPCONbits.SSPM = 0b0101;
+    SSPCONbits.SSPEN = 1;
+    
     SDO = 0;
     SCK = 1;
-    
-    SSPCONbits.SSPEN = 1;
 }
 
 void spiFunctionReadMaster (void){
     while(1){
-        if (spiDataReady()){
+        if(SSPSTATbits.BF ==1){
+ //       if (spiDataReady()){
             __delay_ms(10);
-            slaveIn = spiRead();
-            SSPCONbits.SSPOV = 0;
+            slaveIn = SSPBUF;
+            SSPSTATbits.BF=0;
+            //slaveIn = spiRead();
+            //SSPCONbits.SSPOV = 0;
             __delay_ms(50);
+            break;
         }
 //    return;
     }
@@ -87,9 +89,9 @@ void spiFunctionWriteMaster(void){
 }
 
 void spiWrite(char dat)  {
-    PORTAbits.RA5 = 1;       //Slave Select
+//    PORTAbits.RA5 = 1;       //Slave Select
     SSPBUF = dat;//Write data to SPI bus
-    PORTAbits.RA5 = 0;       //Slave DeSelect
+//    PORTAbits.RA5 = 0;       //Slave DeSelect
 }
 
 unsigned spiDataReady() {

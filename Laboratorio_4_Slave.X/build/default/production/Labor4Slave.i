@@ -2859,6 +2859,7 @@ uint8_t num3;
 float number;
 unsigned char slaveIn;
 unsigned char slaveOut;
+uint8_t variableValeVerga;
 
 
 
@@ -2898,36 +2899,38 @@ void POT (){
     _delay((unsigned long)((1)*(4000000/4000.0)));
     ADCON0bits.GO_DONE=1;
     while(ADCON0bits.GO_DONE);
-        PORTB=ADRESH;
+        slaveOut = ADRESH;
+
+
 
 
         _delay((unsigned long)((5)*(4000000/4000.0)));
         valana =0;
     return;
 }
-# 55 "Labor4Slave.c"
+# 57 "Labor4Slave.c"
 void spiSlaveInit(){
     SSPSTATbits.SMP = 0;
     SSPCONbits.CKP = 1;
     SSPSTATbits.CKE = 0;
-    SSPCONbits.SSPM0 = 0;
-    SSPCONbits.SSPM1 = 0;
-    SSPCONbits.SSPM2 = 1;
-    SSPCONbits.SSPM3 = 0;
+    SSPCONbits.SSPM = 0b0101;
+    SSPCONbits.SSPEN = 1;
 
     TRISCbits.TRISC5 = 0;
     TRISCbits.TRISC3 = 1;
-
-    SSPCONbits.SSPEN = 1;
 }
 
 void spiFunctionReadMaster (void){
     while(1){
-        if (spiDataReady()){
+        if(SSPSTATbits.BF ==1){
+
             _delay((unsigned long)((10)*(4000000/4000.0)));
-            slaveIn = spiRead();
-            SSPCONbits.SSPOV = 0;
+            slaveIn = SSPBUF;
+            SSPSTATbits.BF=0;
+
+
             _delay((unsigned long)((50)*(4000000/4000.0)));
+            break;
         }
 
     }
@@ -2941,9 +2944,9 @@ void spiFunctionWriteMaster(void){
 }
 
 void spiWrite(char dat) {
-    PORTAbits.RA5 = 1;
+
     SSPBUF = dat;
-    PORTAbits.RA5 = 0;
+
 }
 
 unsigned spiDataReady() {

@@ -48,22 +48,26 @@ void main(void) {
     PORTC = 0b00000000;
     PORTD = 0b00000000;
     PORTE = 0b0000;
-    UART_Init(9600);
-    //spiMasterInit();
+    //UART_Init(9600);
+    spiMasterInit();
     
     while(1){
-//        PORTB = 0b00000100;
         //spiWrite (BANDERA);
         //PORTB = 0b00000010;
         //nRBPU = 0;
-        //spiFuctionReadSlave();
-        //PORTB = masterIn;
+        spiFunctionWriteSlave();
+        spiFunctionReadSlave();
+        PORTB = masterIn;
         //if (masterIn == 49){
             //PORTB = 8;
         //}
-    
+        
+        
+        
+        
+    /*ESTA PARTE DE UARTR Y UARTW SI FUNCIONA SIN INTERFAZ Y SIN POTS*/
         //UARTR ();
-        UARTW ();
+        //UARTW ();
     }    
     //return;
 }
