@@ -52,29 +52,57 @@ void main(void) {
     UART_Init(9600);
     spiMasterInit();
     
+    
+//    while(1)
+//  {
+//    //RC7 = 0; //Slave Select
+//    __delay_ms(1);
+//    spiWrite(PORTD);
+//    valordepot1 = spiRead();
+//    
+//    valorsend = valordepot1;
+//    UART_Write(valorsend);
+//    //__delay_ms(10);
+//    if(UART_Data_Ready()){
+//        PORTB =UART_Read();
+//    }
+//    __delay_ms(50);
+//  }
+//}
+    
+    
+    
+    
     while(1){
-        //spiWrite (BANDERA);
-        //PORTB = 0b00000010;
-        //nRBPU = 0;
-        spiFunctionWriteSlave();
-        spiFunctionReadSlave();
-        if (masterIn == 1){
-            spiFunctionWriteSlave();
-            spiFunctionReadSlave();
-            PORTD = masterIn;
-            UARTR();
-            UARTW(1);
-            if (uartIn ==1){
-                UARTR ();
-                UARTW(masterOut);
-                //UARTR
+        __delay_ms(10);
+        spiWrite(0);
+        masterIn = spiRead();
+        UARTR();
+        UARTW(masterIn);
+        //UARTR();
+        //PORTD = uartIn;
+        PORTB = uartIn;
+        
+       // spiFunctionWriteSlave();
+        //spiFunctionReadSlave();
+//        if (masterIn == 1){
+//            spiFunctionWriteSlave();
+//            spiFunctionReadSlave();
+//            PORTD = masterIn;
+//            PORTB = 7;
+//            UARTR();
+//            UARTW(masterOut);
+//            //if (uartIn ==1){
+//                //UARTR ();
+//                //UARTW(masterOut);
+//                //UARTR
+//                
+//            }
                 
-            }
-                
-            UARTW(masterIn);
+            //UARTW(masterIn);
             //UARTW(masterIn);
 //            PORTB = masterIn;
-        }
+        //}
 //        if (masterIn == 2){
 //            spiFunctionWriteSlave();
 //            spiFunctionReadSlave();

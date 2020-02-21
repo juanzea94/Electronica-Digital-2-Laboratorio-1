@@ -2887,7 +2887,6 @@ void UARTR (void){
         if(RCIF == 1){
             uartIn = UART_Read();
             _delay((unsigned long)((100)*(4000000/4000.0)));
-
         }
         return;
 
@@ -2940,11 +2939,6 @@ char UART_Read(){
     return RCREG;
 }
 
-void UART_Read_Text(char *Output, unsigned int length){
-    unsigned int i;
- for(int i=0;i<length;i++)
-  Output[i] = UART_Read();
-}
 
 void UART_Write(char data){
     while(!TRMT);
@@ -2975,8 +2969,7 @@ void spiMasterInit(void){
 
 void spiFunctionReadSlave (void){
 
-
-        while( (!SSPSTATbits.BF));
+        while((!SSPSTATbits.BF));
             _delay((unsigned long)((1)*(4000000/4000.0)));
             masterIn = spiRead();
 

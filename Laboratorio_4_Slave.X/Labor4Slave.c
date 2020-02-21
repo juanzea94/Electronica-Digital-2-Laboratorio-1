@@ -37,7 +37,7 @@ void POT (uint8_t m){
         //valana = PORTB;
         //slaveOut=valana*5.0/255.0;
         //slaveOut = valana;
-        __delay_ms(5);
+        __delay_ms(50);
 
     return;
 }

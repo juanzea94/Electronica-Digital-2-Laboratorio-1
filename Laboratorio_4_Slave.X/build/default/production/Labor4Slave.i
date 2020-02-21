@@ -2906,7 +2906,7 @@ void POT (uint8_t m){
 
 
 
-        _delay((unsigned long)((5)*(4000000/4000.0)));
+        _delay((unsigned long)((50)*(4000000/4000.0)));
 
     return;
 }

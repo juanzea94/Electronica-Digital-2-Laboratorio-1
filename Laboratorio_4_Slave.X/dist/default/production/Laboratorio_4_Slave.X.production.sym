@@ -3,11 +3,11 @@ __S0 2009 0 ABS 0
 __S1 7E 0 ABS 0
 __S2 0 0 ABS 0
 __S3 0 0 ABS 0
-_POT 755 0 CODE 0
+_POT 754 0 CODE 0
 __Hintentry 0 0 CODE 0
 __Lintentry 0 0 CODE 0
 __CFG_PWRTE$ON 0 0 ABS 0
-__end_of_spiFunctionReadMaster 755 0 CODE 0
+__end_of_spiFunctionReadMaster 754 0 CODE 0
 spiWrite@dat 7A 0 COMMON 1
 __CFG_BOR4V$BOR40V 0 0 ABS 0
 POT@m 7C 0 COMMON 1
@@ -28,10 +28,10 @@ _PORTE 9 0 ABS 0
 wtemp0 7E 0 ABS 0
 __Hconfig 2009 0 CONFIG 0
 __Lconfig 2007 0 CONFIG 0
-_spiWrite 6E6 0 CODE 0
+_spiWrite 6E5 0 CODE 0
 __Hram 0 0 ABS 0
 __Lram 0 0 ABS 0
-_spiFunctionReadMaster 733 0 CODE 0
+_spiFunctionReadMaster 732 0 CODE 0
 __Hfunctab 0 0 ENTRY 0
 __Lfunctab 0 0 ENTRY 0
 __Hcommon 0 0 ABS 0
@@ -54,7 +54,7 @@ __Lsfr2 0 0 ABS 0
 __Hsfr3 0 0 ABS 0
 __Lsfr3 0 0 ABS 0
 __end_of_POT 787 0 CODE 0
-__end_of_spiWrite 6EC 0 CODE 0
+__end_of_spiWrite 6EB 0 CODE 0
 ___stackhi 0 0 ABS 0
 __Hcode 0 0 ABS 0
 __Lcode 0 0 ABS 0
@@ -80,12 +80,12 @@ __Lbank3 0 0 ABS 0
 ___latbits 2 0 ABS 0
 __Hpowerup 0 0 CODE 0
 __Lpowerup 0 0 CODE 0
-__ptext1 706 0 CODE 0
-__ptext2 71B 0 CODE 0
-__ptext3 6E6 0 CODE 0
-__ptext4 733 0 CODE 0
-__ptext5 6F4 0 CODE 0
-__ptext6 755 0 CODE 0
+__ptext1 705 0 CODE 0
+__ptext2 71A 0 CODE 0
+__ptext3 6E5 0 CODE 0
+__ptext4 732 0 CODE 0
+__ptext5 6F3 0 CODE 0
+__ptext6 754 0 CODE 0
 __Hclrtext 0 0 ABS 0
 __Lclrtext 0 0 ABS 0
 __size_of_POT 0 0 ABS 0
@@ -97,12 +97,12 @@ __Hidloc 0 0 IDLOC 0
 __Lidloc 0 0 IDLOC 0
 __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
-__end_of_spiSlaveInit 71B 0 CODE 0
+__end_of_spiSlaveInit 71A 0 CODE 0
 __Hspace_0 2009 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __Hspace_1 7E 0 ABS 0
 __Lspace_1 0 0 ABS 0
-_adcInit 6F4 0 CODE 0
+_adcInit 6F3 0 CODE 0
 __Hspace_2 0 0 ABS 0
 __Lspace_2 0 0 ABS 0
 __Hcinit 800 0 CODE 0
@@ -111,8 +111,8 @@ __Hspace_3 0 0 ABS 0
 __Lspace_3 0 0 ABS 0
 __size_of_main 0 0 ABS 0
 __CFG_MCLRE$OFF 0 0 ABS 0
-__end_of_adcInit 706 0 CODE 0
-clear_ram0 6EC 0 CODE 0
+__end_of_adcInit 705 0 CODE 0
+clear_ram0 6EB 0 CODE 0
 __HbssBANK0 0 0 ABS 0
 __LbssBANK0 0 0 ABS 0
 __pbssBANK0 20 0 BANK0 1
@@ -120,7 +120,7 @@ __size_of_adcInit 0 0 ABS 0
 __CFG_FCMEN$OFF 0 0 ABS 0
 _ADCON0bits 1F 0 ABS 0
 _ADCON1bits 9F 0 ABS 0
-_spiFunctionWriteMaster 71B 0 CODE 0
+_spiFunctionWriteMaster 71A 0 CODE 0
 __CFG_BOREN$OFF 0 0 ABS 0
 __HbssCOMMON 0 0 ABS 0
 __LbssCOMMON 0 0 ABS 0
@@ -130,7 +130,7 @@ _SSPCONbits 14 0 ABS 0
 __Hend_init 3 0 CODE 0
 __Lend_init 0 0 CODE 0
 __size_of_spiSlaveInit 0 0 ABS 0
-_spiSlaveInit 706 0 CODE 0
+_spiSlaveInit 705 0 CODE 0
 __Hreset_vec 0 0 CODE 0
 __Lreset_vec 0 0 CODE 0
 intlevel0 0 0 ENTRY 0
@@ -141,7 +141,7 @@ intlevel2 0 0 ENTRY 0
 intlevel3 0 0 ENTRY 0
 intlevel4 0 0 ENTRY 0
 intlevel5 0 0 ENTRY 0
-__end_of_spiFunctionWriteMaster 733 0 CODE 0
+__end_of_spiFunctionWriteMaster 732 0 CODE 0
 __size_of_spiWrite 0 0 ABS 0
 __HcstackCOMMON 0 0 ABS 0
 __LcstackCOMMON 0 0 ABS 0
@@ -163,16 +163,16 @@ config 400E 4011 CONFIG 400E 0
 bssCOMMON 70 7D COMMON 70 1
 bssBANK0 20 37 BANK0 20 1
 maintext F0E FD5 CODE F0E 0
-text6 EAA F0D CODE EAA 0
-text4 E66 EA9 CODE E66 0
-text2 E36 E65 CODE E36 0
-text1 E0C E35 CODE E0C 0
-text5 DE8 E0B CODE DE8 0
-clrtext DD8 DE7 CODE DD8 0
-text3 DCC DD7 CODE DCC 0
+text6 EA8 F0D CODE EA8 0
+text4 E64 EA7 CODE E64 0
+text2 E34 E63 CODE E34 0
+text1 E0A E33 CODE E0A 0
+text5 DE6 E09 CODE DE6 0
+clrtext DD6 DE5 CODE DD6 0
+text3 DCA DD5 CODE DCA 0
 %locals
 dist/default/production\Laboratorio_4_Slave.X.production.o
-C:\Users\juanz\AppData\Local\Temp\seo0.s
+C:\Users\juanz\AppData\Local\Temp\s8sg.s
 630 7EB 0 CODE 0
 633 7EB 0 CODE 0
 695 7EB 0 CODE 0
@@ -187,16 +187,16 @@ C:\Users\juanz\AppData\Local\Temp\seo0.s
 711 7FC 0 CODE 0
 713 7FC 0 CODE 0
 714 7FD 0 CODE 0
-682 6EC 0 CODE 0
-683 6EC 0 CODE 0
-684 6ED 0 CODE 0
-685 6ED 0 CODE 0
-686 6EE 0 CODE 0
-687 6EF 0 CODE 0
-688 6F0 0 CODE 0
-689 6F1 0 CODE 0
-690 6F2 0 CODE 0
-691 6F3 0 CODE 0
+682 6EB 0 CODE 0
+683 6EB 0 CODE 0
+684 6EC 0 CODE 0
+685 6EC 0 CODE 0
+686 6ED 0 CODE 0
+687 6EE 0 CODE 0
+688 6EF 0 CODE 0
+689 6F0 0 CODE 0
+690 6F1 0 CODE 0
+691 6F2 0 CODE 0
 Laboratorio_4_Slave.c
 30 787 0 CODE 0
 32 787 0 CODE 0
@@ -230,50 +230,50 @@ Laboratorio_4_Slave.c
 68 7DC 0 CODE 0
 69 7E1 0 CODE 0
 Labor4Slave.c
-58 706 0 CODE 0
-59 706 0 CODE 0
-60 709 0 CODE 0
-61 70C 0 CODE 0
-62 70F 0 CODE 0
-63 715 0 CODE 0
-65 716 0 CODE 0
-66 719 0 CODE 0
-67 71A 0 CODE 0
-85 71B 0 CODE 0
-86 71C 0 CODE 0
-87 724 0 CODE 0
-89 72A 0 CODE 0
-90 732 0 CODE 0
-92 6E6 0 CODE 0
-94 6E7 0 CODE 0
-96 6EB 0 CODE 0
-69 733 0 CODE 0
-70 733 0 CODE 0
-71 733 0 CODE 0
-73 739 0 CODE 0
-74 742 0 CODE 0
-75 748 0 CODE 0
-78 74B 0 CODE 0
-83 754 0 CODE 0
-15 6F4 0 CODE 0
-16 6F4 0 CODE 0
-17 6F8 0 CODE 0
-18 6F9 0 CODE 0
-19 6FC 0 CODE 0
-20 6FD 0 CODE 0
-21 6FE 0 CODE 0
-22 701 0 CODE 0
-23 702 0 CODE 0
-24 704 0 CODE 0
-25 705 0 CODE 0
-27 755 0 CODE 0
-28 756 0 CODE 0
-29 757 0 CODE 0
-30 760 0 CODE 0
-31 76B 0 CODE 0
-32 76C 0 CODE 0
-33 773 0 CODE 0
-34 776 0 CODE 0
-35 77A 0 CODE 0
-40 77E 0 CODE 0
+58 705 0 CODE 0
+59 705 0 CODE 0
+60 708 0 CODE 0
+61 70B 0 CODE 0
+62 70E 0 CODE 0
+63 714 0 CODE 0
+65 715 0 CODE 0
+66 718 0 CODE 0
+67 719 0 CODE 0
+85 71A 0 CODE 0
+86 71B 0 CODE 0
+87 723 0 CODE 0
+89 729 0 CODE 0
+90 731 0 CODE 0
+92 6E5 0 CODE 0
+94 6E6 0 CODE 0
+96 6EA 0 CODE 0
+69 732 0 CODE 0
+70 732 0 CODE 0
+71 732 0 CODE 0
+73 738 0 CODE 0
+74 741 0 CODE 0
+75 747 0 CODE 0
+78 74A 0 CODE 0
+83 753 0 CODE 0
+15 6F3 0 CODE 0
+16 6F3 0 CODE 0
+17 6F7 0 CODE 0
+18 6F8 0 CODE 0
+19 6FB 0 CODE 0
+20 6FC 0 CODE 0
+21 6FD 0 CODE 0
+22 700 0 CODE 0
+23 701 0 CODE 0
+24 703 0 CODE 0
+25 704 0 CODE 0
+27 754 0 CODE 0
+28 755 0 CODE 0
+29 756 0 CODE 0
+30 75F 0 CODE 0
+31 76A 0 CODE 0
+32 76B 0 CODE 0
+33 772 0 CODE 0
+34 775 0 CODE 0
+35 779 0 CODE 0
+40 77D 0 CODE 0
 43 786 0 CODE 0

@@ -70,12 +70,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "65
 [; ;./Labor4Master.h: 65: void spiMasterInit(void);
 [v _spiMasterInit `(v ~T0 @X0 0 ef ]
-"70
-[; ;./Labor4Master.h: 70: void spiFunctionWriteSlave (void);
-[v _spiFunctionWriteSlave `(v ~T0 @X0 0 ef ]
-"69
-[; ;./Labor4Master.h: 69: void spiFunctionReadSlave (void);
-[v _spiFunctionReadSlave `(v ~T0 @X0 0 ef ]
+[v F1256 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.10\pic\include\pic.h
+[v __delay `JF1256 ~T0 @X0 0 e ]
+[p i __delay ]
+"66 ./Labor4Master.h
+[; ;./Labor4Master.h: 66: void spiWrite(char dat);
+[v _spiWrite `(v ~T0 @X0 0 ef1`uc ]
+"68
+[; ;./Labor4Master.h: 68: char spiRead();
+[v _spiRead `(uc ~T0 @X0 0 e? ]
 "54
 [; ;./Labor4Master.h: 54: void UARTR (void);
 [v _UARTR `(v ~T0 @X0 0 ef ]
@@ -425,63 +429,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 "53
 [; ;Laboratorio_4_Master.c: 53:     spiMasterInit();
 [e ( _spiMasterInit ..  ]
-"55
-[; ;Laboratorio_4_Master.c: 55:     while(1){
+"76
+[; ;Laboratorio_4_Master.c: 76:     while(1){
 [e :U 145 ]
 {
-"59
-[; ;Laboratorio_4_Master.c: 59:         spiFunctionWriteSlave();
-[e ( _spiFunctionWriteSlave ..  ]
-"60
-[; ;Laboratorio_4_Master.c: 60:         spiFunctionReadSlave();
-[e ( _spiFunctionReadSlave ..  ]
-"61
-[; ;Laboratorio_4_Master.c: 61:         if (masterIn == 1){
-[e $ ! == -> _masterIn `i -> 1 `i 147  ]
-{
-"62
-[; ;Laboratorio_4_Master.c: 62:             spiFunctionWriteSlave();
-[e ( _spiFunctionWriteSlave ..  ]
-"63
-[; ;Laboratorio_4_Master.c: 63:             spiFunctionReadSlave();
-[e ( _spiFunctionReadSlave ..  ]
-"64
-[; ;Laboratorio_4_Master.c: 64:             PORTD = masterIn;
-[e = _PORTD _masterIn ]
-"65
-[; ;Laboratorio_4_Master.c: 65:             UARTR();
-[e ( _UARTR ..  ]
-"66
-[; ;Laboratorio_4_Master.c: 66:             UARTW(1);
-[e ( _UARTW (1 -> -> 1 `i `uc ]
-"67
-[; ;Laboratorio_4_Master.c: 67:             if (uartIn ==1){
-[e $ ! == -> _uartIn `i -> 1 `i 148  ]
-{
-"68
-[; ;Laboratorio_4_Master.c: 68:                 UARTR ();
-[e ( _UARTR ..  ]
-"69
-[; ;Laboratorio_4_Master.c: 69:                 UARTW(masterOut);
-[e ( _UARTW (1 -> _masterOut `uc ]
-"72
-[; ;Laboratorio_4_Master.c: 72:             }
-}
-[e :U 148 ]
-"74
-[; ;Laboratorio_4_Master.c: 74:             UARTW(masterIn);
-[e ( _UARTW (1 -> _masterIn `uc ]
 "77
-[; ;Laboratorio_4_Master.c: 77:         }
-}
-[e :U 147 ]
-"88
-[; ;Laboratorio_4_Master.c: 88:     }
+[; ;Laboratorio_4_Master.c: 77:         _delay((unsigned long)((10)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"78
+[; ;Laboratorio_4_Master.c: 78:         spiWrite(0);
+[e ( _spiWrite (1 -> -> 0 `i `uc ]
+"79
+[; ;Laboratorio_4_Master.c: 79:         masterIn = spiRead();
+[e = _masterIn -> ( _spiRead ..  `uc ]
+"80
+[; ;Laboratorio_4_Master.c: 80:         UARTR();
+[e ( _UARTR ..  ]
+"81
+[; ;Laboratorio_4_Master.c: 81:         UARTW(masterIn);
+[e ( _UARTW (1 -> _masterIn `uc ]
+"84
+[; ;Laboratorio_4_Master.c: 84:         PORTB = uartIn;
+[e = _PORTB _uartIn ]
+"116
+[; ;Laboratorio_4_Master.c: 116:     }
 }
 [e :U 144 ]
 [e $U 145  ]
 [e :U 146 ]
-"90
-[; ;Laboratorio_4_Master.c: 90: }
+"118
+[; ;Laboratorio_4_Master.c: 118: }
 [e :UE 143 ]
 }

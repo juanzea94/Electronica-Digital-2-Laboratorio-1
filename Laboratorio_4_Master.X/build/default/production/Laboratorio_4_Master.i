@@ -2931,31 +2931,17 @@ void main(void) {
     PORTE = 0b0000;
     UART_Init(9600);
     spiMasterInit();
-
+# 76 "Laboratorio_4_Master.c"
     while(1){
+        _delay((unsigned long)((10)*(4000000/4000.0)));
+        spiWrite(0);
+        masterIn = spiRead();
+        UARTR();
+        UARTW(masterIn);
 
 
-
-        spiFunctionWriteSlave();
-        spiFunctionReadSlave();
-        if (masterIn == 1){
-            spiFunctionWriteSlave();
-            spiFunctionReadSlave();
-            PORTD = masterIn;
-            UARTR();
-            UARTW(1);
-            if (uartIn ==1){
-                UARTR ();
-                UARTW(masterOut);
-
-
-            }
-
-            UARTW(masterIn);
-
-
-        }
-# 88 "Laboratorio_4_Master.c"
+        PORTB = uartIn;
+# 116 "Laboratorio_4_Master.c"
     }
 
 }

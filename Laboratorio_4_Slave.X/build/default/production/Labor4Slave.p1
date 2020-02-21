@@ -456,8 +456,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Labor4Slave.c: 35:         slaveOut = ADRESH;
 [e = _slaveOut _ADRESH ]
 "40
-[; ;Labor4Slave.c: 40:         _delay((unsigned long)((5)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+[; ;Labor4Slave.c: 40:         _delay((unsigned long)((50)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "42
 [; ;Labor4Slave.c: 42:     return;
 [e $UE 144  ]
