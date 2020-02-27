@@ -11,7 +11,7 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\juanz\AppData\Local\Temp\sfq0.o
+$C:\Users\juanz\AppData\Local\Temp\sij0.o
 end_init CODE 0 0 0 3 2
 config CONFIG 0 2007 2007 2 2
 $dist/default/production\Laboratorio_4_Master.X.production.o
@@ -73,16 +73,16 @@ STRING 800-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Laboratorio_4_Master.X.production.o
-7F7 cinit CODE >644:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7F7 cinit CODE >647:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7F7 cinit CODE >670:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7F8 cinit CODE >671:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7F9 cinit CODE >672:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7FA cinit CODE >673:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7FB cinit CODE >674:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7FC cinit CODE >680:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7FC cinit CODE >682:C:\Users\juanz\AppData\Local\Temp\sfq0.s
-7FD cinit CODE >683:C:\Users\juanz\AppData\Local\Temp\sfq0.s
+7F7 cinit CODE >644:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7F7 cinit CODE >647:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7F7 cinit CODE >670:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7F8 cinit CODE >671:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7F9 cinit CODE >672:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7FA cinit CODE >673:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7FB cinit CODE >674:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7FC cinit CODE >680:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7FC cinit CODE >682:C:\Users\juanz\AppData\Local\Temp\sij0.s
+7FD cinit CODE >683:C:\Users\juanz\AppData\Local\Temp\sij0.s
 720 text8 CODE >68:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
 720 text8 CODE >69:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
 726 text8 CODE >70:C:\Users\juanz\Documents\GitHub\Electronica-Digital-2-Laboratorio-1\Laboratorio_4_Master.X\Labor4Master.c
@@ -182,21 +182,21 @@ __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __Hstrings 0 0 ABS 0 strings -
 _RCIF 65 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 _TRMT 4C1 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sfq0.o
+___sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sij0.o
 _main F3A 0 CODE 0 maintext dist/default/production\Laboratorio_4_Master.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
-start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sfq0.o
+start 0 0 CODE 0 init C:\Users\juanz\AppData\Local\Temp\sij0.o
 __CFG_BOREN$OFF 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
 __Hpowerup 0 0 CODE 0 powerup -
 _spiMasterInit E64 0 CODE 0 text3 dist/default/production\Laboratorio_4_Master.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sfq0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\juanz\AppData\Local\Temp\sij0.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 _OSCCONbits 8F 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
@@ -209,8 +209,8 @@ UART_Init@baudrate 70 0 COMMON 1 cstackCOMMON dist/default/production\Laboratori
 _SSPCONbits 14 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __size_of_spiRead 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
-___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sfq0.o
-___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sfq0.o
+___stackhi 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sij0.o
+___stacklo 0 0 ABS 0 - C:\Users\juanz\AppData\Local\Temp\sij0.o
 __end_of_UART_Write EA2 0 CODE 0 text6 dist/default/production\Laboratorio_4_Master.X.production.o
 _BAUDCTLbits 187 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __size_of_UARTR 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
@@ -223,7 +223,7 @@ _TRISAbits 85 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.productio
 _TRISCbits 87 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 _SSPBUF 13 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __end_of_spiMasterInit E82 0 CODE 0 text3 dist/default/production\Laboratorio_4_Master.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sfq0.o
+___int_sp 0 0 STACK 2 stack C:\Users\juanz\AppData\Local\Temp\sij0.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -266,7 +266,7 @@ __S3 0 0 ABS 0 - -
 __CFG_BOR4V$BOR40V 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __CFG_FOSC$INTRC_NOCLKOUT 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __Lintentry 0 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sfq0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\juanz\AppData\Local\Temp\sij0.o
 _RCSTAbits 18 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __size_of_UART_Write 0 0 ABS 0 - dist/default/production\Laboratorio_4_Master.X.production.o
 __pmaintext F3A 0 CODE 0 maintext dist/default/production\Laboratorio_4_Master.X.production.o
