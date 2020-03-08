@@ -14,9 +14,9 @@
 
 
 
-#pragma config FOSC = XT
+#pragma config FOSC = INTRC_NOCLKOUT
 #pragma config WDTE = OFF
-#pragma config PWRTE = OFF
+#pragma config PWRTE = ON
 #pragma config MCLRE = OFF
 #pragma config CP = OFF
 #pragma config CPD = OFF
@@ -28,8 +28,6 @@
 
 #pragma config BOR4V = BOR40V
 #pragma config WRT = OFF
-
-
 
 
 
@@ -2517,7 +2515,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\xc.h" 2 3
-# 26 "Laboratorio_5_Slave_3.c" 2
+# 24 "Laboratorio_5_Slave_3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdio.h" 1 3
 
@@ -2616,7 +2614,7 @@ extern int vsscanf(const char *, const char *, va_list) __attribute__((unsupport
 #pragma printf_check(sprintf) const
 extern int sprintf(char *, const char *, ...);
 extern int printf(const char *, ...);
-# 27 "Laboratorio_5_Slave_3.c" 2
+# 25 "Laboratorio_5_Slave_3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
 # 13 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 3
@@ -2751,8 +2749,7 @@ typedef int16_t intptr_t;
 
 
 typedef uint16_t uintptr_t;
-# 28 "Laboratorio_5_Slave_3.c" 2
-
+# 26 "Laboratorio_5_Slave_3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdlib.h" 1 3
 
@@ -2837,7 +2834,7 @@ extern char * ltoa(char * buf, long val, int base);
 extern char * ultoa(char * buf, unsigned long val, int base);
 
 extern char * ftoa(float f, int * status);
-# 30 "Laboratorio_5_Slave_3.c" 2
+# 27 "Laboratorio_5_Slave_3.c" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\string.h" 1 3
 # 14 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\string.h" 3
@@ -2870,46 +2867,66 @@ extern char * strchr(const char *, int);
 extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
-# 31 "Laboratorio_5_Slave_3.c" 2
-
-# 1 "./Labor5_Slave3.h" 1
-# 16 "./Labor5_Slave3.h"
-# 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.10\\pic\\include\\c90\\stdint.h" 1 3
-# 16 "./Labor5_Slave3.h" 2
-# 41 "./Labor5_Slave3.h"
-void i2cInit(short address);
-void __attribute__((picinterrupt(("")))) i2cSlaveRead(void);
-
-short z;
-# 32 "Laboratorio_5_Slave_3.c" 2
+# 28 "Laboratorio_5_Slave_3.c" 2
 
 
 
 
 
 
-void main(void) {
-        TRISBbits.TRISB0 =0;
-        PORTBbits.RB0 = 1;
 
-        int a;
 
-        TRISB = 0b00000000;
-        TRISA = 0b00000000;
+void __attribute__((picinterrupt(("")))) isr(void){
+   if(PIR1bits.SSPIF == 1){
 
-        PORTBbits.RB0 = 1;
-        _delay((unsigned long)((3000)*(4000000/4000.0)));
-        T1CON = 0x20;
-        PORTB = 0;
-        PORTD = 0;
-        PORTA = 1;
-        PORTBbits.RB0 = 1;
-        PORTBbits.RB1 = 1;
-        PORTBbits.RB2 = 1;
-        PORTBbits.RB3 = 1;
-        PORTBbits.RB4 = 1;
-        TRISDbits.TRISD6 = 0;
-        TRISDbits.TRISD3 = 1;
+        SSPCONbits.CKP = 0;
+
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;
+            SSPCONbits.SSPOV = 0;
+            SSPCONbits.WCOL = 0;
+            SSPCONbits.CKP = 1;
+        }
+
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+
+            z = SSPBUF;
+
+            PIR1bits.SSPIF = 0;
+            SSPCONbits.CKP = 1;
+            while(!SSPSTATbits.BF);
+            desecho = SSPBUF;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
+
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = distancia;
+            SSPCONbits.CKP = 1;
+            _delay((unsigned long)((250)*(4000000/4000000.0)));
+            while(SSPSTATbits.BF);
+        }
+
+        PIR1bits.SSPIF = 0;
+    }
+}
+
+void main()
+{
+    OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
+  int a =0;
+  setup();
+  TRISB = 0b00010000;
+  TRISD = 0x00;
+  PORTD = 0;
+
+  _delay((unsigned long)((3000)*(4000000/4000.0)));
+
+  T1CON = 0x10;
 
 
   while(1)
@@ -2917,20 +2934,54 @@ void main(void) {
     TMR1H = 0;
     TMR1L = 0;
 
-    TRISDbits.TRISD6 = 1;
+    RB0 = 1;
     _delay((unsigned long)((10)*(4000000/4000000.0)));
-    TRISDbits.TRISD6 = 0;
+    RB0 = 0;
 
-    while(TRISDbits.TRISD3==0);
+    while(!RB4);
     T1CONbits.TMR1ON = 1;
-    while(TRISDbits.TRISD3==1);
+    while(RB4);
     T1CONbits.TMR1ON = 0;
 
     a = (TMR1L | (TMR1H<<8));
     a = a/58.82;
     a = a + 1;
-    PORTB = a;
+    distancia = a;
 
-    PORTBbits.RB0 = 1;
+    I2C_Slave_Init(0x50);
+  }
 }
+
+
+void I2C_Slave_Init(uint8_t address)
+{
+    SSPADD = address;
+    SSPCON = 0x36;
+    SSPSTAT = 0x80;
+    SSPCON2 = 0x01;
+    SCL = 1;
+    SDA = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
+}
+
+void setup(void){
+    ANSEL = 0b00000000;
+    ANSELH = 0b00000000;
+
+    TRISA = 0b00000000;
+    TRISB = 0b00010000;
+    TRISC = 0b00011000;
+    TRISD = 0b00001100;
+    TRISE = 0b00000000;
+
+    PORTA = 0b00000000;
+    PORTB = 0b00000000;
+    PORTC = 0b00000000;
+    PORTD = 0b00000000;
+    PORTE = 0b00000000;
+
+    return;
 }

@@ -21,26 +21,11 @@
 
 #define SDA TRISCbits.TRISC4
 #define SCL TRISCbits.TRISC3
-#define SMP SSPSTATbits.SMP
-#define DnA SSPSTATbits.D_nA
-#define STOP SSPSTATbits.P
-#define START SSPSTATbits.S
-#define RnW SSPSTATbits.R_nW
-#define BF SSPSTATbits.BF
-
-#define GIE INTCONbits.GIE
-#define PEIE INTCONbits.PEIE
-#define SSPIF PIR1bits.SSPIF
-#define SSPIE PIE1bits.SSPIE
-#define CKP SSPCONbits.CKP
-#define SSPOV SSPCONbits.SSPOV
-#define WCOL SSPCONbits.WCOL
-#define ECHO TRISDbits.TRISD3
-#define TRIGGER TRISDbits.TRISD6
-
-void i2cInit(short address);
-void __interrupt() i2cSlaveRead(void);
-
-short z;
+void I2C_Slave_Init(uint8_t address);
+void setup(void);
+uint8_t z;
+uint8_t dato;
+uint8_t desecho;
+uint16_t distancia;
 
 #endif	/* XC_HEADER_TEMPLATE_H */

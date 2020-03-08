@@ -2848,11 +2848,17 @@ extern char * strichr(const char *, int);
 extern char * strrchr(const char *, int);
 extern char * strrichr(const char *, int);
 # 19 "./Labor5_Slave3.h" 2
-# 41 "./Labor5_Slave3.h"
-void i2cInit(short address);
-void __attribute__((picinterrupt(("")))) i2cSlaveRead(void);
 
-short z;
+
+
+
+
+void I2C_Slave_Init(uint8_t address);
+void setup(void);
+uint8_t z;
+uint8_t dato;
+uint8_t desecho;
+uint16_t distancia;
 # 2 "Labor5_Slave3.c" 2
 
 
@@ -2863,36 +2869,36 @@ void i2cInit(short address) {
     SSPCON2 = 0x01;
     TRISCbits.TRISC3 = 1;
     TRISCbits.TRISC4 = 1;
-    INTCONbits.GIE = 1;
-    INTCONbits.PEIE = 1;
-    PIR1bits.SSPIF = 0;
-    PIE1bits.SSPIE = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
 }
 
 void __attribute__((picinterrupt(("")))) i2cSlaveRead(void){
-    if(PIR1bits.SSPIF == 1){
-        SSPCONbits.CKP = 0;
-        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+    if(SSPIF == 1){
+        CKP = 0;
+        if ((SSPOV) || (WCOL)){
             z = SSPBUF;
-            SSPCONbits.SSPOV = 0;
-            SSPCONbits.WCOL = 0;
-            SSPCONbits.CKP = 1;
+            SSPOV = 0;
+            WCOL = 0;
+            CKP = 1;
         }
-        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW){
+        if(!DnA && !RnW){
             z = SSPBUF;
-            while(!SSPSTATbits.BF);
+            while(!BF);
             PORTD = SSPBUF;
-            SSPCONbits.CKP = 1;
+            CKP = 1;
             _delay((unsigned long)((250)*(4000000/4000000.0)));
         }
-        else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+        else if(!DnA && RnW){
             z = SSPBUF;
-            SSPSTATbits.BF = 0;
+            BF = 0;
             SSPBUF = PORTB ;
-            SSPCONbits.CKP = 1;
+            CKP = 1;
             _delay((unsigned long)((250)*(4000000/4000000.0)));
-            while(SSPSTATbits.BF);
+            while(BF);
         }
-        PIR1bits.SSPIF = 0;
+        SSPIF = 0;
     }
 }

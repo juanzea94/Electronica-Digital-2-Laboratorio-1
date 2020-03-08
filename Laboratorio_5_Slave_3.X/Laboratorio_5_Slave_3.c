@@ -4,10 +4,10 @@
  *
  * Created on February 24, 2020, 10:06 PM
  */
-// CONFIG1
-#pragma config FOSC = XT        // Oscillator Selection bits (XT oscillator: Crystal/resonator on RA6/OSC2/CLKOUT and RA7/OSC1/CLKIN)
+ //CONFIG1
+#pragma config FOSC = INTRC_NOCLKOUT// Oscillator Selection bits (INTOSCIO oscillator: I/O function on RA6/OSC2/CLKOUT pin, I/O function on RA7/OSC1/CLKIN)
 #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled and can be enabled by SWDTEN bit of the WDTCON register)
-#pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
+#pragma config PWRTE = ON      // Power-up Timer Enable bit (PWRT disabled)
 #pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR pin function is digital input, MCLR internally tied to VDD)
 #pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
 #pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
@@ -20,64 +20,125 @@
 #pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
 #pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
 
-// #pragma config statements should precede project file includes.
-// Use project enums instead of #define for ON and OFF.
 
-#include <xc.h> // include processor files - each processor file is guarded.
+#include <xc.h>
 #include <stdio.h>
 #include <stdint.h>
-#include <pic16f887.h>
 #include <stdlib.h>
 #include <string.h>
-#include "Labor5_Slave3.h"
-#define _XTAL_FREQ  4000000 
+#include <pic16f887.h>
+#define _XTAL_FREQ  4000000
 
 
-//void __interrupt() i2cSlaveRead(void);
+//*****************************************************************************
+// Código de Interrupción 
+//*****************************************************************************
+void __interrupt() isr(void){
+   if(PIR1bits.SSPIF == 1){ 
 
-void main(void) {
-        TRISBbits.TRISB0 =0;
-        PORTBbits.RB0 = 1;
-    
-        int a;
+        SSPCONbits.CKP = 0;
+       
+        if ((SSPCONbits.SSPOV) || (SSPCONbits.WCOL)){
+            z = SSPBUF;                 // Read the previous value to clear the buffer
+            SSPCONbits.SSPOV = 0;       // Clear the overflow flag
+            SSPCONbits.WCOL = 0;        // Clear the collision bit
+            SSPCONbits.CKP = 1;         // Enables SCL (Clock)
+        }
 
-        TRISB = 0b00000000;         //RB4 as Input PIN (ECHO)
-        TRISA = 0b00000000; 
-//        TRISD = 0b10000001;              // LCD Pins as Output
-        PORTBbits.RB0 = 1;
-        __delay_ms(3000);
-        T1CON = 0x20;               //Initialize Timer Module
-        PORTB = 0;
-        PORTD = 0;
-        PORTA = 1;
-        PORTBbits.RB0 = 1;
-        PORTBbits.RB1 = 1;
-        PORTBbits.RB2 = 1;
-        PORTBbits.RB3 = 1;
-        PORTBbits.RB4 = 1;
-        TRIGGER = 0;
-        ECHO = 1;
-        
-        
+        if(!SSPSTATbits.D_nA && !SSPSTATbits.R_nW) {
+            //__delay_us(7);
+            z = SSPBUF;                 // Lectura del SSBUF para limpiar el buffer y la bandera BF
+            //__delay_us(2);
+            PIR1bits.SSPIF = 0;         // Limpia bandera de interrupción recepción/transmisión SSP
+            SSPCONbits.CKP = 1;         // Habilita entrada de pulsos de reloj SCL
+            while(!SSPSTATbits.BF);     // Esperar a que la recepción se complete
+            desecho = SSPBUF;             // Guardar en el PORTD el valor del buffer de recepción
+            __delay_us(250);
+            
+        }else if(!SSPSTATbits.D_nA && SSPSTATbits.R_nW){
+            z = SSPBUF;
+            BF = 0;
+            SSPBUF = distancia;
+            SSPCONbits.CKP = 1;
+            __delay_us(250);
+            while(SSPSTATbits.BF);
+        }
+       
+        PIR1bits.SSPIF = 0;    
+    }
+}
+
+void main()
+{ 
+    OSCCONbits.IRCF =0b110;
+    OSCCONbits.OSTS= 0;
+    OSCCONbits.HTS = 0;
+    OSCCONbits.LTS = 0;
+    OSCCONbits.SCS = 1;
+  int a =0;
+  setup();
+  TRISB = 0b00010000;         //RB4 as Input PIN (ECHO)
+  TRISD = 0x00;               // LCD Pins as Output
+  PORTD = 0;
+
+  __delay_ms(3000);
+
+  T1CON = 0x10;               //Initialize Timer Module
+
+  
   while(1)
   { 
     TMR1H = 0;                //Sets the Initial Value of Timer
     TMR1L = 0;                //Sets the Initial Value of Timer
 
-    TRIGGER = 1;                  //TRIGGER HIGH
+    RB0 = 1;                  //TRIGGER HIGH
     __delay_us(10);           //10uS Delay 
-    TRIGGER = 0;                  //TRIGGER LOW
+    RB0 = 0;                  //TRIGGER LOW
 
-    while(ECHO==0);              //Waiting for Echo
+    while(!RB4);              //Waiting for Echo
     T1CONbits.TMR1ON = 1;               //Timer Starts
-    while(ECHO==1);               //Waiting for Echo goes LOW
+    while(RB4);               //Waiting for Echo goes LOW
     T1CONbits.TMR1ON = 0;               //Timer Stops
 
     a = (TMR1L | (TMR1H<<8)); //Reads Timer Value
     a = a/58.82;              //Converts Time to Distance
     a = a + 1;                //Distance Calibration
-    PORTB = a;
+    distancia = a;
     
-    PORTBbits.RB0 = 1;
+    I2C_Slave_Init(0x50);
+  }
 }
+
+
+void I2C_Slave_Init(uint8_t address)
+{ 
+    SSPADD = address;
+    SSPCON = 0x36;      // 0b00110110
+    SSPSTAT = 0x80;     // 0b10000000
+    SSPCON2 = 0x01;     // 0b00000001
+    SCL = 1;
+    SDA = 1;
+    GIE = 1;
+    PEIE = 1;
+    SSPIF = 0;
+    SSPIE = 1;
+}
+
+void setup(void){
+    ANSEL = 0b00000000;
+    ANSELH = 0b00000000;
+    
+    TRISA = 0b00000000;
+    TRISB = 0b00010000;  
+    TRISC = 0b00011000;
+    TRISD = 0b00001100;
+    TRISE = 0b00000000;
+    
+    PORTA = 0b00000000;    
+    PORTB = 0b00000000;      
+    PORTC = 0b00000000;
+    PORTD = 0b00000000;
+    PORTE = 0b00000000;
+    //I2C_Slave_Init(0x30);  
+    return;
 }
